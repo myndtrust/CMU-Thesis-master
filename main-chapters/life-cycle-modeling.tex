@@ -40,16 +40,24 @@
     \subsection{Functional Unit and Reference Flows}
     Life cycle assessment studies require a functional unit of performance of the system under study for use as a normalized reference point. As a reference point for data centers, there is an industry wide consensus that power is the best indicator for a data center's workload capacity \cite{shah11, whitehead15, barroso18}. Based on the consensus, the functional unit adapted for this research is chosen to be 1-kW of provisioned power per year. 
     
-    Furthermore, for the abstracted functional unit to be used in comparisons between different data center design scenarios requires it to be translated to reference flow values. In this work the reference flow is constrained to 1-year of data center operations with the globally provisioned power footprint of each of the language abstracted services. The language (internet service) to data center distribution is indicated in Figure~\ref{land_dc_sankey}. This choice of the reference flow allows for the full embodied inventory to be quantified based on provisioned capacity and does not constrain the part-load operational energy calculations. 
+    Furthermore, for the abstracted functional unit to be used in comparisons between different data center design scenarios requires it to be translated to reference flow values. In this work the reference flow is constrained to 1-year of data center operations with the globally provisioned power footprint of each of the language abstracted internet services. The language (internet service) to data center distribution is indicated in Figure~\ref{land_dc_sankey}. 
     
     \input{main-chapters/contents/lang_dc_sankey}
     
     \subsection{System Boundary}
+    The presented framework is intended to be used as a tool in data center life cycle assessments (LCA), where prevalent LCA practices are followed. In standard practice, product specific LCA studies generally entail four phases: 1) goal and scope phase, 2) the inventory analysis phase, 3) the impact assessment phase, and 4) the interpretation phase \cite{ISO14040}. The methodology, data sets, and software tools presented in the research is conducive for the first three LCA phases which all require quantitative assessment of data center environmental footprints. Stated more explicitly, this research’s goal is to provide a model that can be used to quantify the energy and carbon footprint of data center systems encompassing the embodied and operational phases in a single workflow. 
+    
+    Figure~\ref{system_boundary} illustrates the boundary conditions the boundary conditions with in the scope of this framework. In the scope are for paths of input of raw materials and energy from the ecosphere. Two paths lead to the embodied systems found in data centers; building construction and information technology manufacturing. While the other two path lead to the operational systems that are required to run the data centers. 
+    
     \input{main-chapters/contents/system_boundary}
     
-    \subsection{Functional Unit}
-    \subsection{System Boundary}
+    In this research specific sub-systems of data centers are segregated as listed in Table~\ref{tab:dc_subsystem_boundaries}. Demarcation by these boundaries allows development of the embodied and operational models to align with industrial cost data and in terms of EIO industrial vectors. Table~\ref{tab:dc_subsystem_boundaries} serves a structural backbone for all the models developed in this framework as discussed next.
+    
+    \input{main-chapters/contents/system_boundary_table}
+    
     \subsection{Operational Inventories}
+    There are extensive operational models available for data centers in literature \cite{dayarathna16, joshi12}. The distribution of power for various points-of-use for the class of data centers this research is concerned about is indicted by the pie-charts shown in Figure 1 for two generations of technology. In 2012, more than 80\% of the energy in a data center was used by four components; CPU 42\%, Cooling 15.4\%, disk 14.3\% and DRAM 11.7\%. By 2017, the cooling overhead had decreased to only account for 3\% a data center energy use, this decrease in cooling inflated the relative fraction of CPU and DRAM energy requirement.  Also of note is the change in terminology for storage and it’s share size. Storage power efficiency has not only significantly enhanced [16], but also traditional magnetic disc storage systems are being replaced by transistor based solid state drives. This semantic change is evidenced by the reduction in of disk energy demand from 14.3\%  in 2012 to 2\% in 2017. 
+    
     \subsection{Embodied Inventories}
     l
         \subsubsection{Building Systems}
