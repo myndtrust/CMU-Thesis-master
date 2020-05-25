@@ -30,22 +30,19 @@
     \subsection{Similar Works}
         In this section similar works that have quantified the environmental foot print of data centers are presented. Data center life cycle assessment works come from industrial operators \cite{shah11},  academia \cite{whitehead15,kline16}, federal agencies \cite{CLEER13}, and industrial consortium's \cite{tgg12}. Two of the reviewed works are conducive to replicate from the ground up \cite{shah11,whitehead15}, while another serves as a guideline \cite{tgg12}, and another provides an online interactive tool to assess the footprint of targeted classes of Cloud services \cite{CLEER13}. 
 
-        From the operators perspective Shah, demonstrates an end to end life cycle assessment of data center systems \cite{shah11}. Shah uses a hybrid model inclusive of process based and economic input/output assessment frameworks to assess a single a data center, while using a static model for use-phase power. Whitehead, extends Shah's hybrid work and demonstrates the life-cycle costs of a real data center, but with an obscure functional unit \cite{whitehead15}.  
+        From the operators perspective Shah, demonstrates an end to end life cycle assessment of data center systems \cite{shah11}. Shah uses a hybrid model inclusive of process based and economic input/output assessment frameworks to assess a single a data center, while using a static model for use-phase power. Whitehead, extends Shah's hybrid work and demonstrates the life-cycle costs of a real data center and sets an explicit functional unit of 1-kW of provisioned capacity \cite{whitehead15}.  
         
-        The recent focus on product operational energy efficiency motivated Kline’s study of the trade-offs between operational energy and the embodied costs of information technology equipment \cite{kline16}. Although their bases for the embodied costs are process based, their literature does not provide sufficient insight for others to reproduce the work. Similarly, The Green Grid's Data Center Life Cycle costs guidelines outline the end goal of a data center life cycle analysis. It classifies several key attributes that need to be considered, but lacks references to explicit procedures that must be followed to achieve the goals.  Does this update?
+        The recent focus on product operational energy efficiency motivated Kline’s study of the trade-offs between operational energy and the embodied costs of information technology equipment \cite{kline16}. Although their bases for the embodied costs are process based, their literature does not provide sufficient insight for others to reproduce the work. Similarly, The Green Grid's Data Center Life Cycle costs guidelines outline the end goal of a data center life cycle analysis. It classifies several key attributes that need to be considered, but lacks references to explicit procedures that must be followed to achieve the goals. 
         
        The Cloud Energy and Emissions Research (CLEER) Model provides a browser based user interface to compare the environmental costs of on-premise server based services with hypothetical cloud-based systems that would provide an equivalent service \cite{CLEER13}. CLEER's analysis is transparent and inclusive of embodied and operational costs, but it does not dynamically couple the embodied or operational costs into the model. The presented set of past works has inspired the methodology of this research as described in the next section.
 
 \section{Methodology}
-    \subsection{Functional Unit}
+    \subsection{Functional Unit and Reference Flows}
+    Life cycle assessment studies require a functional unit of performance of the system under study for use as a normalized reference point. There is an industry wide consensus that power is the best indicator for a data center's workload capacity \cite{shah11, whitehead15, barroso18}. Based on the consensus, the functional unit adapted for this research is chosen to be 1-kW of provisioned power per year. 
     
-%     \input{main-chapters/contents/lang_dc_sankey}
-    \begin{figure}\centering
-        \includegraphics[scale=0.5]{main-chapters/images/lang_dc_sankey.png}
-        \caption[Short caption, to appear in the table of contents]{In line.}
-        \label{LabelForTheImage}
-        \end{figure}
-
+    Furthermore, for the abstracted functional unit to be used in comparisons between different data center design scenarios requires it to be translated to reference flow values. In this study the reference flow is constrained to 1-year of data center operations with the globally provisioned power footprint of each of the language abstracted services. The language (service) to data center mapping is indicated in Figure~\ref{land_dc_sankey}. This choice of the reference flow allows for the full embodied inventory to be quantified based on provisioned capacity and does not constrain the part-load operational energy calculations. 
+    
+    \input{main-chapters/contents/lang_dc_sankey}
     
     \subsection{System Boundary}
     \subsection{Functional Unit}
