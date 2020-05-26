@@ -1,5 +1,5 @@
 \chapter{Life-Cycle Energy and Carbon Footprint Modeling with Data Center Building Energy Models}
-\label{chp:intro}
+\label{chp:embodied_cost_model}
 
 \section{Introduction}
     In this chapter, the aim is to quantify the end to end life cycle costs of data centers by extending the operational models developed in the previous chapters. Those operational models have provided an indication of system level energy for a network of data centers and their marginal carbon dioxide footprints. Although, the presented models are a good proxy for the environmental costs of data center operations, they don't account for the energy and carbon footprint embodied in all the materials that the data centers are composed of.
@@ -51,7 +51,7 @@
     
     \input{embodied_cost_model/contents/system_boundary}
     
-    In this research specific sub-systems of data centers are segregated as listed in Table~\ref{tab:dc_subsystem_boundaries}. Demarcation by these boundaries allows development of the embodied and operational models to align with industrial cost data and in terms of EIO industrial vectors. Table~\ref{tab:dc_subsystem_boundaries} serves a structural backbone for all the models developed in this framework as discussed next.
+    In this research specific sub-systems of data centers are segregated as listed in Table~\ref{tab:dc_subsystem_boundaries}. Demarcation by these boundaries allows development of the embodied and operational models to align with industrial cost data and in terms of EIO industrial vectors. Table~\ref{tab:dc_subsystem_boundaries} serves the structural backbone for all the models developed in this framework as discussed next.
     
     \input{embodied_cost_model/contents/system_boundary_table}
     
@@ -60,9 +60,13 @@
     
     The values in Figure~\ref{power_2012} and Figure~\ref{power_2017} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site.
     
-    Specifically, the building energy model from 
-    
     \input{embodied_cost_model/contents/power_dist}
+    
+    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the traffic simulator from Chapter~\ref{chp:traffic}. The general framework is illustrated in 
+    
+    
+    
+    
     
     \subsection{Embodied Inventories}
     l
