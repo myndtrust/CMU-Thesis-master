@@ -53,19 +53,19 @@
 	\end{spacing}
 	\vfill
 	\vspace{1cm}
-	Theses Committee:\\
+	Doctoral Committee:\\
 	{\normalsize \bf Dr. Erica Cochran Hameen Ph.D - \textit{Committee Chair}}\\ 
 		\small{Assistant Professor Carnegie Mellon University, School or Architecture}\\
 		\vspace{0.3cm}
 	{\normalsize \bf Dr. Gwen DiPietro Ph.D}\\
-		\small{Carnegie Mellon University, Civil and Environmental Engineering} \\
+		\small{Carnegie Mellon University, Civil \& Environmental Engineering} \\
 		\vspace{0.3cm}
 	{\normalsize \bf Dr. Arman Shehabi Ph.D}\\
-		\small{Research Scientist and Deputy Group Leader Sustainable Energy Systems Group
-				Energy Analysis and Environmental Impacts Division Lawrence Berkeley National Laboratory} \\
+		\small{Research Scientist \& Deputy Group Leader Sustainable Energy Systems Group
+				Energy Analysis \\ \& Environmental Impacts Division Lawrence Berkeley National Laboratory} \\
 				\vspace{0.3cm}
 	{\normalsize \bf Dr. In\^es Azevedo Ph.D}\\
-		\small{Associate Professor of Energy Resources Engineering and Senior Fellow at the Woods Institute for the Environment }
+		\small{Associate Professor of Energy Resources Engineering, Stanford University \\ \&  Senior Fellow at the Woods Institute for the Environment }
 
 	\vspace{0.8cm}
 	\begin{LARGE}
