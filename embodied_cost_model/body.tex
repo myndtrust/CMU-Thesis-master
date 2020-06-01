@@ -62,14 +62,15 @@
     
     \input{embodied_cost_model/contents/power_dist}
     
-    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the traffic simulator from Chapter~\ref{chp:traffic}. The general framework is illustrated in 
+    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the traffic simulator from Chapter~\ref{chp:traffic}. The general framework is illustrated in Figure~\ref{process_flow}.
     
-    
-    
-    
+    \input{embodied_cost_model/contents/process_flow}
     
     \subsection{Embodied Inventories}
-    l
+    Embodied cost assessments account for the natural resources consumed when extracting, transforming, manufacturing, transporting, constructing, maintaining, and disposing the product under study. The first step in these assessments is to set the boundary conditions of the system. The second step is to select the method of the assessment. Two methods are available for such assessment; namely process based or EIO based. Process based methods are bottoms up procedures; accounting for all processes that are required to transform raw materials into consumer goods.
+    
+    However, as the product boundary grows the inventory can grow exponentially and become an intractable task for building designers. In this research due to the size and complexity of data center systems, in lieu of detailed bill of materials spanning across building infrastructure and technology sectors a total costs of ownership model is sufficient. Specifically, Hardy’s estimating and exploration for total cost of ownership (EETCO) approach is selected to provide the embodied inventories of the data center [19]
+    
         \subsubsection{Building Systems}
         \subsubsection{Information Technology Systems}
     
