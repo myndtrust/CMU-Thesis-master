@@ -71,14 +71,14 @@
     
     The values in Figure~\ref{fig:power_dist_pies} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site.
     
-    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the network coefficients  from Chapter~\ref{chp:traffic}. The traffic coefficients are used to reset the IT workloads at each data centers and the marginal costs to produce energy in the regional grid. The details of the models is indicated in Algorithm~\ref{mec_coupled_bem_algo} and the general framework is illustrated in Figure~\ref{process_flow}.
+    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the network coefficients  from Chapter~\ref{chp:traffic}. The traffic coefficients are used to reset the IT workloads at each data centers and the marginal costs to produce energy in the regional grid. The details of the model is indicated in Algorithm~\ref{mec_coupled_bem_algo} and the general framework is illustrated in Figure~\ref{process_flow}.
     
     \input{embodied_cost_model/contents/mec_coupled_bem_algo}
     
     \input{embodied_cost_model/contents/horizontal_process_flow}
     
     \subsection{Embodied Inventories}
-    Embodied cost assessments account for the natural resources consumed when extracting, transforming, manufacturing, transporting, constructing, maintaining, and disposing the product under study. The first step in these assessments is to set the boundary conditions of the system. The second step is to select the method of the assessment. Two methods are available for such assessment; namely process based or EIO based. Process based methods are bottoms up procedures; accounting for all processes that are required to transform raw materials into consumer goods. However in process based methods as the product boundary and the count of processes to quantify can have exponentially correlations. This exponential growth can become an intractable task for building designers. A more tractable method is the EIO, where economic relationships between two industries at the national level are exploited. . 
+    Embodied cost assessments account for the natural resources consumed when extracting, transforming, manufacturing, transporting, constructing, maintaining, and disposing the product under study. The first step in these assessments is to set the boundary conditions of the system. The second step is to select the method of the assessment. Two methods are available for such assessment; namely process based or EIO based. Process based methods are bottoms up procedures; accounting for all processes that are required to transform raw materials into consumer goods. However in process based methods as the product boundary and the count of processes to quantify can have exponentially correlations. This exponential growth can become an intractable task for building designers. A more tractable method is the EIO, where economic relationships between two industries at the national level are exploited. 
     
     Leontief's original use case of the EIO was to identify the contribution from all economic sectors required to produce a unit of specific products in an economy.  The formulation of Leontief's EIO is indicated by Equation~\ref{eq:Leontief_IO}; where $Y$ is the input costs, $I$ is the identity matrix, and $A$ is the direct costs array \cite{matthews15}. In general direct costs represent the entire economy as a two-dimensional square array, where the rows and columns indicate distinct sectors within the economy. The values in the array indicate the row-index-sector’s input into the column-header-sector. Since their development in the 1930's, EIOs have been commonly used to characterize national economic accounts. More recently, Matthews and Hendrickson showed that EIO can be used for environmental life cycle assessments as-well \cite{matthews15}.  
     
@@ -109,15 +109,12 @@
         
         \input{embodied_cost_model/contents/sku_cost_dist_table}
         \input{embodied_cost_model/contents/it_component_power_dist_table}
-        
         \input{embodied_cost_model/contents/it_y_vector_algo}
-        
         \input{embodied_cost_model/contents/generic_computer_eeio}
         
 
-
-    
 \section{Results}
+    \input{embodied_cost_model/contents/cpu_profile}
 \section{Discussions}
 \section{Conclusion}
 \newpage
