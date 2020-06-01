@@ -1,6 +1,6 @@
-\definecolor{chinese}{rgb}{0.58, 0.77, 0.45} %chinese #green
-%english #blue
-%french #red
+\definecolor{chinese}{rgb}{0, 1, .25} %chinese #green
+\definecolor{english}{rgb}{0, 0, 1}%english #blue
+\definecolor{english}{rgb}{1, 0, 0}%french #red
 %german #yellow
 %japanese #grey
 %russian #orange
@@ -13,7 +13,7 @@
         \begin{tikzpicture}
         \begin{scope}[xshift=1.5cm]
             \node[anchor=south west,inner sep=0] (image) at (0,0)
-            {\includegraphics[width=1\textwidth]{embodied_cost_model/images/world_language_map.png}};
+            {\includegraphics[width=1\textwidth]{embodied_cost_model/images/world_language_map_3.png}};
         \end{scope}
         \node [anchor=center] (chinese) at (2,-.6) {\small{Chinese}};
         \filldraw[outer color=chinese, inner color=chinese] (1.8,-.4) rectangle (2.2,0); % cpu
