@@ -1,0 +1,53 @@
+\definecolor{pistachio}{rgb}{0.58, 0.77, 0.45} %cpu
+\definecolor{denim}{rgb}{0.08, 0.38, 0.74} %dram
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94} % disk/hdd
+\definecolor{azure}{rgb}{0.0, 0.5, 1.0} % storage
+\definecolor{chartreuse}{rgb}{0.5, 1.0, 0.0} % nw
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71} % balance/misc
+\definecolor{bananamania}{rgb}{0.98, 0.91, 0.71} % psu
+\definecolor{citrine}{rgb}{0.89, 0.82, 0.04} % power dist
+\definecolor{cinnabar}{rgb}{0.89, 0.26, 0.2} %cooling
+
+\begin{figure}[h]
+\centering
+
+\begin{tikzpicture}
+
+% specify the pie charts
+\node [anchor=center] (mix-ssd) at (0,3.5) {Power Allocation in 2012 \cite{barroso13}};
+\pie[explode={0, 0, 0, 0}, , radius = 3, text=hide,color={pistachio, denim, babyblue, chartreuse, ashgrey, citrine, cinnabar }] 
+{42/cpu, 11.7/dram, 14.3/disk, 4.9/nw, 4/misc, 7.7/power_dist, 15.4/cooling}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\node [anchor=center] (mix-hdd) at (7,3.5) {Power Allocation in 2017 \cite{barroso18}};
+\pie[pos={7,0}, explode = 0, radius = 3, text=hide, color={pistachio, denim, azure, chartreuse, ashgrey, citrine, cinnabar }] {60.6/cpu, 17.9/dram, 2.0/storage, 5.0/nw, 4/misc, 7.6/power_dist, 3.0/cooling}
+
+%Specify the legend
+\node [anchor=east] (cpu) at (-2,-3.8) {\small{CPU}};
+\filldraw[outer color=pistachio, inner color=pistachio] (-2,-4) rectangle (-1.6,-3.6); % cpu
+
+\node [anchor=east] (storage) at (0,-3.8) {\small{DRAM}};
+\filldraw[outer color=denim, inner color=denim] (0,-4) rectangle (0.4,-3.6); % dram
+
+\node [anchor=east] (disk) at (1.8,-3.8) {\small{Disk}};
+\filldraw[outer color=babyblue, inner color=babyblue] (1.8,-4) rectangle (2.2,-3.6); % disk
+
+\node [anchor=east] (psu) at (4,-3.8) {\small{Storage}};
+\filldraw[outer color=azure, inner color=azure] (4,-4) rectangle (4.4,-3.6); %nw
+
+\node [anchor=east] (balance) at (6.2,-3.8) {\small{Balance}};
+\filldraw[outer color=ashgrey, inner color=ashgrey] (6.2,-4) rectangle (6.6,-3.6); % balance
+
+\node [anchor=east] (power) at (10,-3.8) {\small{Power Distribution}};
+\filldraw[outer color=citrine, inner color=citrine] (10,-4) rectangle (10.4,-3.6); % power dist
+
+\node [anchor=east] (cooling) at (2,-4.6) {\small{Cooling}};
+\filldraw[outer color=cinnabar, inner color=cinnabar] (2,-4.8) rectangle (2.4,-4.4); %cooling
+
+\node [anchor=east] (nw) at (6,-4.6) {\small{Network}};
+\filldraw[outer color=chartreuse, inner color=chartreuse] (6,-4.8) rectangle (6.4,-4.4); %nw
+
+\end{tikzpicture}
+
+\caption[Barroso's Power Distribution]{Data Center Power Distribution for Two Generation of Technology}
+\label{fig:power_dist_pies}
+\end{figure}

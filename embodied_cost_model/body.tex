@@ -56,24 +56,60 @@
     \input{embodied_cost_model/contents/system_boundary_table}
     
     \subsection{Operational Inventories}
+    
+    \comment{The functional unit is not tied with the operational energy. The result maybe something like $\frac{kWh}{kw}$ (?) the lower the the number the more adverse it will be. Also this can be relative factor; i.e 1 for kWh*8760 hours, with kWh - kW capacity.}
+    
     There are extensive theoretical data center power use models in literature \cite{dayarathna16, joshi12}. However, industrial power usage insights are lacking in the public domain \cite{Masanet20}. As an exception some industrial insights are provided by Barroso in \cite{barroso18, barroso13}. Barroso provides Google's distribution of power for various points-of-use as indicted by the pie-charts shown in Figure~\ref{power_2012} and Figure~\ref{power_2017} for two generations of technology. In 2012, more than 80\% of the energy in a data center was used by four components; CPU 42\%, Cooling 15.4\%, disk 14.3\% and DRAM 11.7\%. By 2017, the cooling overhead had decreased to only account for 3\% a data center energy use, this decrease in cooling inflated the relative fraction of CPU and DRAM energy requirement. From these distributions, it is apparent that CPU's power usage is the dominant hot-spot.  
     
     The values in Figure~\ref{power_2012} and Figure~\ref{power_2017} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site.
     
-    \input{embodied_cost_model/contents/power_dist}
+    \input{embodied_cost_model/contents/power_dist_pie}
     
     Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the traffic simulator from Chapter~\ref{chp:traffic}. The general framework is illustrated in Figure~\ref{process_flow}.
     
-    \input{embodied_cost_model/contents/process_flow}
+    \input{embodied_cost_model/contents/horizontal_process_flow}
     
     \subsection{Embodied Inventories}
-    Embodied cost assessments account for the natural resources consumed when extracting, transforming, manufacturing, transporting, constructing, maintaining, and disposing the product under study. The first step in these assessments is to set the boundary conditions of the system. The second step is to select the method of the assessment. Two methods are available for such assessment; namely process based or EIO based. Process based methods are bottoms up procedures; accounting for all processes that are required to transform raw materials into consumer goods.
+    Embodied cost assessments account for the natural resources consumed when extracting, transforming, manufacturing, transporting, constructing, maintaining, and disposing the product under study. The first step in these assessments is to set the boundary conditions of the system. The second step is to select the method of the assessment. Two methods are available for such assessment; namely process based or EIO based. Process based methods are bottoms up procedures; accounting for all processes that are required to transform raw materials into consumer goods. However in process based methods as the product boundary and the count of processes to quantify can have exponentially correlations. This exponential growth can become an intractable task for building designers. A more tractable method is the EIO, where economic relationships between two industries at the national level are exploited. . 
     
-    However, as the product boundary grows the inventory can grow exponentially and become an intractable task for building designers. In this research due to the size and complexity of data center systems, in lieu of detailed bill of materials spanning across building infrastructure and technology sectors a total costs of ownership model is sufficient. Specifically, Hardy’s estimating and exploration for total cost of ownership (EETCO) approach is selected to provide the embodied inventories of the data center [19]
+    Leontief's original use case of the EIO was to identify the contribution from all economic sectors required to produce a unit of specific products in an economy.  The formulation of Leontief's EIO is indicated by Equation~\ref{eq:Leontief_IO}; where $Y$ is the input costs, $I$ is the identity matrix, and $A$ is the direct costs array \cite{matthews15}. In general direct costs represent the entire economy as a two-dimensional square array, where the rows and columns indicate distinct sectors within the economy. The values in the array indicate the row-index-sector’s input into the column-header-sector. Since their development in the 1930's, EIOs have been commonly used to characterize national economic accounts. More recently, Matthews and Hendrickson showed that EIO can be used for environmental life cycle assessments as-well \cite{matthews15}.  
+    
+        \begin{equation} \label{eq:Leontief_IO}
+        [I-A]^{-1}Y
+        \end{equation}
+   
+    Due to the streamlined approach of the EIO method compared to process based environmental assessments methods, the former is preferred for this research. Specifically, the United States Environmentally Extended Input-Out (USEEIO) model developed by Yang for the EPA is used in this research \cite{yang17}. The USEEIO’s economic relationship between sectors is based on 2007 cost data, while the environmental data are derived from 2013 emissions data. Both were the most up-to-date data available to the researchers at their time of publication. They suggest using 2013 cost of money for inputs, having demonstrated that the underlying structure of the economy has not shifted significantly between 2007 and 2013. 
     
         \subsubsection{Building Systems}
+        Typically, data center shells and structural cores are under the jurisdiction of the same building codes as other commercial buildings, i.e. Type IIA construction types. However, the dense population of computers along with the  power and cooling requirements of data centers make several things clearly distinguishable from most commercial building types. The differences are significant enough to make the generic building sector's USEEIO environmental inventories invalid for data centers. 
+        
+        To more accurately represent data center buildings, several general contractor proposals for new data center construction and retrofit projects were reviewed for the cost distribution of the trades labor and equipment costs.  The contractor cost allocations per trade divisions were then compared with the values of the handful of building construction sectors available in the USEEIO. Based on the comparisons, the USEEIO manufacturing buildings sector is found to be the most similar for data centers. However, there are still shortfalls between data centers and the manufacturing buildings sector. To overcome the shortfalls, a hybrid method was used to construct a more representative Y vector for data centers. 
+        
+        The resulting Y vector for the building and building utilities systems is shown in Table~\ref{tab:eeio_y_building_table}. The table indicates the cost input required to provision a functional unit of 1 kW of data center capacity. Each sector's cost is derived from the contractor costs for the corresponding construction specification division as listed  in their proposals. Seven explicit sectors are quantified in addition to the manufacturing building sector. The manufacturing building/us is a catch all sector. This sector catches all the building trades that are not represented by the other entries in the Y vector; such as concrete or steel. 
+        
+        \input{embodied_cost_model/contents/eeio_y_buildings_table}
+        
         \subsubsection{Information Technology Systems}
+        
+        In this subsection the IT equipment's inventories are assessed. The IT equipment in a data center can be categorized broadly into three segments: compute, storage, and network. Within each of these segments, data center operators can further tune the hardware configurations to optimize their workloads. Figure~\ref{fig:server_cost_apportionment} indicates component wise cost distribution for five hardware stock-keeping units (SKU). The SKU data were obtained under non-disclosure agreements from a large internet website operator.  
+        
+        \input{embodied_cost_model/contents/sku_dist_pie}
+        
+        The configuration of the server SKUs are optimized for the workloads that they support. For example the High-IO server is optimized for high rates of input and outputs; where it processes information at high feed rates. As an example, this useful for workloads that require external communications with a large data set that is housed in a Mix-SSD server that has an abundance of data storage capacity. For a data center with dominant heterogeneous workloads will have a mix of of these SKUs, whereas a data center with a single workload would have only one or two distinct SKUs.
+        
+        The values in Figure~\ref{fig:server_cost_apportionment} are indicative of the deployment cost share per server between 2015 and 2016. Server components such as processors (CPU), memory (MEM), and solid-state-drives (SSD) are fabricated using semiconductor manufacturing processes. These components are grouped together and are categorized as a single input into the USEEIO’s semiconductor sector. Hard disc drives (HDD), motherboard (MBD), and power supply units (PSU) have representative sectors that allow a one to one mapping within the USEEIO. Other components such as chassis, thermal-heat sinks, and cable connectors are grouped into the balance category. The balance category is mapped to the generic computer sector in USEEIO. This costs apportionment values can are used to construct the Y vector for input in the USEEIO.
+        
+        \input{embodied_cost_model/contents/sku_cost_dist_table}
+        \input{embodied_cost_model/contents/it_component_power_dist_table}
+        
+        \input{embodied_cost_model/contents/it_y_vector_algo}
+        
+        \input{embodied_cost_model/contents/generic_computer_eeio}
+
     
 \section{Results}
 \section{Discussions}
 \section{Conclusion}
+\newpage
+\section{Appendix}
+        

@@ -1,0 +1,28 @@
+  \begin{algorithm}
+    \caption{IT equipment Y vector algorithm}
+    \begin{algorithmic}
+      \REQUIRE $P_{DC}$, $P_{i}$, and $C_i$
+      \STATE $P_{S} \gets \sum\limits_{i=1}^n P_{i}$
+    %   \STATE $C_{S} \gets \sum\limits_{i=1}^n C_{i}$
+      \STATE $C_{ip} \gets C_i \times f_i$
+      \STATE $S_\# \gets \frac{P_{DC}}{P_{S}}$
+      \STATE $SC_{DC} \gets S_\# \times P_{S}$
+      
+      \vspace{.1in}
+      \RETURN $Y \gets SC_{DC} \times C_{ip}$
+      
+      \vspace{.1in}
+      \STATE{\bf{Where}}: \\
+        \hspace{.2in}$P_{DC}$ = Provisioned Power of Data Center, (input variable) \\
+        \hspace{.2in}$P_{i}$ = Power demand for component $i$ of server.  \\
+        \hspace{.2in}$n$ = Number of components in the server.  \\
+        \hspace{.2in}$C_{ip}$ = Provisioning cost of component $i$ \\
+        \hspace{.2in}$C_i$ = Cost Apportions for server component $i$, (from Figure~\ref{fig:server_cost_apportionment}) \\
+        \hspace{.2in}$f_i$ = Failure rate of component $i$\\
+        \hspace{.2in}$S_\#$ = Count of servers in data center \\
+        \hspace{.2in}$SC_{DC}$ = Total Server Costs for DC \\
+        \hspace{.2in}$Y$ = Vector of sector wise costs for input to USEEIO
+    
+    \end{algorithmic}
+    \label{it_y_vector_algo}
+  \end{algorithm}
