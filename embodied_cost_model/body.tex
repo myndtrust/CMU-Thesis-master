@@ -51,24 +51,29 @@
     
     \input{embodied_cost_model/contents/system_boundary}
     
-    In this research specific sub-systems of data centers are segregated as listed in Table~\ref{tab:dc_subsystem_boundaries}. Demarcation by these boundaries allows development of the embodied and operational models to align with industrial cost data and in terms of EIO industrial vectors. Table~\ref{tab:dc_subsystem_boundaries} serves the structural backbone for all the models developed in this framework as discussed next.
+    The geographical bounds of the service are illustrated in Figure~\ref{image:world_language_map}. The map indicates the countries in which each language from the Wikipedia set are the official languages. From  Figure~\ref{land_dc_sankey} it can be seen that one or more languages can be supported at a single data center facility. Although the workloads originate across international boundaries, the environmental emissions studied in this research are attributed to the data center sites only.  
+    
+    \input{embodied_cost_model/contents/world_language_map}
+    
+    Within these data center sites, specific sub-systems are segregated as listed in Table~\ref{tab:dc_subsystem_boundaries}. Demarcation by these sub-systems allows development of the embodied and operational models to align with industrial cost breakdown data and in terms of EIO industrial vectors. Table~\ref{tab:dc_subsystem_boundaries} serves the structural backbone for all the models developed in this framework as discussed next.
     
     \input{embodied_cost_model/contents/system_boundary_table}
-    
-    The geographical bounds of the data center and services are illustrated in Figure~\ref{image:world_language_map}. 
-    \input{embodied_cost_model/contents/world_language_map}
     
     \subsection{Operational Inventories}
     
     \comment{The functional unit is not tied with the operational energy. The result maybe something like $\frac{kWh}{kw}$ (?) the lower the the number the more adverse it will be. Also this can be relative factor; i.e 1 for kWh*8760 hours, with kWh - kW capacity.}
     
-    There are extensive theoretical data center power use models in literature \cite{dayarathna16, joshi12}. However, industrial power usage insights are lacking in the public domain \cite{Masanet20}. As an exception some industrial insights are provided by Barroso in \cite{barroso18, barroso13}. Barroso provides Google's distribution of power for various points-of-use as indicted by the pie-charts shown in Figure~\ref{power_2012} and Figure~\ref{power_2017} for two generations of technology. In 2012, more than 80\% of the energy in a data center was used by four components; CPU 42\%, Cooling 15.4\%, disk 14.3\% and DRAM 11.7\%. By 2017, the cooling overhead had decreased to only account for 3\% a data center energy use, this decrease in cooling inflated the relative fraction of CPU and DRAM energy requirement. From these distributions, it is apparent that CPU's power usage is the dominant hot-spot.  
+    In this section, this research's methodology to assess the operational energy and carbon footprint of data center site infrastructure is presented. There are extensive theoretical data center energy use models in literature \cite{dayarathna16, joshi12}. These models can generally be segregated between IT and building systems domains. The model developed in this research couples the two domains by first selecting the the right IT component to model; i.e. the IT component that the total energy of the data centers is most sensitive to.
     
-    The values in Figure~\ref{power_2012} and Figure~\ref{power_2017} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site.
+    Detailed industrial power usage insights are lacking in the public domain \cite{Masanet20}. As an exception some industrial insights are provided by Barroso in \cite{barroso18, barroso13}. Barroso provides Google's distribution of power for various points-of-use as indicted by the pie-charts shown in Figure~\ref{fig:power_dist_pies} for two generations of technology. In 2012, more than 80\% of the energy in a data center was used by four components; CPU 42\%, Cooling 15.4\%, disk 14.3\% and DRAM 11.7\%. By 2017, the cooling overhead had decreased to only account for 3\% a data center energy use, this decrease in cooling inflated the relative fraction of CPU and DRAM energy requirement. From these distributions, it is apparent that CPU's power usage is the dominant hot-spot.  
     
     \input{embodied_cost_model/contents/power_dist_pie}
     
-    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the traffic simulator from Chapter~\ref{chp:traffic}. The general framework is illustrated in Figure~\ref{process_flow}.
+    The values in Figure~\ref{fig:power_dist_pies} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site.
+    
+    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the network coefficients  from Chapter~\ref{chp:traffic}. The traffic coefficients are used to reset the IT workloads at each data centers and the marginal costs to produce energy in the regional grid. The details of the models is indicated in Algorithm~\ref{mec_coupled_bem_algo} and the general framework is illustrated in Figure~\ref{process_flow}.
+    
+    \input{embodied_cost_model/contents/mec_coupled_bem_algo}
     
     \input{embodied_cost_model/contents/horizontal_process_flow}
     

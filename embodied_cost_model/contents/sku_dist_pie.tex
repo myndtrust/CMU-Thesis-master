@@ -28,11 +28,13 @@
 \pie[pos={6,-4}, explode = 0, radius = 1.5, text=hide, color={pistachio, babyblue, pinkpearl, bananamania, ashgrey}] {51/sc, 34/hdd, 6/mbd,
 4/psu, 5/balance}
 
-\node [anchor=west] (semiconductor) at (-1.7,-7.5) {\small{CPU, Memory, SSD}};
-\node [anchor=west] (storage) at (1.7,-7.5) {\small{Hard Disc Drive}};
-\node [anchor=west] (pcb) at (4.5,-7.5) {\small{Motherboard}};
-\node [anchor=west] (psu) at (7,-7.5) {\small{Power Supply}};
-\node [anchor=west] (balance) at (9.5,-7.5) {\small{Balance}};
+\node [anchor=center] (semiconductor) at (.2,-7.25) {\small{CPU, Memory,}};
+\node [anchor=center] (semiconductor) at (.2,-7.6) {\small{SSD}};
+\node [anchor=center] (storage) at (2.7,-7.25) {\small{Hard Disc}};
+\node [anchor=center] (storage) at (2.7,-7.6) {\small{Drive}};
+\node [anchor=center] (pcb) at (5.2,-7.25) {\small{Motherboard}};
+\node [anchor=center] (psu) at (7.7,-7.25) {\small{Power Supply}};
+\node [anchor=center] (balance) at (10.2,-7.25) {\small{Balance}};
 
 \filldraw[outer color=pistachio, inner color=pistachio] (0,-7) rectangle (0.4,-6.6);
 \filldraw[outer color=babyblue, inner color=babyblue] (2.5,-7) rectangle (2.9,-6.6);
