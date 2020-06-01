@@ -1,0 +1,34 @@
+  \begin{algorithm}
+
+    \caption{MEC coupled BEM algorithm}
+    \begin{algorithmic}
+      \REQUIRE $DOSCOE[region_i]$ \& $traffic.language[site_{DC}]$
+      \FOR{site and region in $DC.site$ and $DC.region$}
+        \IF{traffic.language[site].all $!= 0$: }
+        \STATE $D_{DC} \gets BEM(site, traffic.language[site_{DC}])$
+        \STATE $DOSCOE[region].demand  \mathrel{+}=  D_{DC}$
+        \ENDIF
+      \ENDFOR
+      \RETURN $CO_{2}$ {footprint}$\ =\ GridSim(region, rps)$
+      
+      \begin{small}
+      \vspace{.1in}
+      \STATE{\bf{Where}}: \\
+     
+        \hspace{.2in} $DOSCOE[region_i]$ = Dispatch Optimized System Cost of Energy Model for $region_i$ \cite{platt17}.  \\
+        \hspace{.2in} $site_{DC}$ = data center site. \\
+        \hspace{.2in} $traffic.language_l[site_{DC}]$ = the traffic routed to data center for lanuage $l$.  \\
+        \hspace{.2in} $DC.site$ = list of all data centers in the network. \\
+        \hspace{.2in} $DC.region$ = list of corresponding power grid region for the data centers in $DC.site$ . \\
+        \hspace{.2in}$DOSCOE[region].demand$ = demand vector of loads added to the power grid for every hour. \\
+        \vspace{.1in}
+        \STATE{\bf{External Models}}: \\
+        \vspace{.05in}
+        \hspace{.2in}{$BEM(site, traffic.language[site_{DC}])$ is a EnergyPlus model of the data center. As an external argument the traffic profile for the language to the data center is passed. The traffic profiles serve as coefficients for the IT load, bounded by 0 and 1.  The output is a vector indicating the building energy demands for each hour of the year.} \\
+        \vspace{.05in}
+        \hspace{.2in}$GridSim(region, rps)$ is a DOSCOE model with $DOSCOE[region].demand$ and renewable portfolio standard ($rps$) value indicating the required penetration percentage of renewable energy in the power supply. The model quantifies the costs of energy in terms of carbon footprint and monetary values. 
+        \end{small}
+    \end{algorithmic}
+    \label{mec_coupled_bem_algo}
+
+  \end{algorithm}
