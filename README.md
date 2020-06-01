@@ -1,4 +1,4 @@
-# The non-official PhD thesis template for Engineering and Public Policy (EPP) at Carnegie Mellon University (CMU).
+# Eric Kumar Dissertation Paper.
 
 ## Quick Instructions
 
