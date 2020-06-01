@@ -1,0 +1,47 @@
+\definecolor{pistachio}{rgb}{0.58, 0.77, 0.45}
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+\definecolor{bananamania}{rgb}{0.98, 0.91, 0.71}
+\definecolor{pinkpearl}{rgb}{0.91, 0.67, 0.81}
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
+
+\begin{figure}[h]
+\centering
+
+\begin{tikzpicture}
+\node [anchor=center] (mix-ssd) at (0,1.75) {SSD Server};
+\pie[explode={0, 0, 0, 0}, , radius = 1.5, text=hide,color={pistachio, babyblue, pinkpearl, bananamania, ashgrey}] {72/sc, 15/hdd, 5/mbd,
+4/psu, 4/balance}
+
+\node [anchor=center] (mix-hdd) at (4,1.75) {HDD Server};
+\pie[pos={4,0}, explode = 0, radius = 1.5, text=hide, color={pistachio, babyblue, pinkpearl, bananamania, ashgrey}] {58/sc, 29/hdd, 6/mbd,
+4/psu, 3/balance}
+
+\node [anchor=center] (high-op) at (8,1.75) {High-IO Server};
+\pie[pos={8,0}, explode = 0, radius = 1.5, text=hide, color={pistachio, babyblue, pinkpearl, bananamania, ashgrey}] {69/sc, 16/hdd, 7/mbd,
+8/psu, 6/balance}
+
+\node [anchor=center] (compute) at (2,-2.25) {Compute Server};
+\pie[pos={2,-4}, explode = 0, radius = 1.5, text=hide, color={pistachio, babyblue, pinkpearl, bananamania, ashgrey}] {48/sc, 25/hdd, 13/mbd,
+8/psu, 6/balance}
+
+\node [anchor=center] (low-mem) at (6,-2.25) {Low-Memory Server};
+\pie[pos={6,-4}, explode = 0, radius = 1.5, text=hide, color={pistachio, babyblue, pinkpearl, bananamania, ashgrey}] {51/sc, 34/hdd, 6/mbd,
+4/psu, 5/balance}
+
+\node [anchor=west] (semiconductor) at (-1.7,-7.5) {\small{CPU, Memory, SSD}};
+\node [anchor=west] (storage) at (1.7,-7.5) {\small{Hard Disc Drive}};
+\node [anchor=west] (pcb) at (4.5,-7.5) {\small{Motherboard}};
+\node [anchor=west] (psu) at (7,-7.5) {\small{Power Supply}};
+\node [anchor=west] (balance) at (9.5,-7.5) {\small{Balance}};
+
+\filldraw[outer color=pistachio, inner color=pistachio] (0,-7) rectangle (0.4,-6.6);
+\filldraw[outer color=babyblue, inner color=babyblue] (2.5,-7) rectangle (2.9,-6.6);
+\filldraw[outer color=pinkpearl, inner color=pinkpearl] (5,-7) rectangle (5.4,-6.6);
+\filldraw[outer color=bananamania, inner color=bananamania] (7.5,-7) rectangle (7.9,-6.6);
+\filldraw[outer color=ashgrey, inner color=ashgrey] (10,-7) rectangle (10.4,-6.6);
+
+\end{tikzpicture}
+
+\caption[Cost Apportionment Chart]{Cost apportionment of deployable hardware SKU charts. See Figure~\ref{tab:sku_cost_dist_table} for details of USEEIO sector mapping.}
+\label{fig:server_cost_apportionment}
+\end{figure}
