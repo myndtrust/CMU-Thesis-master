@@ -1,5 +1,4 @@
 \pgfplotsset{compat=1.7}
-% \usepackage{subcaption}
 
 
 % PGFPlots Settings
@@ -31,7 +30,7 @@ RedBars/.style={
 
 \begin{figure}
     \centering
-\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/100SalesRecords.csv}\datatable
+\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/english_env_costs.csv}\datatable
 \begin{tikzpicture}
 \begin{axis}[
     ybar,
