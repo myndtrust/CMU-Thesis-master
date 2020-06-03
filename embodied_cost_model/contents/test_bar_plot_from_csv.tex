@@ -1,0 +1,142 @@
+% \documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% Packages Required
+% \usepackage{pgfplots}
+% \usepackage{pgfplotstable}
+\pgfplotsset{compat=1.7}
+% \usepackage{subcaption}
+
+
+% PGFPlots Settings
+\pgfplotsset{
+SmallBarPlot/.style={
+    font=\footnotesize,
+    ybar,
+    width=\linewidth,
+    ymin=0,
+    xtick=data,
+    xticklabel style={text width=1.5cm, rotate=45, align=center}
+},
+BlueBars/.style={
+    fill=blue!20, bar width=0.25
+},
+RedBars/.style={
+    fill=red!20, bar width=0.25
+}
+}
+
+\DeclareRobustCommand\legendbox[1]{(\textcolor{#1}{#1}~\begin{tikzpicture}[x=0.2cm, y=0.2cm] \draw [color=black, fill=#1!20] (0,0) -- (0,1) -- (0.6,1) -- (0.6,0) -- (0, 0); \end{tikzpicture})}
+
+\pgfplotsset{select coords between index/.style 2 args={
+    x filter/.code={
+        \ifnum\coordindex<#1\def\pgfmathresult{}\fi
+        \ifnum\coordindex>#2\def\pgfmathresult{}\fi
+    }
+}}
+
+
+% % Documents Preamble
+% \title{PGFPlots for Blog}
+% \author{Shanto Roy}
+% \date{December 2019}
+
+% \begin{document}
+
+% \maketitle
+
+
+% \section{Bar plot}
+\begin{figure}
+    \centering
+\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/100SalesRecords.csv}\datatable
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    bar width=.1cm,
+    width=\textwidth,
+    height=10cm,
+    ymin = 0,
+    xtick=data,
+    xticklabels from table={\datatable}{Country},
+    x tick label style={font=\normalsize, rotate=90, anchor=east},
+    ylabel={Units Sold in Number}]
+    \addplot [select coords between index={1}{20}, BlueBars] table [x expr=\coordindex, y={Units Sold}]{\datatable};
+\end{axis}
+\end{tikzpicture}
+\caption{Units sold by Different countries}
+\label{fig:my_label}
+\end{figure}
+
+
+
+% \section{Group Bar Plot}
+% \begin{figure}[ht!]
+% \pgfplotstableread[col sep = comma]{100SalesRecords.csv}\table
+% \centering
+%     \begin{tikzpicture}
+%     \begin{axis}[
+%             SmallBarPlot,
+%             xticklabels from table={\table}{Country},
+%             ylabel=Value in Number,
+%             xlabel=Countries
+%         ]
+%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Units Sold] {\table};
+%         \addlegendentry{First}
+%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Unit Price] {\table};
+%         \addlegendentry{Second}
+%         \legend{}
+%     \end{axis}
+%     \end{tikzpicture}
+% \caption{The first legend \legendbox{blue} and the second one \legendbox{red}}
+% \label{fig:multiBar}
+% \end{figure}
+
+
+
+% \section{Subplots with Group Bar}
+
+% \begin{figure}[ht!]
+% \pgfplotstableread[col sep = comma]{100SalesRecords.csv}\table
+% \centering
+% \begin{subfigure}[b]{.5\linewidth}
+%     \centering
+%     \begin{tikzpicture}
+%     \begin{axis}[
+%             SmallBarPlot,
+%             xticklabels from table={\table}{Country},
+%             ylabel=Value in Number,
+%             xlabel=Countries
+%         ]
+%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Units Sold] {\table};
+%         \addlegendentry{First}
+%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Unit Price] {\table};
+%         \addlegendentry{Second}
+%         \legend{}
+%     \end{axis}
+%     \end{tikzpicture}
+% \end{subfigure}%
+% \begin{subfigure}[b]{.5\linewidth}
+%      \centering
+%     \begin{tikzpicture}
+%     \begin{axis}[
+%             SmallBarPlot,
+%             xticklabels from table={\table}{Country},
+%             ylabel= Value in Number,
+%             xlabel=Countries,
+%             ymode=log,
+%             log basis y={10}
+%         ]
+%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Total Revenue] {\table};
+%         \addlegendentry{First}
+%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Total Cost] {\table};
+%         \addlegendentry{Second}
+%         \legend{}
+%     \end{axis}
+%     \end{tikzpicture}
+% \end{subfigure}
+% \caption{The first legend \legendbox{blue} and the second one \legendbox{red}.}
+% \label{fig:subBarPlot}
+% \end{figure}
+
+% \end{document}

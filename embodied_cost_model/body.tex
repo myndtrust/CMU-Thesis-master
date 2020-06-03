@@ -93,7 +93,7 @@
         
         To more accurately represent data center buildings, several general contractor proposals for new data center construction and retrofit projects were reviewed for the cost distribution of the trades labor and equipment costs.  The contractor cost allocations per trade divisions were then compared with the values of the handful of building construction sectors available in the USEEIO. Based on the comparisons, the USEEIO manufacturing buildings sector is found to be the most similar for data centers. However, there are still shortfalls between data centers and the manufacturing buildings sector. To overcome the shortfalls, a hybrid method was used to construct a more representative Y vector for data centers. 
         
-        The resulting Y vector for the building and building utilities systems is shown in Table~\ref{tab:eeio_y_building_table}. The table indicates the cost input required to provision a functional unit of 1 kW of data center capacity. Each sector's cost is derived from the contractor costs for the corresponding construction specification division as listed  in their proposals. Seven explicit sectors are quantified in addition to the manufacturing building sector. The manufacturing building/us is a catch all sector. This sector catches all the building trades that are not represented by the other entries in the Y vector; such as concrete or steel. 
+        The resulting Y vector to scale for the building and building utilities systems is shown in Table~\ref{tab:eeio_y_building_table}. The table indicates the cost input required to provision a functional unit of 1 kW of data center capacity. Each sector's cost is derived from the contractor costs for the corresponding construction specification division as listed  in their proposals. Seven explicit sectors are quantified in addition to the manufacturing building sector. The manufacturing building/us is a catch all sector. This sector catches all the building trades that are not represented by the other entries in the Y vector; such as concrete or steel. 
         
         \input{embodied_cost_model/contents/eeio_y_buildings_table}
         
@@ -105,18 +105,47 @@
         
         The configuration of the server SKUs are optimized for the workloads that they support. For example the High-IO server is optimized for high rates of input and outputs; where it processes information at high feed rates. As an example, this useful for workloads that require external communications with a large data set that is housed in a Mix-SSD server that has an abundance of data storage capacity. For a data center with dominant heterogeneous workloads will have a mix of of these SKUs, whereas a data center with a single workload would have only one or two distinct SKUs.
         
-        The values in Figure~\ref{fig:server_cost_apportionment} are indicative of the deployment cost share per server between 2015 and 2016. Server components such as processors (CPU), memory (MEM), and solid-state-drives (SSD) are fabricated using semiconductor manufacturing processes. These components are grouped together and are categorized as a single input into the USEEIO’s semiconductor sector. Hard disc drives (HDD), motherboard (MBD), and power supply units (PSU) have representative sectors that allow a one to one mapping within the USEEIO. Other components such as chassis, thermal-heat sinks, and cable connectors are grouped into the balance category. The balance category is mapped to the generic computer sector in USEEIO. This costs apportionment values can are used to construct the Y vector for input in the USEEIO.
+        Server components such as processors (CPU), memory (MEM), and solid-state-drives (SSD) are fabricated using semiconductor manufacturing processes. These components are grouped together and are categorized as a single input into the USEEIO’s semiconductor sector. Hard disc drives (HDD), motherboard (MBD), and power supply units (PSU) have representative sectors that allow a one to one mapping within the USEEIO. Other components such as chassis, thermal-heat sinks, and cable connectors are grouped into the balance category. The balance category is mapped to the generic computer sector in USEEIO. This costs apportionment values can be used to construct the Y vector for input in the USEEIO. However, before doing so the quantities of the components must be scaled up to by the count of servers provisioned in the data center.
         
-        \input{embodied_cost_model/contents/sku_cost_dist_table}
-        \input{embodied_cost_model/contents/it_component_power_dist_table}
+         Algorithm~\ref{it_y_vector_algo} is used to quantify the count of servers in each data center. Table~\ref{tab:it_component_power_dist_table} indicates the algorithm's power density value for each component found in each server. For each server the total power is calculated by summing the power for all components in it. The component apportionment for each server SKU is indicated in Table~\ref{tab:sku_cost_dist_table}.
+         
         \input{embodied_cost_model/contents/it_y_vector_algo}
-        \input{embodied_cost_model/contents/generic_computer_eeio}
+        \input{embodied_cost_model/contents/it_component_power_dist_table}
+        \input{embodied_cost_model/contents/sku_cost_dist_table}
+        \input{embodied_cost_model/contents/it_failure_rates}
+
+        Using the above characteristics of the data center systems, the embodied costs of the systems are amortized over their useful lives. Namely, the building systems are amortized over 20 years, while the IT equipment is amortized over 3 years. For both of these systems the annual amortized costs are distributed on a hourly basis over the year. The hour distribution allows for the network traffic coefficients of each language and data center pair to apportion the embodied costs with the traffic coincident traffic for the hour.
+        
+        As a final and important note about how the carbon footprint is translated from the USEEIO to a meaningful measure of sustainability. The USEEIO provides environmental impacts associated with the embodied costs of data center components based on the US Environmental Protection Agency's (EPA) Tool for Reduction and Assessment of Chemical and Other Environmental Impacts (TRACI) \cite{EPA12}. The impacts of the carbon footprint manifests itself as the global warming potential of the system. Therefore, the carbon footprint indicator from USEEIO is in terms of equivalent carbon dioxides mass.
+       
         
 
 \section{Results}
+    In this section the results of the methodology described above is provided. Again, the discussion is presented first by discussing the operational and embodied carbon footprints separately. 
+    
+    \subsection{Operational Carbon Footprint}
+    Figure~\ref{image:cpu_profile} shows CPU workload values for a single language at each of the data centers in the global network. The variance in the curve demonstrates the effectiveness of using the traffic coefficients. The CPU workloads are used in EnergyPlus as building plug loads that must be powered and cooled data center infrastructure. The EnergyPlus model performance a physics based simulation for the total building considering these CPU loads, the ambient environment, the interior operational temperatures, and systems inefficiencies to quantify the energy use for each hour of the year.
+    
+
     \input{embodied_cost_model/contents/cpu_profile}
+    
+    The energy demand of the building at an hourly interval from EnergyPlus is then passed to the DOSCOE - marginal costs of energy model. The model quantifies the data center's incremental cost of energy within it's power grid. The annualized carbon footprint of the English language pages is noted in Table~\ref{table:dc_carbon_footprint}.
+
+    \input{embodied_cost_model/contents/dc_carbon_footprint}
+    
+    \subsection{Embodied Carbon Footprint}
+    The second part of the modeling framework quantified the embodied cost of each data center using the USEEIO. 
+    
+    \input{embodied_cost_model/contents/gwp_bar_chart}
+    
+    
+
+    
+    \input{embodied_cost_model/contents/generic_computer_eeio}
+    
 \section{Discussions}
 \section{Conclusion}
-\newpage
-\section{Appendix}
+
+    \input{embodied_cost_model/contents/english_gwp_bar_plot_from_csv}
+
         

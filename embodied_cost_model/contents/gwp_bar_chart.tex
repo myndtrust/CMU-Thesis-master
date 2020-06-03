@@ -1,0 +1,18 @@
+% \usepackage{pgfplots}
+\begin{figure}[h]
+\begin{tikzpicture}
+  \begin{axis}[
+  	title= English Language TRACI Impact Category - Climate Change,
+    xbar,
+    width=13cm, height=6cm, enlarge y limits=.1, enlarge x limits=.12, 
+    xlabel={kg $CO^2$ eq},
+    symbolic y coords={Ashburn,Carrollton,Haarlem,San Francisco,Singapore},
+    ytick=data,
+    nodes near coords, nodes near coords align={horizontal},
+    ]
+    \addplot coordinates {(821713169,Ashburn) (248643193,Carrollton)
+     (240769876,Haarlem) (8680925118,San Francisco) (257946737,Singapore)};
+  \end{axis}
+\end{tikzpicture}
+
+\end{figure}
