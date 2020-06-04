@@ -15,7 +15,7 @@ BlueBars/.style={
     fill=blue!20, bar width=0.25
 },
 RedBars/.style={
-    fill=red!20, bar width=0.25
+    fill=orange!20, bar width=0.25
 }
 }
 
@@ -36,15 +36,15 @@ RedBars/.style={
     ybar,
     bar width=.1cm,
     width=\textwidth,
-    height=10cm,
+    height=7cm,
     ymin = 0,
     xtick=data,
-    xticklabels from table={\datatable}{Country},
-    x tick label style={font=\normalsize, rotate=90, anchor=east},
-    ylabel={Units Sold in Number}]
-    \addplot [select coords between index={1}{20}, RedBars] table [x expr=\coordindex, y={Units Sold}]{\datatable};
+    xticklabels from table={\datatable}{Site},
+    x tick label style={font=\normalsize, rotate=45, anchor=east,nodes near coords, nodes near coords align={vertical}},
+    ylabel={kg $CO^2$ Eq.}]
+    \addplot [RedBars] table [x expr=\coordindex, y={impact potential/gcc/kg co2 eq}]{\datatable};
 \end{axis}
 \end{tikzpicture}
-\caption{Units sold by Different countries}
-\label{fig:my_label}
+\caption[TRACI GCC for English]{TRACI Impact Potential for English Language \\ Global Climate Change}
+\label{fig:traci_gcc_english}
 \end{figure}

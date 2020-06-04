@@ -47,57 +47,57 @@ RedBars/.style={
 
 
 % \section{Bar plot}
-\begin{figure}
-    \centering
-\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/100SalesRecords.csv}\datatable
-\begin{tikzpicture}
-\begin{axis}[
-    ybar,
-    bar width=.1cm,
-    width=\textwidth,
-    height=10cm,
-    ymin = 0,
-    xtick=data,
-    xticklabels from table={\datatable}{Country},
-    x tick label style={font=\normalsize, rotate=90, anchor=east},
-    ylabel={Units Sold in Number}]
-    \addplot [select coords between index={1}{20}, BlueBars] table [x expr=\coordindex, y={Units Sold}]{\datatable};
-\end{axis}
-\end{tikzpicture}
-\caption{Units sold by Different countries}
-\label{fig:my_label}
-\end{figure}
-
-
-
-% \section{Group Bar Plot}
-% \begin{figure}[ht!]
-% \pgfplotstableread[col sep = comma]{100SalesRecords.csv}\table
-% \centering
-%     \begin{tikzpicture}
-%     \begin{axis}[
-%             SmallBarPlot,
-%             xticklabels from table={\table}{Country},
-%             ylabel=Value in Number,
-%             xlabel=Countries
-%         ]
-%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Units Sold] {\table};
-%         \addlegendentry{First}
-%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Unit Price] {\table};
-%         \addlegendentry{Second}
-%         \legend{}
-%     \end{axis}
-%     \end{tikzpicture}
-% \caption{The first legend \legendbox{blue} and the second one \legendbox{red}}
-% \label{fig:multiBar}
+% \begin{figure}
+%     \centering
+% \pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/100SalesRecords.csv}\datatable
+% \begin{tikzpicture}
+% \begin{axis}[
+%     ybar,
+%     bar width=.1cm,
+%     width=\textwidth,
+%     height=10cm,
+%     ymin = 0,
+%     xtick=data,
+%     xticklabels from table={\datatable}{Country},
+%     x tick label style={font=\normalsize, rotate=90, anchor=east},
+%     ylabel={Units Sold in Number}]
+%     \addplot [select coords between index={1}{20}, BlueBars] table [x expr=\coordindex, y={Units Sold}]{\datatable};
+% \end{axis}
+% \end{tikzpicture}
+% \caption{Units sold by Different countries}
+% \label{fig:my_label}
 % \end{figure}
+
+
+
+\section{Group Bar Plot}
+\begin{figure}[ht!]
+\pgfplotstableread[col sep = comma]{embodied_cost_model/contents/100SalesRecords.csv}\table
+\centering
+    \begin{tikzpicture}
+    \begin{axis}[
+            SmallBarPlot,
+            xticklabels from table={\table}{Country},
+            ylabel=Value in Number,
+            xlabel=Countries
+        ]
+        \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Units Sold] {\table};
+        \addlegendentry{First}
+        \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Unit Price] {\table};
+        \addlegendentry{Second}
+        \legend{}
+    \end{axis}
+    \end{tikzpicture}
+\caption{The first legend \legendbox{blue} and the second one \legendbox{red}}
+\label{fig:multiBar}
+\end{figure}
 
 
 
 % \section{Subplots with Group Bar}
 
 % \begin{figure}[ht!]
-% \pgfplotstableread[col sep = comma]{100SalesRecords.csv}\table
+% \pgfplotstableread[col sep = comma]{embodied_cost_model/contents/100SalesRecords.csv}\table
 % \centering
 % \begin{subfigure}[b]{.5\linewidth}
 %     \centering
