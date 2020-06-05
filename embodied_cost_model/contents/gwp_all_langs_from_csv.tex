@@ -4,7 +4,7 @@
 \definecolor{german}{rgb}{.5, .5, .5}%german 
 \definecolor{japanese}{rgb}{0, 0, .5}%japanese 
 \definecolor{russian}{rgb}{0, .5, 0}%russian 
-\definecolor{spanish}{rgb}{0, .25, .5}%spanish 
+\definecolor{spanish}{rgb}{.20, .92, .85}%spanish 
 
 \pgfplotsset{compat=1.7}
 
@@ -53,7 +53,7 @@ russianBars/.style={
 
 \begin{figure}
     \centering
-\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/gcc_all_langs.csv}\datatable
+\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/total_gwp_comps.csv}\datatable
 \begin{tikzpicture}
 \begin{axis}[
     ybar,
@@ -66,13 +66,13 @@ russianBars/.style={
     xticklabels from table={\datatable}{Site},
     x tick label style={font=\normalsize, rotate=45, anchor=east},
     ylabel={kg $CO^2$ Eq.}]
-    \addplot [germanBars] table [x expr=\coordindex, y=de]{\datatable};
-    \addplot [englishBars] table [x expr=\coordindex, y=en]{\datatable};
-    \addplot [spanishBars] table [x expr=\coordindex, y=es]{\datatable};
-    \addplot [frenchBars] table [x expr=\coordindex, y=fr]{\datatable};
-    \addplot [chineseBars] table [x expr=\coordindex, y=zh]{\datatable};
-    \addplot [russianBars] table [x expr=\coordindex, y=ru]{\datatable};
-    \addplot [japaneseBars] table [x expr=\coordindex, y=ja]{\datatable};
+    \addplot [germanBars] table [x expr=\coordindex, y=de_total]{\datatable};
+    \addplot [englishBars] table [x expr=\coordindex, y=en_total]{\datatable};
+    \addplot [spanishBars] table [x expr=\coordindex, y=es_total]{\datatable};
+    \addplot [frenchBars] table [x expr=\coordindex, y=fr_total]{\datatable};
+    \addplot [chineseBars] table [x expr=\coordindex, y=zh_total]{\datatable};
+    \addplot [russianBars] table [x expr=\coordindex, y=ru_total]{\datatable};
+    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_total]{\datatable};
 \end{axis}
 
    \begin{scope}[xshift=-1.125cm, yshift=-2.25cm]
