@@ -70,10 +70,37 @@ RedBars/.style={
 
 
 
-\section{Group Bar Plot}
+% \section{Group Bar Plot}
+% \begin{figure}[ht!]
+% \pgfplotstableread[col sep = comma]{embodied_cost_model/contents/100SalesRecords.csv}\table
+% \centering
+%     \begin{tikzpicture}
+%     \begin{axis}[
+%             SmallBarPlot,
+%             xticklabels from table={\table}{Country},
+%             ylabel=Value in Number,
+%             xlabel=Countries,
+%         ]
+%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Units Sold] {\table};
+%         \addlegendentry{First}
+%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Unit Price] {\table};
+%         \addlegendentry{Second}
+%         \legend{}
+%     \end{axis}
+%     \end{tikzpicture}
+% \caption{The first legend \legendbox{blue} and the second one \legendbox{red}}
+% \label{fig:multiBar}
+% \end{figure}
+
+
+
+\section{Subplots with Group Bar}
+
 \begin{figure}[ht!]
 \pgfplotstableread[col sep = comma]{embodied_cost_model/contents/100SalesRecords.csv}\table
 \centering
+\begin{subfigure}[b]{.5\linewidth}
+    \centering
     \begin{tikzpicture}
     \begin{axis}[
             SmallBarPlot,
@@ -88,55 +115,28 @@ RedBars/.style={
         \legend{}
     \end{axis}
     \end{tikzpicture}
-\caption{The first legend \legendbox{blue} and the second one \legendbox{red}}
-\label{fig:multiBar}
+\end{subfigure}%
+\begin{subfigure}[b]{.5\linewidth}
+     \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+            SmallBarPlot,
+            xticklabels from table={\table}{Country},
+            ylabel= Value in Number,
+            xlabel=Countries,
+            ymode=log,
+            log basis y={10}
+        ]
+        \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Total Revenue] {\table};
+        \addlegendentry{First}
+        \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Total Cost] {\table};
+        \addlegendentry{Second}
+        \legend{}
+    \end{axis}
+    \end{tikzpicture}
+\end{subfigure}
+\caption{The first legend \legendbox{blue} and the second one \legendbox{red}.}
+\label{fig:subBarPlot}
 \end{figure}
-
-
-
-% \section{Subplots with Group Bar}
-
-% \begin{figure}[ht!]
-% \pgfplotstableread[col sep = comma]{embodied_cost_model/contents/100SalesRecords.csv}\table
-% \centering
-% \begin{subfigure}[b]{.5\linewidth}
-%     \centering
-%     \begin{tikzpicture}
-%     \begin{axis}[
-%             SmallBarPlot,
-%             xticklabels from table={\table}{Country},
-%             ylabel=Value in Number,
-%             xlabel=Countries
-%         ]
-%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Units Sold] {\table};
-%         \addlegendentry{First}
-%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Unit Price] {\table};
-%         \addlegendentry{Second}
-%         \legend{}
-%     \end{axis}
-%     \end{tikzpicture}
-% \end{subfigure}%
-% \begin{subfigure}[b]{.5\linewidth}
-%      \centering
-%     \begin{tikzpicture}
-%     \begin{axis}[
-%             SmallBarPlot,
-%             xticklabels from table={\table}{Country},
-%             ylabel= Value in Number,
-%             xlabel=Countries,
-%             ymode=log,
-%             log basis y={10}
-%         ]
-%         \addplot [BlueBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Total Revenue] {\table};
-%         \addlegendentry{First}
-%         \addplot [RedBars] [select coords between index={1}{5}] table [x expr=\coordindex, y=Total Cost] {\table};
-%         \addlegendentry{Second}
-%         \legend{}
-%     \end{axis}
-%     \end{tikzpicture}
-% \end{subfigure}
-% \caption{The first legend \legendbox{blue} and the second one \legendbox{red}.}
-% \label{fig:subBarPlot}
-% \end{figure}
 
 % \end{document}
