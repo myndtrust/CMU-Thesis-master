@@ -1,0 +1,103 @@
+\definecolor{chinese}{rgb}{0, 1, 0} %chinese 
+\definecolor{english}{rgb}{0, 0, 1}%english 
+\definecolor{french}{rgb}{.8, 0, 0}%french 
+\definecolor{german}{rgb}{.5, .5, .5}%german 
+\definecolor{japanese}{rgb}{0, 0, .5}%japanese 
+\definecolor{russian}{rgb}{0, .5, 0}%russian 
+\definecolor{spanish}{rgb}{.20, .92, .85}%spanish 
+
+\pgfplotsset{compat=1.7}
+
+
+% PGFPlots Settings
+\pgfplotsset{
+SmallBarPlot/.style={
+    font=\footnotesize,
+    ybar,
+    width=\linewidth,
+    ymin=0,
+    xtick=data,
+    xticklabel style={text width=1.5cm, rotate=45, align=center}
+},
+chineseBars/.style={
+    fill=chinese, bar width=0.1
+},
+englishBars/.style={
+    fill=english, bar width=0.1
+},
+frenchBars/.style={
+    fill=french, bar width=0.1
+},
+germanBars/.style={
+    fill=german, bar width=0.1
+},
+spanishBars/.style={
+    fill=spanish, bar width=0.1
+},
+japaneseBars/.style={
+    fill=japanese, bar width=0.1
+},
+russianBars/.style={
+    fill=russian, bar width=0.1
+}
+}
+
+\DeclareRobustCommand\legendbox[1]{(\textcolor{#1}{#1}~\begin{tikzpicture}[x=0.2cm, y=0.2cm] \draw [color=black, fill=#1!20] (0,0) -- (0,1) -- (0.6,1) -- (0.6,0) -- (0, 0); \end{tikzpicture})}
+
+\pgfplotsset{select coords between index/.style 2 args={
+    x filter/.code={
+        \ifnum\coordindex<#1\def\pgfmathresult{}\fi
+        \ifnum\coordindex>#2\def\pgfmathresult{}\fi
+    }
+}}
+
+\begin{figure}[ht!]
+\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/total_gwp_comps.csv}\datatable
+\centering
+\begin{subfigure}[b]{.5\linewidth}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+            SmallBarPlot,
+            xticklabels from table={\table}{Site},
+            ylabel=Value in Number,
+            xlabel=Countries
+        ]
+    \addplot [germanBars] table [x expr=\coordindex, y=de_oe]{\datatable};
+    \addplot [englishBars] table [x expr=\coordindex, y=en_oe]{\datatable};
+    \addplot [spanishBars] table [x expr=\coordindex, y=es_oe]{\datatable};
+    \addplot [frenchBars] table [x expr=\coordindex, y=fr_oe]{\datatable};
+    \addplot [chineseBars] table [x expr=\coordindex, y=zh_oe]{\datatable};
+    \addplot [russianBars] table [x expr=\coordindex, y=ru_oe]{\datatable};
+    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_oe]{\datatable};
+        \addlegendentry{Second}
+        \legend{}
+    \end{axis}
+    \end{tikzpicture}
+\end{subfigure}%
+\begin{subfigure}[b]{.5\linewidth}
+     \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+            SmallBarPlot,
+            xticklabels from table={\table}{Site},
+            ylabel= Value in Number,
+            xlabel=Countries,
+            ymode=log,
+            log basis y={10}
+        ]
+    \addplot [germanBars] table [x expr=\coordindex, y=de_em]{\datatable};
+    \addplot [englishBars] table [x expr=\coordindex, y=en_em]{\datatable};
+    \addplot [spanishBars] table [x expr=\coordindex, y=es_em]{\datatable};
+    \addplot [frenchBars] table [x expr=\coordindex, y=fr_em]{\datatable};
+    \addplot [chineseBars] table [x expr=\coordindex, y=zh_em]{\datatable};
+    \addplot [russianBars] table [x expr=\coordindex, y=ru_em]{\datatable};
+    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_em]{\datatable};
+        \addlegendentry{Second}
+        \legend{}
+    \end{axis}
+    \end{tikzpicture}
+\end{subfigure}
+\caption{The first legend \legendbox{blue} and the second one \legendbox{red}.}
+\label{fig:subBarPlot}
+\end{figure}
