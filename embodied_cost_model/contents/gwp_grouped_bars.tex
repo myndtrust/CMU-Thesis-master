@@ -14,7 +14,7 @@
 SmallBarPlot/.style={
     font=\footnotesize,
     ybar,
-    width=\linewidth,
+    width=6cm,
     ymin=0,
     xtick=data,
     xticklabel style={text width=1.5cm, rotate=45, align=center}
@@ -59,19 +59,18 @@ russianBars/.style={
     \begin{tikzpicture}
     \begin{axis}[
             SmallBarPlot,
-            xticklabels from table={\table}{Site},
-            ylabel=Value in Number,
-            xlabel=Countries
+            xticklabels from table={\datatable}{Site},
+            ylabel=Operational kg $CO^2$ ,
+            xlabel=Sites
         ]
-    \addplot [germanBars] table [x expr=\coordindex, y=de_oe]{\datatable};
-    \addplot [englishBars] table [x expr=\coordindex, y=en_oe]{\datatable};
-    \addplot [spanishBars] table [x expr=\coordindex, y=es_oe]{\datatable};
-    \addplot [frenchBars] table [x expr=\coordindex, y=fr_oe]{\datatable};
-    \addplot [chineseBars] table [x expr=\coordindex, y=zh_oe]{\datatable};
-    \addplot [russianBars] table [x expr=\coordindex, y=ru_oe]{\datatable};
-    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_oe]{\datatable};
-        \addlegendentry{Second}
-        \legend{}
+    \addplot [germanBars] table [x expr=\coordindex, y=de_OE]{\datatable};
+    \addplot [englishBars] table [x expr=\coordindex, y=en_OE]{\datatable};
+    \addplot [spanishBars] table [x expr=\coordindex, y=es_OE]{\datatable};
+    \addplot [frenchBars] table [x expr=\coordindex, y=fr_OE]{\datatable};
+    \addplot [chineseBars] table [x expr=\coordindex, y=zh_OE]{\datatable};
+    \addplot [russianBars] table [x expr=\coordindex, y=ru_OE]{\datatable};
+    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_OE]{\datatable};
+
     \end{axis}
     \end{tikzpicture}
 \end{subfigure}%
@@ -79,25 +78,27 @@ russianBars/.style={
      \centering
     \begin{tikzpicture}
     \begin{axis}[
+            legend pos=outer north east,
             SmallBarPlot,
-            xticklabels from table={\table}{Site},
-            ylabel= Value in Number,
-            xlabel=Countries,
-            ymode=log,
-            log basis y={10}
+            xticklabels from table={\datatable}{Site},
+            ylabel= Embodied kg  $CO^2$ Eq.,
+            xlabel=Sites,
+            legend image code/.code={
+            \draw [#1] (0cm,-0.05cm) rectangle (0.2cm,0.15cm); },
         ]
-    \addplot [germanBars] table [x expr=\coordindex, y=de_em]{\datatable};
-    \addplot [englishBars] table [x expr=\coordindex, y=en_em]{\datatable};
-    \addplot [spanishBars] table [x expr=\coordindex, y=es_em]{\datatable};
-    \addplot [frenchBars] table [x expr=\coordindex, y=fr_em]{\datatable};
-    \addplot [chineseBars] table [x expr=\coordindex, y=zh_em]{\datatable};
-    \addplot [russianBars] table [x expr=\coordindex, y=ru_em]{\datatable};
-    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_em]{\datatable};
+    \addplot [germanBars] table [x expr=\coordindex, y=de_EM]{\datatable};
+    \addplot [englishBars] table [x expr=\coordindex, y=en_EM]{\datatable};
+    \addplot [spanishBars] table [x expr=\coordindex, y=es_EM]{\datatable};
+    \addplot [frenchBars] table [x expr=\coordindex, y=fr_EM]{\datatable};
+    \addplot [chineseBars] table [x expr=\coordindex, y=zh_EM]{\datatable};
+    \addplot [russianBars] table [x expr=\coordindex, y=ru_EM]{\datatable};
+    \addplot [japaneseBars] table [x expr=\coordindex, y=ja_EM]{\datatable};
         \addlegendentry{Second}
-        \legend{}
+        \small{\legend{German,Enlgish,Spanish,French, Chinese, Russian, Japanese }}
     \end{axis}
     \end{tikzpicture}
 \end{subfigure}
-\caption{The first legend \legendbox{blue} and the second one \legendbox{red}.}
-\label{fig:subBarPlot}
+\caption[Operation and Embodied Carbon Footprint]{Carbon footprint of each language pages at each data center. 
+Left - Operational Energy for a year. Right - Embodied energy for a year from TRACI Impact Potential Global Climate Change.}
+\label{gwp_grouped_bars}
 \end{figure}
