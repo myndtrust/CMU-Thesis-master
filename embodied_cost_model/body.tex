@@ -117,8 +117,6 @@
         Using the above characteristics of the data center systems, the embodied costs of the systems are amortized over their useful lives. Namely, the building systems are amortized over 20 years, while the IT equipment is amortized over 3 years. For both of these systems the annual amortized costs are distributed on a hourly basis over the year. The hour distribution allows for the network traffic coefficients of each language and data center pair to apportion the embodied costs with the traffic coincident traffic for the hour.
         
         As a final and important note about how the carbon footprint is translated from the USEEIO to a meaningful measure of sustainability. The USEEIO provides environmental impacts associated with the embodied costs of data center components based on the US Environmental Protection Agency's (EPA) Tool for Reduction and Assessment of Chemical and Other Environmental Impacts (TRACI) \cite{EPA12}. The impacts of the carbon footprint manifests itself as the global warming potential of the system. Therefore, the carbon footprint indicator from USEEIO is in terms of equivalent carbon dioxides mass.
-       
-        
 
 \section{Results}
     In this section the results of the methodology described above is provided. Again, the discussion is presented first by discussing the operational and embodied carbon footprints separately. 
@@ -134,14 +132,14 @@
     \input{embodied_cost_model/contents/dc_carbon_footprint}
     
     \subsection{Embodied Carbon Footprint}
-    The second part of the modeling framework quantified the embodied cost of each data center using the USEEIO. 
+    The second part of the modeling framework quantified the embodied cost of each data center using the USEEIO. In Figure~\ref{gwp_grouped_bars}, the operational carbon footprint from the above BEM models are compared with the embodied carbon costs through USEEIO framework. In the figure the left curve shows the operational carbon footprint over the yearly model, while on the right the embodied costs of the same language - data center pairs are shown. Note the scale of the two graphs which clearly indicate that the embodied costs dominate over the operational costs. 
     
-
-    \input{embodied_cost_model/contents/gwp_all_langs_from_csv}
     \input{embodied_cost_model/contents/gwp_grouped_bars}
-    \input{embodied_cost_model/contents/test_bar_plot_from_csv}
+    \input{embodied_cost_model/contents/gwp_all_langs_from_csv}
     
-    \input{embodied_cost_model/contents/generic_computer_eeio}
+    % \input{embodied_cost_model/contents/test_bar_plot_from_csv}
+    
+    % \input{embodied_cost_model/contents/generic_computer_eeio}
     
 \section{Discussions}
 \section{Conclusion}

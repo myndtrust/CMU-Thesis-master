@@ -56,16 +56,19 @@ russianBars/.style={
 \pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/total_gwp_comps.csv}\datatable
 \begin{tikzpicture}
 \begin{axis}[
+    legend pos=outer north east,
     ybar,
     bar width=.1cm,
-    width=\textwidth,
+    width=14cm,
     height=7cm,
     ymin = 0,
     xtick=data,
     enlarge x limits=0.1,
     xticklabels from table={\datatable}{Site},
     x tick label style={font=\normalsize, rotate=45, anchor=east},
-    ylabel={kg $CO^2$ Eq.}]
+    ylabel={kg $CO^2$ Eq.},
+    legend image code/.code={
+            \draw [#1] (0cm,-0.05cm) rectangle (0.2cm,0.15cm); },]
     \addplot [germanBars] table [x expr=\coordindex, y=de_total]{\datatable};
     \addplot [englishBars] table [x expr=\coordindex, y=en_total]{\datatable};
     \addplot [spanishBars] table [x expr=\coordindex, y=es_total]{\datatable};
@@ -73,33 +76,10 @@ russianBars/.style={
     \addplot [chineseBars] table [x expr=\coordindex, y=zh_total]{\datatable};
     \addplot [russianBars] table [x expr=\coordindex, y=ru_total]{\datatable};
     \addplot [japaneseBars] table [x expr=\coordindex, y=ja_total]{\datatable};
+    \small{\legend{German,Enlgish,Spanish,French, Chinese, Russian, Japanese }}
 \end{axis}
 
-   \begin{scope}[xshift=-1.125cm, yshift=-2.25cm]
-            \node [anchor=center] (chinese) at (2,-.6) {\small{Chinese}};
-            \filldraw[outer color=chinese, inner color=chinese] (1.8,-.4) rectangle (2.2,0); % chinese
-            
-            \node [anchor=center] (english) at (4,-.6) {\small{English}};
-            \filldraw[outer color=english, inner color=english] (3.8,-.4) rectangle (4.2,0); % english
-            
-            \node [anchor=center] (french) at (6,-.6) {\small{French}};
-            \filldraw[outer color=french, inner color=french] (5.8,-.4) rectangle (6.2,0); % french
-            
-            \node [anchor=center] (german) at (8,-.6) {\small{German}};
-            \filldraw[outer color=german, inner color=german] (7.8,-.4) rectangle (8.2,0); % german
-            
-            \node [anchor=center] (japanese) at (10,-.6) {\small{Japanese}};
-            \filldraw[outer color=japanese, inner color=japanese] (9.8,-.4) rectangle (10.2,0); % japanese
-            
-            \node [anchor=center] (russian) at (12,-.6) {\small{Russian}};
-            \filldraw[outer color=russian, inner color=russian] (11.8,-.4) rectangle (12.2,0); % russian
-            
-            \node [anchor=center] (spanish) at (14,-.6) {\small{Spanish}};
-            \filldraw[outer color=spanish, inner color=spanish] (13.8,-.4) rectangle (14.2,0); % spanish
-            
-            
-            \end{scope}
 \end{tikzpicture}
-\caption[TRACI GCC for English]{TRACI Impact Potential for All Language \\ Global Climate Change}
-\label{fig:traci_gcc_english}
+\caption[Total Carbon Footrpint]{Total Carbon Footprint of each language at each Data Center}
+\label{gwp_total_bar}
 \end{figure}
