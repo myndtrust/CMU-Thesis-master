@@ -63,19 +63,23 @@
     
     \comment{The functional unit is not tied with the operational energy. The result maybe something like $\frac{kWh}{kw}$ (?) the lower the the number the more adverse it will be. Also this can be relative factor; i.e 1 for kWh*8760 hours, with kWh - kW capacity.}
     
-    In this section, this research's methodology to assess the operational energy and carbon footprint of data center site infrastructure is presented. There are extensive theoretical data center energy use models in literature \cite{dayarathna16, joshi12}. These models can generally be segregated between IT and building systems domains. The model developed in this research couples the two domains by first selecting the the right IT component to model; i.e. the IT component that the total energy of the data centers is most sensitive to.
+    In this section, this research's methodology to assess the operational energy and carbon footprint of data center site infrastructure is presented. There are extensive theoretical data center energy use models in literature \cite{dayarathna16, joshi12}. These models can generally be segregated between IT and building systems domains. The model developed in this research couples the two domains by first selecting the right IT component to model; i.e. the IT component that the total energy of the data centers is most sensitive to.
     
     Detailed industrial power usage insights are lacking in the public domain \cite{Masanet20}. As an exception some industrial insights are provided by Barroso in \cite{barroso18, barroso13}. Barroso provides Google's distribution of power for various points-of-use as indicted by the pie-charts shown in Figure~\ref{fig:power_dist_pies} for two generations of technology. In 2012, more than 80\% of the energy in a data center was used by four components; CPU 42\%, Cooling 15.4\%, disk 14.3\% and DRAM 11.7\%. By 2017, the cooling overhead had decreased to only account for 3\% a data center energy use, this decrease in cooling inflated the relative fraction of CPU and DRAM energy requirement. From these distributions, it is apparent that CPU's power usage is the dominant hot-spot.  
     
     \input{embodied_cost_model/contents/power_dist_pie}
     
-    The values in Figure~\ref{fig:power_dist_pies} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site.
+    The values in Figure~\ref{fig:power_dist_pies} are annualized distributions. In practice the power demand of data centers is very dynamic and sensitive to complex workload dependencies. These dependencies lend themselves to be exploited in power proportional computing paradigms. Several proportional workload techniques are discussed in detail by O'Sullivan in \cite{osullivan15}. This research takes such techniques and extends building energy models to be aware of proportional CPU loads based on coming network traffic to a data center site in an EnergyPlus model.
     
-    Specifically, the embodied costs of the data center materials are extended to the EnergyPlus model from Chapter~\ref{chp:bem}. EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the network coefficients  from Chapter~\ref{chp:traffic}. The traffic coefficients are used to reset the IT workloads at each data centers and the marginal costs to produce energy in the regional grid. The details of the model is indicated in Algorithm~\ref{mec_coupled_bem_algo} and the general framework is illustrated in Figure~\ref{process_flow}.
+    EnergyPlus provides a comprehensive indication of the operational energy and together with the marginal cost of energy model from Chapter~\ref{chp:mec}, it exposes the carbon footprint for each of the five data centers and the language abstracted service pairs. Both models are based on the network coefficients  from Chapter~\ref{chp:traffic}. The traffic coefficients are used to reset the IT workloads at each data centers and the marginal costs to produce energy in the regional grid. The details of the model is indicated in Algorithm~\ref{mec_coupled_bem_algo} and the general framework is illustrated in Figure~\ref{process_flow}. 
     
     \input{embodied_cost_model/contents/mec_coupled_bem_algo}
     
     \input{embodied_cost_model/contents/horizontal_process_flow}
+    
+     The configuration of the model is as presented by Kumar in \cite{kumar20b}; where the provisioned IT capacity of each data center is 492-MW. This provisioned capacity is scaled from the EnergyPlus simulation to represent metropolitan sized data center nodes. This scale sufficiently represents IT capacity provisioned at modern metropolitan area data center nodes. The specific data center wise allocation of each language is indicated in Figure~\ref{provisioned_allocation_of_lang_at_dcs_table}.
+     
+     \input{embodied_cost_model/contents/lang_dc_allocation_table_from_csv}
     
     \subsection{Embodied Inventories}
     Embodied cost assessments account for the natural resources consumed when extracting, transforming, manufacturing, transporting, constructing, maintaining, and disposing the product under study. The first step in these assessments is to set the boundary conditions of the system. The second step is to select the method of the assessment. Two methods are available for such assessment; namely process based or EIO based. Process based methods are bottoms up procedures; accounting for all processes that are required to transform raw materials into consumer goods. However in process based methods as the product boundary and the count of processes to quantify can have exponentially correlations. This exponential growth can become an intractable task for building designers. A more tractable method is the EIO, where economic relationships between two industries at the national level are exploited. 
@@ -83,7 +87,7 @@
     Leontief's original use case of the EIO was to identify the contribution from all economic sectors required to produce a unit of specific products in an economy.  The formulation of Leontief's EIO is indicated by Equation~\ref{eq:Leontief_IO}; where $Y$ is the input costs, $I$ is the identity matrix, and $A$ is the direct costs array \cite{matthews15}. In general direct costs represent the entire economy as a two-dimensional square array, where the rows and columns indicate distinct sectors within the economy. The values in the array indicate the row-index-sector’s input into the column-header-sector. Since their development in the 1930's, EIOs have been commonly used to characterize national economic accounts. More recently, Matthews and Hendrickson showed that EIO can be used for environmental life cycle assessments as-well \cite{matthews15}.  
     
         \begin{equation} \label{eq:Leontief_IO}
-        [I-A]^{-1}Y
+            [I-A]^{-1}Y
         \end{equation}
    
     Due to the streamlined approach of the EIO method compared to process based environmental assessments methods, the former is preferred for this research. Specifically, the United States Environmentally Extended Input-Out (USEEIO) model developed by Yang for the EPA is used in this research \cite{yang17}. The USEEIO’s economic relationship between sectors is based on 2007 cost data, while the environmental data are derived from 2013 emissions data. Both were the most up-to-date data available to the researchers at their time of publication. They suggest using 2013 cost of money for inputs, having demonstrated that the underlying structure of the economy has not shifted significantly between 2007 and 2013. 
@@ -119,20 +123,21 @@
         As a final and important note about how the carbon footprint is translated from the USEEIO to a meaningful measure of sustainability. The USEEIO provides environmental impacts associated with the embodied costs of data center components based on the US Environmental Protection Agency's (EPA) Tool for Reduction and Assessment of Chemical and Other Environmental Impacts (TRACI) \cite{EPA12}. The impacts of the carbon footprint manifests itself as the global warming potential of the system. Therefore, the carbon footprint indicator from USEEIO is in terms of equivalent carbon dioxides mass.
 
 \section{Results}
-    In this section the results of the methodology described above is provided. Again, the discussion is presented first by discussing the operational and embodied carbon footprints separately. 
+    In this section the results of the methodology described above is provided. Again, the discussion is presented first by discussing the operational and embodied carbon footprints separately. The results of this research culminate by quantifying the carbon footprint of the data center based to the functional unit of provide 1 kW-year.
     
     \subsection{Operational Carbon Footprint}
     Figure~\ref{image:cpu_profile} shows CPU workload values for a single language at each of the data centers in the global network. The variance in the curve demonstrates the effectiveness of using the traffic coefficients. The CPU workloads are used in EnergyPlus as building plug loads that must be powered and cooled data center infrastructure. The EnergyPlus model performance a physics based simulation for the total building considering these CPU loads, the ambient environment, the interior operational temperatures, and systems inefficiencies to quantify the energy use for each hour of the year.
     
-
     \input{embodied_cost_model/contents/cpu_profile}
     
     The energy demand of the building at an hourly interval from EnergyPlus is then passed to the DOSCOE - marginal costs of energy model. The model quantifies the data center's incremental cost of energy within it's power grid. The annualized carbon footprint of the English language pages is noted in Table~\ref{table:dc_carbon_footprint}.
-
-    \input{embodied_cost_model/contents/dc_carbon_footprint}
+c
+    % \input{embodied_cost_model/contents/dc_carbon_footprint}
+    
+    \input{embodied_cost_model/contents/dc_carbon_footprint_table_from_csv}
     
     \subsection{Embodied Carbon Footprint}
-    The second part of the modeling framework quantified the embodied cost of each data center using the USEEIO. In Figure~\ref{gwp_grouped_bars}, the operational carbon footprint from the above BEM models are compared with the embodied carbon costs through USEEIO framework. In the figure the left curve shows the operational carbon footprint over the yearly model, while on the right the embodied costs of the same language - data center pairs are shown. Note the scale of the two graphs which clearly indicate that the embodied costs dominate over the operational costs. 
+    The second part of the modeling framework quantified the embodied cost of each data center using the USEEIO. In Figure~\ref{gwp_grouped_bars}, the operational carbon footprint from the above BEM models are compared with the embodied carbon costs through USEEIO framework. In the figure the left curve shows the operational carbon footprint over the yearly model, while on the right the embodied costs of the same language - data center pairs are shown. Note the scale of the two graphs which clearly indicate that the embodied costs dominate over the operational costs. The total costs with both the operational and embodied models are shown in Figure~\ref{gwp_total_bar}.
     
     \input{embodied_cost_model/contents/gwp_grouped_bars}
     \input{embodied_cost_model/contents/gwp_all_langs_from_csv}
@@ -141,7 +146,12 @@
     
     % \input{embodied_cost_model/contents/generic_computer_eeio}
     
-\section{Discussions}
+    \subsection{Cost per Functional Unit}
+
+    In this research, the focal point for data center sustainability is its total carbon footprint. In the preceding methodology, the carbon footprint over a year has been quantified with consideration of the operational and embodied life cycle phases of the data center. However, the it has not yet been correlated with the functional unit of performance for the data center system. To correlate with the functional unit, the provisioned capacity of the network of data centers to support each language is needed. 
+    
+    \input{embodied_cost_model/contents/functional_unit_bar_from_csv}
+    
 \section{Conclusion}
 
 
