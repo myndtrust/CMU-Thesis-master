@@ -1,0 +1,36 @@
+\sisetup{
+  round-mode          = places, % Rounds numbers
+  round-precision     = 0, % to 2 places
+}
+
+
+\begin{table}[h!]
+  \begin{center}
+    \scalebox{0.9}{%
+    \pgfplotstabletypeset[
+      multicolumn names, % allows to have multicolumn names
+      col sep=comma, % the seperator in our .csv file
+      display columns/0/.style={
+		column name=Language, % name of first colum
+		string type},  % use siunitx for formatting
+      display columns/1/.style={
+		column name=Site,
+		string type},
+	  display columns/2/.style={
+		column name=Allocation,
+		column type={S},string type},
+	  display columns/3/.style={
+		column name=Allocation,
+		column type={S},string type},
+      every head row/.style={
+		before row={\toprule}, % have a rule at top
+		after row={
+			& & \(\%\) & \(MW\)\\ % the units seperated by &
+			\midrule} % rule under units
+			},
+		every last row/.style={after row=\bottomrule}, % rule at bottom
+    ]{embodied_cost_model/contents/data/dc_provisioned_capacity_per_lang.csv} % filename/path to file
+  }\end{center}
+     \caption[Provisioned Allocation of Language at each Data Center]{Provisioned Allocation of Language at each Data Center}
+    \label{provisioned_allocation_of_lang_at_dcs_table}
+\end{table}
