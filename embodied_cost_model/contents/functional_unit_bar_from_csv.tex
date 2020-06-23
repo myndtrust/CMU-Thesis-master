@@ -41,7 +41,7 @@ russianBars/.style={
     fill=russian, bar width=0.1
 },
 fuBars/.style={
-    fill=red!20, bar width=0.3
+    fill=blue!20, bar width=0.3
 }
 }
 
@@ -56,7 +56,7 @@ fuBars/.style={
 
 \begin{figure}
     \centering
-\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/functional_unit.csv}\datatable
+\pgfplotstableread[col sep=comma,]{embodied_cost_model/contents/data/functional_unit_2.csv}\datatable
 \begin{tikzpicture}
 \begin{axis}[
     legend pos=outer north east,
@@ -69,13 +69,13 @@ fuBars/.style={
     enlarge x limits=0.1,
     xticklabels from table={\datatable}{Language},
     x tick label style={font=\normalsize, rotate=45, anchor=east},
-    ylabel={kg $CO^2$/kW.},
+    ylabel={kg $CO^2$/kW-year},
     legend image code/.code={
             \draw [#1] (0cm,-0.05cm) rectangle (0.2cm,0.15cm); },]
     \addplot [fuBars] table [x expr=\coordindex, y=kg-CO2/kW]{\datatable};
 \end{axis}
 
 \end{tikzpicture}
-\caption[Carbon Footprint per Functional Unit]{Carbon Footprint per Functional Unit}
-\label{fucntional_unit_bar}
+\caption[Carbon Footprint per Functional Unit of Process Flow]{Carbon Footprint per Functional Unit of Process Flow}
+\label{functional_unit_bar}
 \end{figure}
