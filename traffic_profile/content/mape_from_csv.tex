@@ -1,0 +1,13 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{0.8}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        every head row/.style={before row=\hline,after row=\hline},
+        every last row/.style={after row=\hline},
+        ]{traffic_profile/content/data/mape.csv}}
+    \end{center}
+    \caption[MAPE for ARIMA and Prophet Models]{Mean Absolute Percentage Error}
+    \label{mape}
+\end{table}
