@@ -1,0 +1,8 @@
+ID,Language,Count Pages,Word_length,Words_page,Bytes_character,Bytes_page,bits_page
+zh,Mandarin,17229,1.0,1032,2,2064.0,16512.0
+fr,French,17802,10.9,640,1,6976.0,55808.0
+en,English,24108,8.23,640,1,5267.2,42137.6
+ru,Russian,15022,9.97,640,1,6380.8,51046.4
+de,German,18547,11.66,640,1,7462.4,59699.2
+ja,Japanese,20431,1.0,1600,2,3200.0,25600.0
+es,Spanish,14069,8.8,640,1,5632.0,45056.0
