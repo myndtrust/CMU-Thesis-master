@@ -40,6 +40,40 @@
     
     \input{embodied_cost_model/contents/world_language_map}
     
-    After segregation of the pages by language and dropping pages without language indicators, the languages are mapped to countries in which they are the official language. Figure 4 shows the mapping of languages to their respective countries by color groups; English (blue), Japanese (navy blue), German (gray), French (red), Chinese (light green), Russian (forest green), and Spanish (cyan). Red markers indicate the locations of Wikipedia data centers from around the world as listed in Table 1.
+    After segregation of the pages by language and dropping pages without language indicators, the languages are mapped to countries in which they are the official language. Figure 4 shows the mapping of languages to their respective countries by color groups; English (blue), Japanese (navy blue), German (gray), French (red), Chinese (light green), Russian (forest green), and Spanish (cyan). Red markers indicate the locations of Wikipedia data centers from around the world as listed in Table~\ref{language_to_dc}.
     
+    \input{traffic_profile/content/lang_to_dc_from_csv}
     
+    Throughout this research these Wikipedia data centers are used to the model the network based on publicly available information. Several additional assumptions are made in regard to the attributes of the system that are not in the public domain. Furthermore, some of the system complexity is reduced for brevity. For example, the traffic generating in a particular country is allocated with their closest ingress points as listed in Table~\ref{language_to_dc} by using a minimum distance function between the respective geographical codes. 
+    
+    The specific step-wise approach of mapping languages to the respective data center is shown in Table~\ref{traffic_allocation_steps}. Following these steps, Table~\ref{language_to_dc} shows that English is the most dominant language, with its traces appearing at all of Wikipedia's ingress sites while originating in 49 countries.  
+    
+    \input{traffic_profile/content/traffic_allocation_steps}
+    
+    \subsection{Scaling service demands and data center workloads}
+    
+    In this section, the Wikipedia traffic profiles are used to forecast future demands. Note that the traffic data is slightly modified to represent digital bits in order to demonstrate another useful insight that network traffic inherently provides. The objective here is to determine the future service demands that drive workloads at each data center. To obtain the digital payload of the pages, their contents are converted to its byte size representation. The bit size distribution of Wikipedia articles was not readily available in the public domain so an estimation method was developed for this work as follows. First, several resources were consulted to determine the page size \cite{wiki_stats, xtools}. The resulting page sizes for each of the seven languages studied in this article are noted in Table~\ref{language_to_page_size}. 
+    
+    \input{traffic_profile/content/language_to_page_size}    
+    
+    Now, the time series of bit-wise representation of the traffic can be analyzed to make future predictions. The time series ($t$) dependencies of a variable $X$ can generally be decomposed in trending ($T$), seasonal ($S$), and random ($R$) components, as shown in equation below \cite{zhuang15}. Specifically T exists when there is a gradual shift across time. indicates cyclic patterns, and R accounts for randomness.   
+    
+        \begin{equation}
+        X_t = T_t + S_t + R_t
+        \end{equation}
+    
+    In the next few paragraphs two time-series forecasting frameworks that decompose time series into these three components are discussed. First, the Auto Regressive Integrated Moving Average (ARIMA) model is presented and its implementation challenges along with its results are noted. Second, as alternate to ARIMA, Prophet another time-series modeling tool is implemented and its details along with its results are presented. 
+    
+    \emph{ARIMA Model}: First, time-series analysis is performed using the Auto Regressive Integrated Moving Average (ARIMA) model. The auto regression component leverages the dependencies between an observation and some lagged time step. The integration component differentiates the raw observations from preceding time steps to make the series stationary. The moving average component quantifies the dependency between observations and residual errors with a moving average model applied to lagged observations. Each of the three components are specified as a model input parameter in the form ARIMA(p, d, q). The parameter p indicates the lag order, d indicates the degree of difference (i.e. the number times raw observations are differenced), and q indicates the size of the moving window (the moving average). 
+    
+    The ARIMA model has been used effectively in previous literature to forecast 21 days of network traffic with 42 days of past trends [8]. This research extends the forecast out to 9 months. Figure 5’s legend indicates the use of combination of ARIMA(2,1,2) and ARIMA(1,2,4) as parametric arguments to the ARIMA module. The generated estimate is based on 550 historical records for each site and forecasts the traffic profile 250 days beyond the training data cutoff date. Figure 5 shows that the ARIMA predictions are heavily influenced by the trend near the training cutoff period. As shown, the ARIMA models appear to capture weekly seasonality well but fail accurately capture longer seasonality periods; given the time range of the our dataset with the parametric used in this work. Nonetheless, ARIMA models are capable of including seasonal covariates to improve sensitivity to longer cyclic periods, but the attempts to model with Seasonal Auto-ARIMA led to extremely long fitting times at best or the models didn't converge on a solution. 
+    
+    % \input{arima curves}
+    
+    \emph{Generalized Additive Model}: Next, a variant of the generalized additive model (GAM) was simulated with the same bit wise time series from above. The model is explained in great detail by Taylor in \cite{fbprophet}. The GAM model variant, Prophet, also has a decomposable time series formulation similar to the time series dependence equation from above. However, Prophet is supplemented with a term that accounts for holidays that occur at idiosyncratic  intervals. Prophet has a novel concept that deals with trends in forecast uncertainty, in that it uses a Laplace transform to randomly distribute future change points in the trend based on past data. This can be seen by how closely the forecasts, blue lines in Figure 6 track the historical data, black dots in Figure 6 and the actual forecast based on the test data (magenta lines in figure. The change point parameter is set to 0.3 and the yearly seasonality parameter is set to True for these simulations. 
+    
+    % Provide a compartive table for MAPE of Arima and Prophet
+    
+\section {Results}
+
+    In this section the results from using the traffic coefficients is presented. Following the steps listed in Table~\ref{traffic_allocation_steps} yields the curves indicated in Figure 7. Each curve in the figure consists of all the languages that are routed to it. To reason about these curves, recollect the distribution of the languages at each data center form Figure 1. For example, the curve for San Francisco (SFO) in Figure 7 is nearly 100 times smaller than the curve for the Haarlem (AMS) site. This is due to only four countries being routed to San Francisco, whereas Haarlem has traffic routed from 38 countries. 
