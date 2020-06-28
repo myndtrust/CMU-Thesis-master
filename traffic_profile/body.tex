@@ -70,7 +70,11 @@
     
     \input{traffic_profile/content/arima}
     
-    \emph{Generalized Additive Model}: Next, a variant of the generalized additive model (GAM) was simulated with the same bit wise time series from above. The model is explained in great detail by Taylor in \cite{fbprophet}. The GAM model variant, Prophet, also has a decomposable time series formulation similar to the time series dependence equation from above. However, Prophet is supplemented with a term that accounts for holidays that occur at idiosyncratic  intervals. Prophet has a novel concept that deals with trends in forecast uncertainty, in that it uses a Laplace transform to randomly distribute future change points in the trend based on past data. This can be seen by how closely the forecasts, blue lines in Figure 6 track the historical data, black dots in Figure 6 and the actual forecast based on the test data (magenta lines in figure. The change point parameter is set to 0.3 and the yearly seasonality parameter is set to True for these simulations. 
+    \emph{Generalized Additive Model}: Next, a variant of the generalized additive model (GAM) was simulated with the same bit wise time series from above. The model is explained in great detail by Taylor in \cite{fbprophet}. The GAM model variant, Prophet, also has a decomposable time series formulation similar to the time series dependence equation from above. However, Prophet is supplemented with a term that accounts for holidays that occur at idiosyncratic  intervals. 
+    
+    Prophet has a novel concept that deals with trends in forecast uncertainty, in that it uses a Laplace transform to randomly distribute future change points in the trend based on past data. This can be seen by how closely the forecasts, blue lines track the historical data, black dots in Figures~\ref{DFW}, \ref{AMS}, \ref{SFO}, \ref{SIN} and the actual forecast based on the test data (magenta lines in figure). The change point parameter is set to 0.3 and the yearly seasonality parameter is set to True for these simulations. The forecast extends beyond the test data range which shows the that the cone of uncertainty increases as the forecast is extended out further indicated by the light blue curves. 
+    
+    
     
     \input{traffic_profile/content/prophet_curves}
     % Provide a compartive table for MAPE of Arima and Prophet
@@ -80,4 +84,10 @@
     
 \section {Results}
 
-    In this section the results from using the traffic coefficients is presented. Following the steps listed in Table~\ref{traffic_allocation_steps} yields the curves indicated in Figure 7. Each curve in the figure consists of all the languages that are routed to it. To reason about these curves, recollect the distribution of the languages at each data center form Figure 1. For example, the curve for San Francisco (SFO) in Figure 7 is nearly 100 times smaller than the curve for the Haarlem (AMS) site. This is due to only four countries being routed to San Francisco, whereas Haarlem has traffic routed from 38 countries. 
+    In this section the results from using the traffic coefficients is presented. Following the steps listed in Table~\ref{traffic_allocation_steps} yields the curves indicated in Figure \ref{ingress_hitrate_95_links}. Each curve in the figure consists of all the languages that are routed to it, truncated to the . 
+    
+    To reason about these curves, recollect the distribution of the languages at each data center form Figure 1. For example, the curve for San Francisco (SFO) in Figure 7 is nearly 100 times smaller than the curve for the Haarlem (AMS) site. This is due to only four countries being routed to San Francisco, whereas Haarlem has traffic routed from 38 countries. 
+    
+    Figure 8 shows the resulting CPU power profiles when using traffic coefficients in EnergyPlus simulations. The average page view values are used as indicated in Figure 3A for the English language. The details of the EnergyPlus configuration are provided by Kumar in [14]. Since the English language is the dominate language at the San Francisco site nearly all of the CPU resources at the site are dedicated to it. The constant load profile for San Francisco is constant in the figure and can be attributed to the nearly flat curve for San Francisco shown in Figure 7. 
+    
+    \input{traffic_profile/content/ingress_curves}
