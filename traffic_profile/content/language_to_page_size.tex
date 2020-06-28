@@ -1,0 +1,13 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{0.8}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        every head row/.style={before row=\hline,after row=\hline},
+        every last row/.style={after row=\hline},
+        ]{traffic_profile/content/data/language_to_page_size.csv}}
+    \end{center}
+    \caption[Language to Page Size Classification]{Language to Page Size Classification}
+    \label{language_to_page_size}
+\end{table}

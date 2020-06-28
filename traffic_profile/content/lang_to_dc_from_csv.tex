@@ -1,0 +1,24 @@
+
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{0.8}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        columns/DC/.style={column name=DC, column type={|l}},
+        columns/en/.style={column name=English, column type={|c}},
+        columns/ja/.style={column name=Japanese, column type={|c}},
+        columns/de/.style={column name=German, column type={|c}},
+        columns/fr/.style={column name=French, column type={|c}},
+        columns/zh/.style={column name=Chinese, column type={|c}},
+        columns/ru/.style={column name=French, column type={|c}},
+        columns/es/.style={column name=Spanish, column type={|c}},
+        columns/total/.style={column name=Total, column type={|c|}},
+        every head row/.style={before row=\hline,after row=\hline},
+        every last row/.style={after row=\hline},
+        ]{traffic_profile/content/data/Language_to_DC.csv}}
+    \end{center}
+    \caption[Languages to Ingress Sites]{Languages to Ingress Sites}
+    \label{language_to_dc}
+\end{table}
+
