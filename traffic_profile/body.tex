@@ -68,11 +68,15 @@
     
     The ARIMA model has been used effectively in previous literature to forecast 21 days of network traffic with 42 days of past trends [8]. This research extends the forecast out to 9 months. Figure 5’s legend indicates the use of combination of ARIMA(2,1,2) and ARIMA(1,2,4) as parametric arguments to the ARIMA module. The generated estimate is based on 550 historical records for each site and forecasts the traffic profile 250 days beyond the training data cutoff date. Figure 5 shows that the ARIMA predictions are heavily influenced by the trend near the training cutoff period. As shown, the ARIMA models appear to capture weekly seasonality well but fail accurately capture longer seasonality periods; given the time range of the our dataset with the parametric used in this work. Nonetheless, ARIMA models are capable of including seasonal covariates to improve sensitivity to longer cyclic periods, but the attempts to model with Seasonal Auto-ARIMA led to extremely long fitting times at best or the models didn't converge on a solution. 
     
-    % \input{arima curves}
+    \input{traffic_profile/content/arima}
     
     \emph{Generalized Additive Model}: Next, a variant of the generalized additive model (GAM) was simulated with the same bit wise time series from above. The model is explained in great detail by Taylor in \cite{fbprophet}. The GAM model variant, Prophet, also has a decomposable time series formulation similar to the time series dependence equation from above. However, Prophet is supplemented with a term that accounts for holidays that occur at idiosyncratic  intervals. Prophet has a novel concept that deals with trends in forecast uncertainty, in that it uses a Laplace transform to randomly distribute future change points in the trend based on past data. This can be seen by how closely the forecasts, blue lines in Figure 6 track the historical data, black dots in Figure 6 and the actual forecast based on the test data (magenta lines in figure. The change point parameter is set to 0.3 and the yearly seasonality parameter is set to True for these simulations. 
     
+    \input{traffic_profile/content/prophet_curves}
     % Provide a compartive table for MAPE of Arima and Prophet
+    
+    Table~\ref{mape} provides a comparison of the mean absolute error (MAPE) for four data center sites. The difference in error rates varies by a factor 1.72 (for SIN) and over 52 (for SFO). Overall, in comparison it is shown that the Prophet model is superior to the ARIMA model in terms of accuracy of its predication's. 
+    \input{traffic_profile/content/mape_from_csv}
     
 \section {Results}
 
