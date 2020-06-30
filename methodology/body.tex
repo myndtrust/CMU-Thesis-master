@@ -18,7 +18,13 @@ This chapter provides the methods used to identify the scope of this dissertatio
     
     Internet DC capacity is not bound by physical sizes or geographic locations however. Location agnostic networks spanning the globe allow information technology (IT) systems to scale in resource parameters such as CPU, GPU, memory, storage, and data access rates. Parametric scaling of these resources enables operational tuning to compensate for physical capacity constraints. Capacity fungibility of DC parameters at a global scale leads businesses with risky practices to provision building scale data-center infrastructure very lean. While businesses that are adverse to risk can be excessively conservative. In the case of lean provisioning, all physical resources are highly utilized with little or no headroom. For the conservative approaches, normal operating conditions are such that sustained operational points are well below the capacity of the equipment. Operations significantly below capacity allows the service to accept bursts in service, inorganic  growth, and be fault tolerant in case of failures elsewhere in the system. 
     
-    Lean and conservative operations are both classified as equivalent based on today's sustainability indicators and both have strategic advantages for data center owners. For example the abrupt change in internet traffic for many communications, media, and collaboration web sites due to COVID have critical dependencies on data center facilities. These change in traffic pattern is shown in Figre
+    Lean and conservative operations are both classified as equivalent based on today's sustainability indicators and both have strategic advantages for data center owners. For example the abrupt change in internet traffic for many communications, media, and collaboration web sites due to COVID have critical dependencies on data center facilities. These change in traffic pattern are shown in Figure~\ref{img_nyt_covid}, if the data centers were operational loaded to peak capacity then it would be impossible to absorb such drastic changes.
+    
+    \input{methodology/content/nyt}
+    
+    Furthermore, DC facilities can be measured with multiple attributes; power limits, cooling limits, network limits, and floor space. Where power has shown to be the most prevalent indicator of DC, \cite{barroso18}. However, the other attributes don't linearly scale with power. For example, the researcher designed a data center in mid 2013 based on historical trends. By the time the data center was deployment the power density per information technology devices had significantly increased. With the increase in the power density, more that 60\% of the designed floor space was left stranded (ie not deploy-able as the facility was power and cooling limited at 40\% of the designed area).
+    
+    
     
     
     
