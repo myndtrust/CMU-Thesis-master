@@ -1,0 +1,13 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{0.6}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        every head row/.style={before row=\hline,after row=\hline\hline},
+        every last row/.style={after row=\hline},
+        ]{methodology/content/data/Server_Component_Counts.csv}}
+    \end{center}
+    \caption{Server Bill of Materials
+}    \label{computer_parts}
+\end{table}
