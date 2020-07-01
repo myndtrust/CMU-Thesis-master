@@ -22,11 +22,9 @@ This chapter provides the methods used to identify the scope of this dissertatio
     
     \input{methodology/content/nyt}
     
-    Furthermore, DC facilities can be measured with multiple attributes; power limits, cooling limits, network limits, and floor space. Where power has shown to be the most prevalent indicator of DC, \cite{barroso18}. However, the other attributes don't linearly scale with power. For example, the researcher designed a data center in mid 2013 based on historical trends. By the time the data center was deployment the power density per information technology devices had significantly increased. With the increase in the power density, more that 60\% of the designed floor space was left stranded (ie not deploy-able as the facility was power and cooling limited at 40\% of the designed area).
+    Furthermore, DC facilities can be measured with multiple attributes; power limits, cooling limits, network limits, and floor space. Where power has shown to be the most prevalent indicator of DC, \cite{barroso18}. However, the other attributes don't linearly scale with power. For example, the researcher designed a data center in mid 2013 based on historical trends. By the time the data center was deployment the power density per information technology devices had significantly increased. With the increase in the power density, more that 60\% of the designed floor space was left stranded (ie not deploy-able as the facility was power and cooling limited at 40\% of the designed area). However, if the DC design team had looked closer at Moore's law such disruptive change in density were apparent. Figure~\ref{img_moores} indicates the log-scale nature of de-materialization of transistor based technology made famous by Moore.
     
-    
-    
-    
+    \input{methodology/content/transistor}
     
     The prevalent indicator for sustainability of DC facilities is currently the Power Usage Effectiveness metric ($PUE$, see equation \ref{eq:pue}). $PUE$ is a dimensionless ratio of load vs. supply energy.   In the equation $E_{IT}$ indicates the IT energy load and $E_{total}$ indicates the total energy supplied to the facility. The $PUE$ is generally reported in a quarterly or annual basis by integrating the equation across the respective time period. For a given period, the metric measures the operational efficiency of the facility's system compared to the information technology equipment (ITE). Spaces housing ITE have seen profound cooling and power distribution efficiency gains resulting from the focus on $PUE$, however the metric does not comprehensively cover sustainability of DCs.
     
@@ -74,7 +72,11 @@ This chapter provides the methods used to identify the scope of this dissertatio
     
     \input{methodology/content/cleer}
     
-    In this section the background discussed has inspired the research question pursued in the dissertations. Namely the research question is; how can DC design decisions that have longevity  with all of the uncertainty involved?
+    In the rest of the chapters this research builds upon these pioneering similar works. Six parameters common to all three are identified and supplemented with novel contributions developed by this dissertations research. Two additional are also added to make the end to end modeling framework presented dynamic in terms of network traffic and building operations as shown in 
+    
+    In this section the background discussed has inspired the research question pursued in the dissertations. Namely the research question is; how can DC design decisions that have longevity  with all of the uncertainty involved? Next the research hypothesis is stated followed by and overview of the specific methods that are used to validate the hypothesis.
+    
+\section{}
     
 
     
