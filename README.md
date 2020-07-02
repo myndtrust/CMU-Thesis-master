@@ -143,4 +143,5 @@ The document uses a non-official EPP-CMU Thesis Template by Cristian Bravo-Lillo
 
 <!--If you want to thank me, you may send me a tweet to [@tamabravolillo](https://twitter.com/tamabravolillo) or leave a message at [LinkedIn](https://www.linkedin.com/in/cristianbravolillo/).-->
 
+Development of a Global Data Center Infrastructure Systems Model bound by the System’s End to End Life Cycle
 Author: Eric M. Kumar &copy;
