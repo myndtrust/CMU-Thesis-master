@@ -115,7 +115,7 @@ To return to normal mode, simply take out the option 'draft'. All the following 
 
 ### Official sources of information
 
-My departments (or at least my program and Chair) did not require any specific template. The result of a free form template has been assembled and on Carnegie Mellon University's EPP school with slight modifications to use on Overleaf.
+My department (or at least my program and Chair) did not require any specific template. The resulting of a free form structure has been framework by Carnegie Mellon University's EPP school template with slight modifications for use on Overleaf.
 
 
 ### How do I get the latest version of this template?
