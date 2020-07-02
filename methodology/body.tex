@@ -102,17 +102,22 @@ This chapter presents the methods used to identify the scope of this dissertatio
 \section{Information Technology Equipment}
         The modeling framework developed in this research requires details about the information technology hardware from inside the data centers. Low fidelity representations of the hardware configurations suffice for the building energy and EIO based embodied materials modules. Table~\ref{computer_parts} indicates the data used in this research to characterize the information technology hardware. This data is based on production server configurations of a large internet operator, representing their deployments in 2015 and 2016. 
         
-        By nature of the technology sector, the server configurations have a high temporal sensitive; as new products and optimizations are brought to market on quarterly cadences that pivot the total costs of ownership models. Figure shows air cooled server units fitted with a combination of processors and  
+        Servers are generally categorized as compute and storage. Compute servers are fitted with suitable processors, input and output devices, and dynamic random access memory (DRAM). The latter category of storage servers are optimized for high density storage with minimal processor capabilities with input output devices selected based on the desired performance. Figure~\ref{img_server} shows air cooled server units fitted with a combination of processors and DRAM. While Figure~\ref{img_storage_tray} shows a homogeneous arrangement of storage drives in a server. 
         
         \input{methodology/content/server_image}
+        \input{methodology/content/storage_tray}
         
-        In this work, a combination of server components from Table~\ref{computer_parts} are aggregated based on the total power of the building using Algorithm~ \ref{it_y_vector_algo}. This is sufficient for building design tasks and in practice this is the granularity that facilities stake holders handle. Finer granularity is not sought as the models that are developed in this research don't optimize or even account for the air flow patterns or equipment layout inside the buildings. Nonetheless the fidelity of the framework can be enhanced for quantifying the operational energy and embodied materials if the physical layouts of the servers and buildings are more precisely characterised.
+        Segregating the storage from the compute instances have several advantage for the software architecture, for building systems designers the most intuitive is failure isolation. 
+        
+        In this work, a combination of server components from Table~\ref{computer_parts}. This choice for representative server assemblies is based on two reasons. (1) the research had fine grained costs data for these servers. (2) the mix component server assemblies can properly characterize the embodied materials of the overall data center. 
+        
+        Furthermore the mixed component servers lends itself to simplified allocation of the various components with the data center building. This simplification allows the quantification of the component counts using the top down relationship to the total power of the building using Algorithm~ \ref{it_y_vector_algo}. This is sufficient for building design tasks and in practice this is the granularity that facilities stake holders handle. Finer granularity is not sought as the models that are developed in this research don't optimize or even account for the air flow patterns or equipment layout inside the buildings. Nonetheless the fidelity of the framework can be enhanced for quantifying the operational energy and embodied materials if the physical layouts of the servers and buildings are more precisely characterised.
         
         \input{methodology/content/computer_parts}
         
         %  Examples of the design choices for the server components arrangements and building layouts are now discussed. These examples point to modeling improvements that can make this framework more precise. Furthermore, these example are used to normalize the servers into their deploy-able units; a server rack.
         
-        Steel racks host the server assemblies. Figure~\ref{bcu_rack} and Figure~\ref{goog_rack} are examples of hyper-scale racks. There are several design paradigms for combining various components with the racks. Design choices range from fully homogeneous racks to 
+        Steel racks host the server assemblies. Figure~\ref{bcu_rack} and Figure~\ref{goog_rack} are examples of hyper-scale racks. At the rack level these dis-aggregated servers can be mixed and matched where high speed communication is hermetic to the rack. Alternately the entire rack can be of a single type, bridged by high speed communications networks across local areas. The choice for the rack arrangement is reasoned about as performance objectives for specific workloads that the rack will be susceptible to.
         
         \input{methodology/content/rack_image}
         
