@@ -141,11 +141,9 @@ In other Linux distros, you should use the corresponding install command (e.g., 
 
 ### License
 
-The document uses a non-official EPP-CMU Thesis Template by Cristian Bravo-Lillo is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To see a human-readable version of the license, please go to http://creativecommons.org/licenses/by-nc-sa/4.0/.
+The document uses a non-official EPP-CMU Thesis Template by Cristian Bravo-Lillo which is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To see a human-readable version of the license, please go to http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
 ### Author Contact, bugs and acknowledgments
-
-Cristian Bravo-Lillo, cristian AT ciberseguridadhumana DOT cl. Thanks to Nektarios Leontiadis for his input and help.
 
 <!--If you find a bug in the template (that is, something that is wrong based on the department or university guidelines), please leave me a note in GitHub:-->
 
@@ -154,3 +152,5 @@ Cristian Bravo-Lillo, cristian AT ciberseguridadhumana DOT cl. Thanks to Nektari
 1. Give it a name and a longer description, and click on 'Submit new issue'.
 
 <!--If you want to thank me, you may send me a tweet to [@tamabravolillo](https://twitter.com/tamabravolillo) or leave a message at [LinkedIn](https://www.linkedin.com/in/cristianbravolillo/).-->
+
+Author: Eric M. Kumar &copy;
