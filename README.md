@@ -113,11 +113,9 @@ To return to normal mode, simply take out the option 'draft'. All the following 
 
 ## For more information
 
-<!--### Official sources of information-->
+### Official sources of information
 
-<!--You should always consult with the administrator of your department. As of January 2019, the official source of information for thesis guidelines at the College of Engineering in Carnegie Mellon University is https://engineering.cmu.edu/education/academic-policies/graduate-policies/thesis-dissertation.html-->
-
-<!--For EPP guidelines, go to: https://www.cmu.edu/epp/current/doctoral-thesis/index.html-->
+My departments (or at least my program and Chair) did not require any specific template. The result of a free form template has been assembled and on Carnegie Mellon University's EPP school with slight modifications to use on Overleaf.
 
 
 ### How do I get the latest version of this template?
@@ -129,15 +127,7 @@ To return to normal mode, simply take out the option 'draft'. All the following 
 
 ### Dependencies
 
-This template was compiled with pdfTeX 3.14159265-2.6-1.40.18. It was composed with TexStudio 2.6.2 in a laptop with Ubuntu 18.04 LTS. In theory, you may be able to use it in any TeX-capable distribution, although it has not been tested extensively in any other platform than Ubuntu 18.04.
-
-In Ubuntu, you should install the following packages BEFORE trying to do anything:
-
-```sh
-% sudo apt install texlive textlive-latex-extra texlive-publishers
-```
-
-In other Linux distros, you should use the corresponding install command (e.g., yum, aptitude, etc.)
+I use this template on Overleaf. The template and Overleaf are well integrated. The rigor of GitHub source file managment is a great feature.
 
 ### License
 
