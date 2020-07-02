@@ -10,7 +10,7 @@
 
 ### Foreword
 
-The first draft of this manuscript is being written through the 2020 COVID-19 stay in place orders through out the world. However the work spans over five years. During the five years, I have concluded that given the myriad of available type-setting tools, \LaTeX is the most expressive for technical writing. The template I use is a real gem. 
+The first draft of this manuscript is being written through the 2020 COVID-19 stay in place orders set all over the world. However the discussed work spans over five years. During the five years, I have concluded that given the myriad of available type-setting tools, \LaTeX is the most expressive for technical writing. The template I use is a real gem. To any new starting their journey I suggest you adapt this work as a template for your as early as possible. Latex provides a level of organization that other type-setting programs just can't.
 
 
 After some exploration with other forms of type-setting tools I chose to write this manuscript in Latex. My experience with Latex is that it has a steep learning curve, but for me it was the stepping stone into programming languages. The good thing with latex is that with it what you type is what you get. There are tons of resourcefully libraries that make programmatic publishable quality documents.
