@@ -90,23 +90,30 @@ This chapter presents the methods used to identify the scope of this dissertatio
         \item Monetary cost models for DCs are analogous to environmental cost models. LCA modeling community has proven its effectiveness for analysing global scale systems and supply chains.
     \end{enumerate}
     
-\section{Foundations Methodology}
+\section{Structure of Dissertation}
 
     This research is composed of four modules that culminate academic desktop analysis and extensive extensive professional experiences with designing, planning, building, and deploying data center system through out the world. The modules are presented in this dissertation as independent, but correlated chapters. The segmentation of the chapters roughly aligns with the the software modules developed as shown in Figure~\ref{process_flow}.
     
     \input{methodology/content/software_processes}
 
-    \subsection{Data Sources}
+\section{Data sources and overview of the targeted data center systems design.}
     The under laying data that constructs and validates the developed software modules are sourced from publicly available references and professional heuristics. Generally, the preference of this research is to use publicly available data for academic posterity, however there are several critical pieces of information that are not publicly available. In these cases, where no relevant public information was found, the author leans on heuristics. Due to the nature of the technology business, most of the heuristically derived data points are protected under non disclosure agreements, and are presented in generalized terms where meaning is not lost. In cases where generalization leads to misconstruing the data, any indicator pointing to specific business organizations is striped out. 
     
-        \subsubsection{Information Technology Equipment}
-        The modeling framework developed in this research requires details about the information technology hardware that are found inside data centers. Low fidelity representations of the hardware configurations suffice for the building energy and EIO based embodied materials modules. Table~\ref{computer_parts} indicates the data used in this research to characterize the information technology hardware. This data is based on productions server configurations of a large internet operator, representing their deployments in 2015 and 2016. By nature of the technology sector, the server configurations have a high temporal sensitive; as new products and optimizations are brought to market on quarterly cadences that pivot the total costs of ownership models.
+\section{Information Technology Equipment}
+        The modeling framework developed in this research requires details about the information technology hardware from inside the data centers. Low fidelity representations of the hardware configurations suffice for the building energy and EIO based embodied materials modules. Table~\ref{computer_parts} indicates the data used in this research to characterize the information technology hardware. This data is based on production server configurations of a large internet operator, representing their deployments in 2015 and 2016. 
         
-        In this work the server components are aggregated based on the total power of the building as indicated in \ref{it_y_vector_algo}. This is sufficient for overall building design tasks and in practice is the granularity that facilities stake holders handle. Finer granularity is not required as the models that are developed don't optimize or even account for the air flow patterns or equipment layout inside the buildings. However, the next paragraph indicates how the server assemblies are arranged in racks found in data centers.
+        By nature of the technology sector, the server configurations have a high temporal sensitive; as new products and optimizations are brought to market on quarterly cadences that pivot the total costs of ownership models. Figure shows are 
+        
+        
+        
+        In this work, a combination of server components from Table~\ref{computer_parts} are aggregated based on the total power of the building using Algorithm~ \ref{it_y_vector_algo}. This is sufficient for building design tasks and in practice this is the granularity that facilities stake holders handle. Finer granularity is not sought as the models that are developed in this research don't optimize or even account for the air flow patterns or equipment layout inside the buildings. Nonetheless the fidelity of the framework can be enhanced for quantifying the operational energy and embodied materials if the physical layouts of the servers and buildings are more precisely characterised.
         
         \input{methodology/content/computer_parts}
         
-        Steel racks house the server assemblies. Figure~\ref{bcu_rack} and Figure~\ref{goog_rack} are examples of hyper-scale racks. There are several design paradigms for combining various components with the racks. Design choices range from fully homo-genous racks
+        %  Examples of the design choices for the server components arrangements and building layouts are now discussed. These examples point to modeling improvements that can make this framework more precise. Furthermore, these example are used to normalize the servers into their deploy-able units; a server rack.
+        
+        Steel racks host the server assemblies. Figure~\ref{bcu_rack} and Figure~\ref{goog_rack} are examples of hyper-scale racks. There are several design paradigms for combining various components with the racks. Design choices range from fully homogeneous racks to 
+        
         \input{methodology/content/rack_image}
         
         Network - Top of Rack Switch
@@ -117,7 +124,9 @@ This chapter presents the methods used to identify the scope of this dissertatio
     
         \subsubsection{Building Systems}
         
-        The the form factor of data center facilities is heavily influenced by the mechanical means of the cooling the racks. 
+        The the form factor of data center facilities is heavily influenced by the mechanical systems conveying heat from the racks a heat sink. Figure~\ref{img_airflow} illustrates the airflow path across a data center from the point that air enters the building until it is exhausted.
+        
+        \input{methodology/content/airflow}
         
         \subsubsection{Marginal Cost of Energy}
     
