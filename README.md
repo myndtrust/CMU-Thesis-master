@@ -10,29 +10,38 @@
 
 ### Foreword
 
-During 2013 I spent quite a while trying to understand the multiple requirements to put together my PhD thesis for Engineering and Public Policy (EPP) at Carnegie Mellon University (CMU).  Besides having many tables, lots of questions coming from surveys, graphics, statistical data, and a lot of code to put in, I also had to deal with a lot of editorial requirements (e.g., "*this is how* your cover page should look like").  Since there are no official templates for a phd thesis (which makes no sense to me since it's something we all PhD students have to go through), here's my attempt to save you the pain to do it.
+The first draft of this manuscript is being written through the 2020 COVID-19 stay in place orders through out the world. However the work spans over five years. During the five years, I have concluded that given the myriad of available type-setting tools, \LaTeX is the most expressive for technical writing. The template I use is a real gem. 
 
-This template (actually, a set of files needed to give structure to the thesis) has a lof of filler texts, just to give you an example of how to structure your own thesis document. You can safely remove most of the texts.
 
-While there are surely many ways to do what I have done in this template, I strongly suggest that you create a set of rules for yourself and stick to them firmly (e.g., putting each chapter in a separate folder, naming all the images in a certain way, etc.) Writing your thesis can be very stressful, and many things can go wrong in stressful times (like deleting important files unrecoverably).
+After some exploration with other forms of type-setting tools I chose to write this manuscript in Latex. My experience with Latex is that it has a steep learning curve, but for me it was the stepping stone into programming languages. The good thing with latex is that with it what you type is what you get. There are tons of resourcefully libraries that make programmatic publishable quality documents.
 
-The most important two pieces of advice that I can give for writing your thesis document are:
+<!--Before going all in with Latex, I tried Markdown, Jupyter Notebooks, and of course Word. Markdown is cool for routine notes. Jupyter Notebook was not worth the effort. While Word was to con trained and is not conducive to programmatic writing.-->
 
-1. **Back up everything twice out of your own computer**.
-1. **Be organized**.
+<!--This is about my sixth document in Latex, first using this handy template from [@tamabravolillo](https://twitter.com/tamabravolillo).-->
+
+<!--During 2013 I spent quite a while trying to understand the multiple requirements to put together my PhD thesis for Engineering and Public Policy (EPP) at Carnegie Mellon University (CMU).  Besides having many tables, lots of questions coming from surveys, graphics, statistical data, and a lot of code to put in, I also had to deal with a lot of editorial requirements (e.g., "*this is how* your cover page should look like").  Since there are no official templates for a phd thesis (which makes no sense to me since it's something we all PhD students have to go through), here's my attempt to save you the pain to do it.-->
+
+<!--This template (actually, a set of files needed to give structure to the thesis) has a lof of filler texts, just to give you an example of how to structure your own thesis document. You can safely remove most of the texts.-->
+
+<!--While there are surely many ways to do what I have done in this template, I strongly suggest that you create a set of rules for yourself and stick to them firmly (e.g., putting each chapter in a separate folder, naming all the images in a certain way, etc.) Writing your thesis can be very stressful, and many things can go wrong in stressful times (like deleting important files unrecoverably).-->
+
+<!--The most important two pieces of advice that I can give for writing your thesis document are:-->
+
+<!--1. **Back up everything twice out of your own computer**.-->
+<!--1. **Be organized**.-->
 
 ### Important files
 
-1. *thesis.tex*: This is the main file of your thesis. It contains references to all your chapters, appendices, and other needed commands.
-1. *content/frontmatter.tex*: This is where most of the details go: the title of your thesis, your own name, your degrees (which should go in your cover page), the date of your graduation, copyright permission, keywords of your thesis, your abstract, dedication, and acknowledgements.
+1. *thesis.tex*: This is the main file of this thesis. It contains references to all the chapters, appendices, and other needed commands.
+1. *content/frontmatter.tex*: This is where most of the details are: the title of the author, author's name, author's degrees (goes on the cover page), the date of the authors graduation, copyright permission, keywords of the thesis, the abstract, the dedications, and the acknowledgements.
 1. *content/macros.tex*: This is where you put all the special LaTeX packages that you need, and all those definitions that are repeated all over your work, but that nonetheless may change often.
 1. *content/references.bib*: This is where your bibliographic references go (BibTeX format).
 
 Except for these files, you should not need to change any other files.
 
-### How to structure your thesis
+### Structure of thesis
 
-The starting file for your thesis is thesis.tex. This file includes references to the chapters and main files. Some lines in this file are not meant to be changed, others are.  The file is commented to indicate what you should change.
+The starting file for this thesis is thesis.tex. This file includes references to the chapters and main files. Some lines in this file are not meant to be changed, others are.  The file is commented to indicate what you should change.
 
 In this template, all the content belonging to a chapter has been put into a separate folder (a "chapter folder"). There is one folder (chp-main) that contains the "special" chapters: Introduction, Related Work and Conclusions, but if you don't like this you may tweak it as you please.
 
@@ -75,9 +84,9 @@ If you want to include an image, I strongly recommend doing the following:
 
 ### How to make comments (actually, how to use editing commands)
 
-I included a few commands to add editing capabilities to your thesis file. When you're editing your thesis, it's useful to have a mechanism to make comments, and introduce some stuff that may or may not end up in the thesis. Maybe your advisor wants to read the LaTeX file and make comments right there!
+There are a few commands to add editing capabilities to your thesis file. When you're editing your thesis, it's useful to have a mechanism to make comments, and introduce some stuff that may or may not end up in the thesis. Maybe an advisor wants to read the LaTeX file and make comments right there!
 
-When writing and compiling your thesis, you can use two modes: *normal* and *draft*. The way to make it a draft is passing the option 'draft' to the documentclass command, like this:
+When writing and compiling this thesis, you can use two modes: *normal* and *draft*. The way to make it a draft is passing the option 'draft' to the documentclass command, like this:
 
 ```tex
 \documentclass[11pt,draft]{cmuthesis}
@@ -104,11 +113,11 @@ To return to normal mode, simply take out the option 'draft'. All the following 
 
 ## For more information
 
-### Official sources of information
+<!--### Official sources of information-->
 
-You should always consult with the administrator of your department. As of January 2019, the official source of information for thesis guidelines at the College of Engineering in Carnegie Mellon University is https://engineering.cmu.edu/education/academic-policies/graduate-policies/thesis-dissertation.html
+<!--You should always consult with the administrator of your department. As of January 2019, the official source of information for thesis guidelines at the College of Engineering in Carnegie Mellon University is https://engineering.cmu.edu/education/academic-policies/graduate-policies/thesis-dissertation.html-->
 
-For EPP guidelines, go to: https://www.cmu.edu/epp/current/doctoral-thesis/index.html
+<!--For EPP guidelines, go to: https://www.cmu.edu/epp/current/doctoral-thesis/index.html-->
 
 
 ### How do I get the latest version of this template?
@@ -132,16 +141,16 @@ In other Linux distros, you should use the corresponding install command (e.g., 
 
 ### License
 
-The non-official EPP-CMU Thesis Template by Cristian Bravo-Lillo is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To see a human-readable version of the license, please go to http://creativecommons.org/licenses/by-nc-sa/4.0/.
+The document uses a non-official EPP-CMU Thesis Template by Cristian Bravo-Lillo is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To see a human-readable version of the license, please go to http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
-### Contact, bugs and acknowledgments
+### Author Contact, bugs and acknowledgments
 
 Cristian Bravo-Lillo, cristian AT ciberseguridadhumana DOT cl. Thanks to Nektarios Leontiadis for his input and help.
 
-If you find a bug in the template (that is, something that is wrong based on the department or university guidelines), please leave me a note in GitHub:
+<!--If you find a bug in the template (that is, something that is wrong based on the department or university guidelines), please leave me a note in GitHub:-->
 
 1. Go to https://github.com/cristianbravolillo/EPP-CMU-Thesis/issues
 1. Click on the button 'New issue' (green button to the right)
 1. Give it a name and a longer description, and click on 'Submit new issue'.
 
-If you want to thank me, you may send me a tweet to [@tamabravolillo](https://twitter.com/tamabravolillo) or leave a message at [LinkedIn](https://www.linkedin.com/in/cristianbravolillo/).
+<!--If you want to thank me, you may send me a tweet to [@tamabravolillo](https://twitter.com/tamabravolillo) or leave a message at [LinkedIn](https://www.linkedin.com/in/cristianbravolillo/).-->

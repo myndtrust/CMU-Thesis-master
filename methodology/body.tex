@@ -2,15 +2,15 @@
 
 \section{Chapter Abstract}
 
-This chapter provides the methods used to identify the scope of this dissertation's research around the total costs of ownership of data centers, the methods used for articulating a succinct research question for such a broad and emerging area application, and the methods used to execute the research. It begins by describing data centers based on past literature to set the context of the research undertaking. Then the chapter discusses the resulting modeling framework from the culmination of the literature reviews and the researcher's professional experiences. The presented model is capable of quantifying the end to end costs of a the global system using life cycle analysis frameworks by demonstrating it effectiveness with the quantification $CO_2$ emissions. 
+This chapter presents the methods used to identify the scope of this dissertation's research around the total costs of ownership of data centers. These are the methods used to understand and address the scope of a succinct research questions that seek to address total costs of building infrastructure of hyper-scale internet data centers. It begins by describing data centers based on past literature to set the context of the research undertaking. Then the chapter discusses the resulting modeling framework from the culmination of the literature reviews and the researcher's professional experiences. The presented model is capable of quantifying the end to end costs of a the global system using life cycle analysis frameworks by demonstrating its effectiveness with the quantification of $CO_2$ emissions. 
 
 \section{Introduction}
 
-    This research considers energy and $CO_2$ inventories across the life time of hyper-scale data centers (DC). These DCs house scalable computational architectures consisting of buildings, cooling plants, power distribution systems, compute hardware, digital storage hardware, and network hardware which are the status-quo for internet services. Physically, the size of individual internet DC facilities have increased from modest footprints to now span millions of square feet over the last decade; coinciding with ubiquitous penetration of the internet into the lives of people around the world . The increase in demand for DCs motivates this work as a tool kit in the DC design process. Beyond, the building design process, this kit is intended to be an element for broader business models for internet products.
+    This research considers energy and $CO_2$ inventories across the life time of hyper-scale data centers (DC). These DCs house scalable computational architectures consisting of buildings, cooling plants, power distribution systems, compute hardware, digital storage hardware, and network hardware which are the status-quo for internet service operations. Physically, the size of individual internet DC facilities have increased from modest footprints to now span millions of square feet over the last decade; coinciding with ubiquitous penetration of the internet into the lives of people around the world . The increase in demand for DCs motivates this work as a tool kit in the DC building infrastructure design process. Beyond, the building design process, this kit is intended to be an element for broader business models for internet products.
     
     For internet products, DCs represent a major fraction of their total costs of operations and environmental footprints.  This work develops a modeling framework that couples building energy models, marginal cost of grid energy models, and the embodied costs of materials to provide an end to end assessment of data centers. Specifically, this dissertation demonstrates the models by quantifying the $CO_2$ emissions as a singular metric that is is sufficiently analogous monetary costs.
     
-    In the next section, some background and past literature about the sustainability of data centers is presented. The background indicates motivation behind the life cycle perspective for data center systems and it also provides an overview of the technical space that inspires the methods. These literature guide the development of resulting model from this research by pointing to low hanging fruits and gaps in the current practices. They are the inspiration of the research's methodology. 
+    In the next section, some background and past literature about the sustainability of data centers is presented first. The background indicates the research motivation behind the life cycle perspective for data center systems. Then second, seminal works that have analyzed data center life cycle costs are reviewed. These works guide the development of resulting model from this research by pointing to low hanging fruits and gaps in the current practices. They are the inspiration of the research's methodology. Ultimately, this chapter provides an overview of the technical problem space and it points to past works that inspire the solution methods.
 
 \section{Background}
 
@@ -100,12 +100,23 @@ This chapter provides the methods used to identify the scope of this dissertatio
     The under laying data that constructs and validates the developed software modules are sourced from publicly available references and professional heuristics. Generally, the preference of this research is to use publicly available data for academic posterity, however there are several critical pieces of information that are not publicly available. In these cases, where no relevant public information was found, the author leans on heuristics. Due to the nature of the technology business, most of the heuristically derived data points are protected under non disclosure agreements, and are presented in generalized terms where meaning is not lost. In cases where generalization leads to misconstruing the data, any indicator pointing to specific business organizations is striped out. 
     
         \subsubsection{Information Technology Equipment}
+        The modeling framework developed in this research requires details about the information technology hardware that are found inside data centers. Low fidelity representations of the hardware configurations suffice for the building energy and EIO based embodied materials modules. Table~\ref{computer_parts} indicates the data used in this research to characterize the information technology hardware. This data is based on productions server configurations of a large internet operator, representing their deployments in 2015 and 2016. By nature of the technology sector, the server configurations have a high temporal sensitive; as new products and optimizations are brought to market on quarterly cadences that pivot the total costs of ownership models.
+        
+        In this work the server components are aggregated based on the total power of the building as indicated in \ref{it_y_vector_algo}. This is sufficient for overall building design tasks and in practice is the granularity that facilities stake holders handle. Finer granularity is not required as the models that are developed don't optimize or even account for the air flow patterns or equipment layout inside the buildings. However, the next paragraph indicates how the server assemblies are arranged in racks found in data centers.
         
         \input{methodology/content/computer_parts}
+        
+        \input{methodology/content/block_diag}
+        
+        Network - Top of Rack Switch
+        Rectifiers - 
+        Servers
     
-         \subsubsection{Network Model}
+        \subsubsection{Network Model}
     
         \subsubsection{Building Systems}
+        
+        The bui
         
         \subsubsection{Marginal Cost of Energy}
     
