@@ -2,7 +2,7 @@
 
 \section{Chapter Abstract}
 
-This chapter presents the methods used to identify the scope of this dissertation's research around the total costs of ownership of data centers. These are the methods used to understand and address the scope of a succinct research questions that seek to address total costs of building infrastructure of hyper-scale internet data centers. It begins by describing data centers based on past literature to set the context of the research undertaking. Then the chapter discusses the resulting modeling framework from the culmination of the literature reviews and the researcher's professional experiences. The presented model is capable of quantifying the end to end costs of a the global system using life cycle analysis frameworks by demonstrating its effectiveness with the quantification of $CO_2$ emissions. 
+This chapter presents the methods used to identify the scope of this dissertation's research for the total costs of ownership of data centers. These are the methods used to understand and address the scope of succinct research questions that seek to address total costs of building infrastructure of hyper-scale internet data centers. It begins by describing data centers based on past literature to set the context of the research undertaking. Then the chapter discusses the resulting modeling framework from the culmination of the literature reviews and the researcher's professional experiences. The presented model is capable of quantifying the end to end costs of a the global system using life cycle analysis frameworks by demonstrating its effectiveness with the quantification of $CO_2$ emissions. 
 
 \section{Introduction}
 
@@ -44,11 +44,11 @@ This chapter presents the methods used to identify the scope of this dissertatio
     
     \input{methodology/content/dc_cooling}
     
-    However, there are many second order effects that must me taken into account when developing disruptive designs. For example, one of the undertakings of the researcher that pointed to a life cycle analysis framework was in the development of a novel bottom-cooled hermetic rack \cite{gao16}. The test chamber for the cooling coil and the computational fluid dynamic model of the bottom-cooled rack is shown in \ref{bcu_bench} and \ref{bcu_rack}, respectively. This development alone required a deep trade-off analysis of various systems. 
+    However, there are many second order effects that must me taken into account when developing disruptive designs. The researcher's need for a life cycle analysis framework was recognized during the development of a novel bottom-cooled hermetic rack \cite{gao16}. The test chamber for the cooling coil and the computational fluid dynamic model of the bottom-cooled rack is shown in \ref{bcu_bench} and \ref{bcu_rack}, respectively. This development alone required a deep trade-off analysis of various systems that could most appropriate be done with a life cycle analysis framework. 
     
     \input{methodology/content/bcu_design}
     
-    The second order trade offs for such system include the changes required to the building systems, the impacts to the the network topology, chiller plant augments, and power distribution. These trade-offs must be made with awareness of the data center service level agreements as not to strand space, power, or network ports. Furthermore, the business evaluation of such a development efforts must normalize all of the above factors to indicate cost vs. performance to allow consideration of alternate technologies as shown in Figure~\ref{img_bcu_second_order}.
+    The second order trade offs for such system include the changes required to the building systems, the impacts to the network topology, chiller plant augments, and power distribution. These trade-offs must be made with awareness of the data center service level agreements as not to strand space, power, or network ports. Furthermore, the business evaluation of such a development efforts must normalize all of the above factors to indicate cost vs. performance to allow consideration of alternate technologies as shown in Figure~\ref{img_bcu_second_order}.
     
     \input{methodology/content/second_order_bcu}
     
@@ -58,9 +58,9 @@ This chapter presents the methods used to identify the scope of this dissertatio
     
     \input{methodology/content/img_ict_higher_order_imacts}
     
-\section{Similar Literature}
+\section{Similar Works}
     
-    Now, pioneering literature to quantify the life cycle costs of DCs is presented. The most explicit DC life cycle costs is by Whitehead \cite{whitehead15}. Whitehead proposes guidelines and criterion for DC life cycle assessments in-line with ISO 14040 \cite{ISO14040}. These ISO standards are the authoritative standard for Life Cycle Assessment (LCA) work.  Whitehead's work is based on the LCA of a UK DC with legacy infrastructure. The UK DC is compared to a state of the art DC in Sweden across all phases of their life cycle. The boundary conditions and life cycle phases from Whitehead are shown in figure \ref{LCAphases}. Through sensitivity analysis, Whitehead finds that server stock turnover (refresh) cycles have  the most significant contribution to the embodied impacts in today's state of the art DCs.  Embodied impacts for these DCs dominate the life cycle impacts even more so as the state of the art DCs are optimized for PUE with efficient cooling and power distribution systems . To demonstrate, they performed a comparative evaluation. When quantified, the environmental impacts were double for the Swedish facility. Whitehead attributes this difference to the Swedish data refresh cycle of every 16 months, as opposed to every 36 months for the UK DC. They establish a functional unit of \textit{1 kW of IT per year in a Tier III facility} which is a reasonable units of measure of data centers.
+    Now, pioneering works that have quantified the life cycle costs of DCs are presented. The most explicit DC life cycle costs is by Whitehead \cite{whitehead15}. Whitehead proposes guidelines and criterion for DC life cycle assessments in-line with ISO 14040 \cite{ISO14040}. These ISO standards are the authoritative standard for Life Cycle Assessment (LCA) work.  Whitehead's work is based on the LCA of a UK DC with legacy infrastructure. The UK DC is compared to a state of the art DC in Sweden across all phases of their life cycle. The boundary conditions and life cycle phases from Whitehead are shown in figure \ref{LCAphases}. Through sensitivity analysis, Whitehead finds that server stock turnover (refresh) cycles have  the most significant contribution to the embodied impacts in today's state of the art DCs.  Embodied impacts for these DCs dominate the life cycle impacts even more so as the state of the art DCs are optimized for PUE with efficient cooling and power distribution systems . To demonstrate, they performed a comparative evaluation. When quantified, the environmental impacts were double for the Swedish facility. Whitehead attributes this difference to the Swedish data refresh cycle of every 16 months, as opposed to every 36 months for the UK DC. They establish a functional unit of \textit{1 kW of IT per year in a Tier III facility} which is a reasonable units of measure of data centers.
     
     \input{methodology/content/whitehead_boundaries}
     
@@ -76,11 +76,11 @@ This chapter presents the methods used to identify the scope of this dissertatio
     
     \input{methodology/content/gap_matrix}
     
-    In this section the background discussed has inspired the research question pursued in the dissertations. Namely the research question is; how can DC design decisions that have longevity  with all of the uncertainty involved? Next the research hypothesis is stated followed by and overview of the specific methods that are used to validate the hypothesis.
+    The background discussed in this section inspires the research question pursued through the dissertation. Namely the research question is \emph{how can DC designers make decisions that have longevity with all of the uncertainty involved?} Next the research hypothesis is stated followed by and overview of the specific methods that are used to validate the hypothesis.
     
 \section{Hypothesis}
 
-    \emph{To make effective DC design capacity decisions, the decisions must be based on scalable and agile models.} 
+    \emph{\large To make effective DC design capacity decisions, the decisions must be based on scalable and agile models.}
         
     Sub hypothesis are as follows:
     
@@ -92,50 +92,68 @@ This chapter presents the methods used to identify the scope of this dissertatio
     
 \section{Structure of Dissertation}
 
-    This research is composed of four modules that culminate academic desktop analysis and extensive extensive professional experiences with designing, planning, building, and deploying data center system through out the world. The modules are presented in this dissertation as independent, but correlated chapters. The segmentation of the chapters roughly aligns with the the software modules developed as shown in Figure~\ref{process_flow}.
+    This research is composed of four modules that culminate academic desktop analysis and extensive professional experience with designing, planning, building, and deploying data center system through out the world. The modules are presented in this dissertation as independent, but correlated chapters. The segmentation of the chapters roughly aligns with the software modules developed as shown in Figure~\ref{process_flow}.
     
     \input{methodology/content/software_processes}
 
-\section{Data sources and overview of the targeted data center systems design.}
-    The under laying data that constructs and validates the developed software modules are sourced from publicly available references and professional heuristics. Generally, the preference of this research is to use publicly available data for academic posterity, however there are several critical pieces of information that can not be publicly disclosed. In these cases, where no relevant public information was found, the author leans on professional heuristics. 
+\section{Overview of Data Center Systems.}
+    The research's understanding of data centers and the various systems with-in data centers are now presented. The first systems addressed are the information technology equipment. The information technology equipment have two points of significance in the overall research objective. First, a detailed bill of materials of all the equipment is required to quantify the embodied energy. Second, in the operational phase each piece of information technology device has a unique power use profile. Therefore, ensemble representations of servers without the consideration of the individual components that only provide coarse insights of both embodied and operational energy may not be generalized across different data centers. 
     
-    Due to the nature of the technology business, most of the heuristically derived data points are protected under non disclosure agreements. Sensitive information is therefore presented in generalized terms where meaning is not lost. In cases where generalization leads to misconstruing the data, any indicator pointing to specific business organizations is striped out and the rawest form of the data is presented. 
+    The second set of systems addressed are data center communication networks. The network is a critical component that is at the core of hyper-scale data centers. Its the network that allows data center services to appear to its users as a single coherent system whether they are located in the same rack are globally dispersed \cite{steen17}.
     
-\section{Information Technology Equipment}
-        The modeling framework developed in this research requires details about the information technology hardware housed inside data centers. Low fidelity representations of the hardware configurations suffice for the building energy and EIO based embodied materials modules. Table~\ref{computer_parts} indicates the data used in this research to characterize the information technology hardware. This data is based on production server configurations of a large internet operator, representing their deployments in 2015 and 2016. 
-        
-        Servers are generally categorized as compute and storage. Compute servers are fitted with suitable processors, input and output devices, and dynamic random access memory (DRAM). The latter category of storage servers are optimized for high density storage with minimal processor capabilities with input output devices selected based on the desired performance. Figure~\ref{img_server} shows air cooled server units fitted with a combination of processors and DRAM. While Figure~\ref{img_storage_tray} shows a homogeneous arrangement of storage drives in a server. 
-        
-        \input{methodology/content/server_image}
-        \input{methodology/content/storage_tray}
-        
-        Segregating the storage from the compute instances have several advantage for the software architecture; for building systems designers the most intuitive is failure isolation and operational diversity. For consideration of failure isolation, the outage of a single compute instance will also result in the stored data becoming unavailable. In terms of diversity, when compute devices and storage devices are on the same physical equipment the single processing device may not be capable of handling the all the requests to access the stored data within performance bounds. Separating the data into different servers allows the incoming read or write requests for the stored data to be balanced across a set of processors based on performance bounds. This relationships is the premise of many modern data center cluster designs, where stored data and compute resources are strategically arranged. Figure~\ref{img_cluster_storage_hierarchy} indicates such a cluster storage hierarchical scheme from Barroso \cite{barroso18}. 
-        
-        \input{methodology/content/cluster_storage_hierarchy}
-        
-        In this work, a combination of compute and storage components are aggregated for modeling as listed Table~\ref{computer_parts}. This heterogeneous server choices suffices for this dissertation because of two reasons. (1) the research had fine grained costs data for these servers. (2) the mix component server assemblies can properly characterize the embodied materials of the overall data center. 
-        
-        Furthermore, the mixed component servers lend themselves to simplified allocation of the various components with the data center building. This simplification allows the quantification of the component counts using the top down relationship to the total power of the building using Algorithm~ \ref{it_y_vector_algo}. This is sufficient for building design tasks and in practice this is the granularity that facilities stake holders handle. Finer granularity is not sought as the models that are developed in this research don't optimize or even account for the air flow patterns or equipment layout inside the buildings. Nonetheless the fidelity of the framework can be enhanced for quantifying the operational energy and embodied materials if the physical layouts of the servers and buildings are more precisely characterised.
-        
-        \input{methodology/content/computer_parts}
-        
-        %  Examples of the design choices for the server components arrangements and building layouts are now discussed. These examples point to modeling improvements that can make this framework more precise. Furthermore, these example are used to normalize the servers into their deploy-able units; a server rack.
-        
-        Steel racks host the server assemblies. Figure~\ref{bcu_rack} and Figure~\ref{goog_rack} are examples of racks found inside warehouse-scale data centers. At the rack level the servers can be mixed and matched where high speed communication is hermetic to the rack. Alternately, the entire rack can be of a single type, bridged by high speed communications networks across local areas. The choice for the rack arrangement is reasoned about as performance objectives for specific workloads that the rack will be susceptible to. In the end whether at a the individual sever, rack level, or cluster level; compute and storage devices need to communicate with each other as shown in Figure~\ref{img_cluster_storage_hierarchy}. Specific design choices must optimize the service level performance objective in terms of the attributes noted in Figure~\ref{img_cluster_storage_hierarchy} namely data volume, read/write latency, and the read/write rates.
-        
-        \input{methodology/content/rack_image}
-        
-        As shown in Figure~\ref{goog_rack}, a server rack hosts local power conditioning, power distribution, and network devices as-well. The incoming power feed is generally AC voltage where as all the server components require DC voltage. In legacy servers the AC to DC voltage conversion happened within the server, however in modern racks the power is rectified at the rack level with more efficient rectifiers and distributed with 48V bus bars \cite{open_compute_48V}. The rectification leads to some additional heat at the rack level in addition to the server heat. At the rack level, there also exist the network devices, commonly termed top of rack (TOR) switches. These TOR are a hub for all the the server's communications cables
+    The third system addressed in this section are the building systems. The building systems are the key focus of this research and this section aims to identify the key parameters that make data center facilities distinguishable from other building types. 
+    
+    The underlying data sources that construct and validate the developed software modules are sourced from publicly available references and professional heuristics. Generally, the preference of this research is to use publicly available data for academic posterity, however there are several critical pieces of information that can not be publicly disclosed. In these cases, where no relevant public information was found, the author leans on professional heuristics. 
+    
+    Due to the nature of the technology business, most of the heuristically derived data points are protected under non-disclosure agreements. Every effort is made not to impede these agreements.
+    
+    The following subsections provide overviews of the information technology equipment, communications networks, and buildings as they are reasoned about in this research.
+    
+        \subsubsection{Information Technology Equipment (IT)}
+            The modeling framework developed in this research is founded upon the information technology hardware housed inside data centers. Table~\ref{computer_parts} indicates the data used in this research to characterize the information technology hardware that are inputs to building energy simulations and embodied materials models. There server profiles are based on production server configurations of a large internet operator, representing their deployments in 2015 and 2016. However, the objective of the research is to have the agility to model any allocation of individual components found in data centers. Some of the current approaches for allocating servers and their components are described next.
+            
+            Servers are generally categorized as compute nodes or storage nodes. Compute servers maybe fitted with state-of-the-art processors, input and output devices, and dynamic random access memory (DRAM). The latter category of storage servers are optimized for high density storage with minimal processor capabilities with input output devices selected based on the desired performance. Figure~\ref{img_server} shows air cooled server units fitted with a combination of processors and DRAM. While Figure~\ref{img_storage_tray} shows a homogeneous arrangement of storage drives in a server. 
+             \input{methodology/content/server_image}
+            \input{methodology/content/storage_tray}
+            
+            Segregating the storage from the compute instances have several advantage for the software architecture; for building systems designers the most intuitive is failure isolation and operational diversity. For consideration of failure isolation, the outage of a single compute instance will also result in the stored data becoming unavailable. In terms of diversity, when compute devices and storage devices are on the same physical equipment the single processing device may not be capable of handling the all the requests to access the stored data within performance bounds. Separating the data into different servers allows the incoming read or write requests for the stored data to be balanced across a set of processors based on performance bounds. This relationships is the premise of many modern data center cluster designs, where stored data and compute resources are strategically arranged. Figure~\ref{img_cluster_storage_hierarchy} indicates such a cluster storage hierarchical scheme from Barroso \cite{barroso18}. 
+            
+            \input{methodology/content/cluster_storage_hierarchy}
+            
+            In this work, a combination of compute and storage components are aggregated for modeling as listed Table~\ref{computer_parts}. The heterogeneous server choices suffice for this dissertation because of two reasons. (1) research had first hand access to representative cost data for these servers. (2) mixed component server assemblies can properly characterize the embodied materials of the overall data center. Nonetheless, the model developed is extensible towards other server component mixes. 
+             \input{methodology/content/computer_parts}
+            
+            Furthermore, the mixed component servers lend themselves to simplified allocation of the various components within the data center building. This simplification allows the quantification of the component counts using the top down relationship to the total power of the building using Algorithm~ \ref{it_y_vector_algo}. This is sufficient for building design tasks. Finer granularity is not sought as the models that are developed in this research don't optimize or even account for the air flow patterns or equipment layout inside the buildings. Nonetheless the accuracy of the framework can be enhanced for quantifying the operational energy and embodied materials if the physical layouts of the servers are more precisely characterised in future work. Next, racks that host the server chassis are discussed.
+            
+            %  Examples of the design choices for the server components arrangements and building layouts are now discussed. These examples point to modeling improvements that can make this framework more precise. Furthermore, these example are used to normalize the servers into their deploy-able units; a server rack.
+            
+            Steel racks host the server assemblies. Figure~\ref{bcu_rack} and Figure~\ref{goog_rack} are examples of racks found inside warehouse-scale data centers. At the rack level, the servers can be mixed and matched with a high speed hermetic network within the rack (see Figure~\ref{img_server_rack}. Alternately, the entire rack can be of a single type, bridged by high speed communications networks across local areas. 
+            
+            The choice for the rack arrangement is reasoned about as performance objectives for specific workloads that the rack will be susceptible to. In the end whether at a the individual sever, rack level, or cluster level; compute and storage devices need to communicate with each other as shown in Figure~\ref{img_cluster_storage_hierarchy}. Specific design choices must optimize the service level performance objective in terms of the attributes noted in Figure~\ref{img_cluster_storage_hierarchy} namely data volume, read/write latency, and the read/write rates.
+            
+            \input{methodology/content/rack_image}
+            
+            As shown in Figure~\ref{goog_rack}, a server rack hosts local power conditioning, power distribution, and network devices as-well. The incoming power feed is generally AC voltage where as all the server components require DC voltage. In legacy servers the AC to DC voltage conversion happened within the server, however in modern racks the power is rectified at the rack level with more efficient rectifiers and distributed with 48V bus bars \cite{open_compute_48V}. The rectification leads to some additional heat at the rack level in addition to the server heat. At the rack level, there also exist the network devices, commonly termed top of rack (TOR) switches. These TORs are a hub for all the server's communications cables. The network connections are discussed next. 
     
         \subsubsection{Network Model}
+        A generic server rack arrangement and the network connections relative to the rack is indicated in \ref{img_server_rack}.
+    
+        \input{methodology/content/server rack}
     
         \subsubsection{Building Systems}
         
-        The the form factor of data center facilities is heavily influenced by the mechanical systems conveying heat from the racks a heat sink. Figure~\ref{img_airflow} illustrates the airflow path across a data center from the point that air enters the building until it is exhausted.
+        The form factor of data center facilities is heavily influenced by the mechanical systems conveying heat from the racks a heat sink. Figure~\ref{img_airflow} illustrates the airflow path across a data center from the point that air enters the building until it is exhausted.
         
         \input{methodology/content/airflow}
         
-        \subsubsection{Marginal Cost of Energy}
+        The building attributes that guide this research are obtained from real world hyper-scale designs and their construction costs in various regions around the world. Specific building designs are not be explicitly disclosed in this dissertation and the costs data have been normalized across the set of real world examples per kW of provision-able capacity at the respective data center. The most influential data center attribute, the power density, ranged from 2.3kW per meter squared to 3.3kW meter square. Next the above systems are tied back to spatial area of the data centers; namely the rack form factor. 
+        
+        \input{methodology/content/building_costs}
+        
+    \section{Tieing it all back to deploy-able units of IT equipment}
+    
+    EnergyPlus input is a IT load density per thermal zone. Based on the
+        
     
    
     
