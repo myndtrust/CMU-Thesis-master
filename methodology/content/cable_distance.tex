@@ -1,0 +1,13 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{0.7}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        every head row/.style={before row=\hline,after row=\hline\hline},
+        every last row/.style={after row=\hline},
+        ]{methodology/content/data/fiber_limitations.csv}}
+    \end{center}
+    \caption[Fiber Limits]{Communication capacity distance limitations. Data sourced from \cite{cleerline}.}
+    \label{table_fiber_limits}
+\end{table}
