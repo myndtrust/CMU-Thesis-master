@@ -1,9 +1,9 @@
 Sector,	Relative Costs
 HVAC Equipment,	0.55
-333611/turbines and turbine generator sets/us,	0.77
-335311/specialty transformers/us,	0.05
-335313/switchgear and switchboards/us,	0.1
-335920/communication and energy wire and cable/us,	0.1
-335999/other miscellaneous electrical equipment and components/us,	0.04
-335314/relay and industrial controls/us,	0.146
-233230/manufacturing buildings/us,	5.244
+Turbines and turbine generator sets,	0.77
+Transformers,	0.05
+Switchgear and switchboards,	0.1
+Communication and energy wire and cable,	0.1
+Other miscellaneous electrical equipment and components,	0.04
+Relay and industrial controls,	0.146
+Manufacturing buildings,	5.244

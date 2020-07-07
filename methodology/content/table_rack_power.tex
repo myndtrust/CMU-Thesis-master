@@ -1,0 +1,13 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{0.7}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        every head row/.style={before row=\hline,after row=\hline\hline},
+        every last row/.style={after row=\hline},
+        ]{methodology/content/data/rack_power.csv}}
+    \end{center}
+    \caption[Example Rack Power]{Example of rack power for server floor power density values.}
+    \label{table_rack_power}
+\end{table}
