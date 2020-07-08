@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: towards_energy_sims_for_proportionally_designed_dcs.aux
+The style file: chicago.bst
+Database file #1: bibs.bib
+Warning--empty organization in intel15
+Warning--empty organization in kaggle17
+Warning--empty organization in liebert20
+Warning--empty organization in marculescu20
+Warning--no journal in moriyama18
+Warning--no number and no volume in moriyama18
+Warning--page numbers missing in moriyama18
+Warning--empty organization in Mulay18
+Warning--no number and no volume in osullivan15
+Warning--page numbers missing in osullivan15
+Warning--empty institution in Shehabi16
+Warning--empty organization in LEED16
+Warning--no number and no volume in wei17
+Warning--page numbers missing in wei17
+Warning--empty organization in wetter16
+Warning--empty organization in ASHRAETC9.9
+You've used 21 entries,
+            2861 wiz_defined-function locations,
+            717 strings with 8526 characters,
+and the built_in function-call counts, 13166 in all, are:
+= -- 970
+> -- 1116
+< -- 0
++ -- 330
+- -- 378
+* -- 1171
+:= -- 2579
+add.period$ -- 59
+call.type$ -- 21
+change.case$ -- 144
+chr.to.int$ -- 21
+cite$ -- 37
+duplicate$ -- 344
+empty$ -- 721
+format.name$ -- 418
+if$ -- 2318
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 19
+newline$ -- 104
+num.names$ -- 210
+pop$ -- 126
+preamble$ -- 1
+purify$ -- 284
+quote$ -- 0
+skip$ -- 390
+stack$ -- 0
+substring$ -- 474
+swap$ -- 112
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 350
+warning$ -- 16
+while$ -- 182
+width$ -- 0
+write$ -- 270
+(There were 16 warnings)

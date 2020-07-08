@@ -1,0 +1,136 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Barroso, Hozle, and Ranganathan}{Barroso
+  et~al.}{2018}]{barroso18}
+Barroso, L.~A., U.~Hozle, and P.~Ranganathan (2018).
+\newblock {\em The Datacenter as a Computer: Designing Warehouse-Scale Machines
+  3rd ed}.
+\newblock Morgan and Claypool.
+
+\bibitem[\protect\citeauthoryear{Beatty}{Beatty}{2015}]{Beatty15}
+Beatty, D. (2015).
+\newblock {\em Gaps in Modeling Data Center Energy}.
+\newblock ASHRAE Journal.
+
+\bibitem[\protect\citeauthoryear{Intel}{Intel}{2015}]{intel15}
+Intel (2015).
+\newblock {\em Intelligent Power Node Manager 3.30 External Interface Using
+  IPMI Document Number 332200-001US}.
+\newblock https://www.intel.com/content/dam/www/public
+  /us/en/documents/technical-specifications/intel-power-node-manager-v3-spec.pdf.
+
+\bibitem[\protect\citeauthoryear{Joshi and Kumar}{Joshi and
+  Kumar}{2012}]{joshi12}
+Joshi, Y. and P.~Kumar (2012).
+\newblock {\em Energy Efficient Thermal Management of Data Centers}.
+\newblock Springer-Verlag New York.
+
+\bibitem[\protect\citeauthoryear{Kaggle}{Kaggle}{2017}]{kaggle17}
+Kaggle (2017).
+\newblock {\em Web Traffic Time Series Forecasting. {Retrieved:} {January} 08,
+  2020}.
+
+\bibitem[\protect\citeauthoryear{Koomey}{Koomey}{2007}]{koomey07}
+Koomey, J. (2007).
+\newblock {\em Estimating Total Power Consumption by Servers in the {US} and
+  the World}.
+\newblock Berkeley, {CA}: {US} Department of Energy, Lawerence Berkeley
+  National Labs.
+
+\bibitem[\protect\citeauthoryear{Li, Lefurgy, Rajamani~K., Silva, Ghose, and
+  Heimsoth}{Li et~al.}{2018}]{Li18}
+Li, Y., C.~Lefurgy, M.~Rajamani~K., Allenware, G.~Silva, S.~Ghose, and
+  D.~Heimsoth (2018).
+\newblock {\em CapMastro: Exploitung Power Redundancy, Data Center-Wide
+  Priorities, and Straned Power for Boosting Data Center Performance}.
+\newblock Austin, TX: IBM Research Division.
+
+\bibitem[\protect\citeauthoryear{Liebert}{Liebert}{2020}]{liebert20}
+Liebert (2020).
+\newblock {\em Liebert DS Thermal Management System, {Retrieved:} {May} 14,
+  2020}.
+\newblock
+  https://www.vertiv.com/globalassets/products/thermal\-management/room\-cooling/liebert\-ds\-28\-105kw\-8\-30\-tons\-system\-design\-manual\_01.pdf.
+
+\bibitem[\protect\citeauthoryear{Marculescu}{Marculescu}{2019}]{marculescu20}
+Marculescu, D. (2019).
+\newblock {\em EMC2 Workshop at {NeurlPS}. {Retrieved:} {January} 05, 2020}.
+
+\bibitem[\protect\citeauthoryear{Moriyama, Magistris, G., M., H., Munawar, and
+  Tachibana}{Moriyama et~al.}{2018}]{moriyama18}
+Moriyama, T., D.~Magistris, T.~G., P.~M., T.~H., A.~Munawar, and R.~Tachibana
+  (2018).
+\newblock Reinforcement learning testbed for power-consumption optimization.
+
+\bibitem[\protect\citeauthoryear{Mulay}{Mulay}{2018}]{Mulay18}
+Mulay, V. (2018).
+\newblock {\em StatePoint {Liquid} {Cooling} system: {A} new, more efficient
+  way to cool a data center. ({Facebook} {Engineering}) {Retrieved:} {January}
+  02, 2020}.
+\newblock
+  https://engineering.fb.com/data-center-engineering/statepoint-liquid-cooling/.
+
+\bibitem[\protect\citeauthoryear{O'Sullivan, Ammu, and Yazdani}{O'Sullivan
+  et~al.}{2015}]{osullivan15}
+O'Sullivan, N., U.~Ammu, and M.~Yazdani (2015).
+\newblock Energy proportional power managemetn for data center applications.
+\newblock {\em DesignCon\/}.
+
+\bibitem[\protect\citeauthoryear{Park}{Park}{2015}]{Park15}
+Park, J. (2015).
+\newblock {\em Data Center Handbook, First Edition}.
+\newblock Menlo Park, CA: John Wiley \& Sons.
+
+\bibitem[\protect\citeauthoryear{Parolini, Sinopoli, Bruce, and Wang}{Parolini
+  et~al.}{2012}]{parolini12}
+Parolini, L., B.~Sinopoli, K.~Bruce, and Z.~Wang (2012).
+\newblock A cyber-physical systsems approach to data center modelsing and
+  control for energy efficiency.
+\newblock {\em Proceedings of the {IEEE}\/}~{\em 100\/}(1), 254--268.
+
+\bibitem[\protect\citeauthoryear{Shehabi}{Shehabi}{2016}]{Shehabi16}
+Shehabi, A. (2016).
+\newblock United {S}tates {D}ata {C}enter {E}nergy {U}sage, {U}nited {S}tates
+  {D}epartment of {E}nergy.
+\newblock Technical report, Berkeley, CA.
+
+\bibitem[\protect\citeauthoryear{USGBC}{USGBC}{2016}]{LEED16}
+USGBC, U. G.~C. (2016).
+\newblock {\em Minimum Energy Performance Data Center Calculator for {LEED}
+  Certification}.
+
+\bibitem[\protect\citeauthoryear{Wei, Ren, and Zhu}{Wei et~al.}{2017}]{wei17}
+Wei, T., S.~Ren, and Q.~Zhu (2017).
+\newblock Deep reinforcement learning for jointndatacenter and hvac load
+  control in distributed mixed-use buildings.
+\newblock {\em {IEEE} {Transactions} on {Sustainable} {Computing}\/}.
+
+\bibitem[\protect\citeauthoryear{Wetter and Noudui}{Wetter and
+  Noudui}{2016}]{wetter16}
+Wetter, M. and T.~Noudui (2016).
+\newblock {\em Building Controls Virtual Test Bed User Manual Version 1}.
+\newblock Berkeley, CA.
+
+\bibitem[\protect\citeauthoryear{Zhang, Chong, Pan, Chenlu, and Khee}{Zhang
+  et~al.}{2019}]{zhang19}
+Zhang, Z., A.~Chong, Y.~Pan, Z.~Chenlu, and L.~P. Khee (2019).
+\newblock Whole {Building} {Energy} {Model} for {HVAC} optimal control: {A}
+  practical framework based on deep reinforcement learning.
+\newblock {\em Energy and Buildings\/}~{\em 199}, 473--490.
+
+\bibitem[\protect\citeauthoryear{Zhuang, Ramachandra, Tran, Subramaniam, Botev,
+  Xiong, and Sridharan}{Zhuang et~al.}{2015}]{zhuang15}
+Zhuang, Z., H.~Ramachandra, C.~Tran, S.~Subramaniam, C.~Botev, C.~Xiong, and
+  B.~Sridharan (2015).
+\newblock {\em Capacity Planning and Headroom Analysis for Taming Database
+  Replication Latency}.
+\newblock ICPE'15 Jan 31-Feb 4.
+
+\bibitem[\protect\citeauthoryear{​ASHRAE-TC9.9}{​ASHRAE-TC9.9}{2016}]{ASHRAETC9.9}
+​ASHRAE-TC9.9 (2016).
+\newblock {\em Thermal Guidelines for Data Processing Environments, Fourth
+  Edition 2016, {Retrieved:} {January} 02, 2020}.
+\newblock
+  https://www.ashrae.org/File%20Library/Technical%20Resources/Bookstore/ASHRAE_TC0909_Power_White_Paper_22_June_2016_REVISED.pdf.
+
+\end{thebibliography}

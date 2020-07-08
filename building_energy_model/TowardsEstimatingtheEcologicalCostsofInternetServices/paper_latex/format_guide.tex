@@ -1,0 +1,266 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BSO2020_paper_format_guide.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[twocolumn, a4paper,10pt]{article}
+\usepackage{boxedminipage}
+\usepackage{nopageno}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage[font=it]{caption}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.0cm, right=2.0cm,
+columnsep=0.8cm]{geometry}
+
+\setlength{\abovecaptionskip}{0.2cm}
+\setlength{\belowcaptionskip}{0cm}
+\setlength{\parindent}{0pt}
+
+% Comment this line if you want to compile the paper without comments
+\newcommand{\displaycomments}
+
+\setcounter{secnumdepth}{-1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set fonts for title, section and subsection headings
+\makeatletter
+\renewcommand\title[1]{\gdef\@title{\fontsize{12pt}{2pt}\bfseries{#1}}}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{0.25cm}{0.1cm}{\normalfont\large\bfseries}}
+% \normalfont\large
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{1}{\z@}{0.2cm}{0.1cm}{\normalfont\normalsize\bfseries}}
+\makeatletter
+\renewcommand\subsubsection{\@startsection{subsection}{1}{\z@}{0.2cm}{0.1cm}{\normalfont\normalsize\itshape}}
+
+\renewcommand\refname{References}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Configurations from the "enumitem" package to set the configurations
+%%for the lists and remove undesired horizontal space for the enumerate
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist{itemsep=-0.1cm,topsep=0.1cm,labelsep=0.3cm}
+\setenumerate{leftmargin=*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% END OF THE SETUP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%--------------------------------
+% Custom configurations
+\usepackage{amsmath, amssymb}
+\usepackage{color}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{rema}[defn]{Remark}
+%QED box, from the TeXbook, p. 106. ----------------------------------
+\newcommand\qed{{\unskip\nobreak\hfil\penalty50\hskip2em\vadjust{}
+    \nobreak\hfil$\Box$\parfillskip=0pt\finalhyphendemerits=0\par}}
+
+\renewcommand{\Re}{{\mathbb R}}
+\newcommand{\Rep}{{\Re_{+}}}
+\newcommand{\Na}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\codi}[2]{{\mathcal{C}^{#1}(#2)}}
+
+\DeclareMathOperator{\sgn}{sgn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% see: http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/listings/listings-1.3.pdf
+\lstset{%
+  basicstyle=\fontsize{8}{9}\selectfont\ttfamily,
+%  basicstyle=\small, % print whole listing small
+  keywordstyle=\color{red},
+  identifierstyle=, % nothing happens
+  commentstyle=\color{blue}, % white comments
+  stringstyle=\color{OliveGreen}\it, % typewriter type for strings
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt} % no special string space
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{Modelica}{%
+  morekeywords={Modelica,Thermal,HeatTransfer,Interfaces, flow, %
+    SI,Temperature,HeatFlowRate,HeatPort, Real, zeros},
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  emph={equation, partial, connector, model, public, end, %
+    extends, parameter}, emphstyle=\color{blue},
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Please keep the \vspace{-1.5cm} at the top
+\title{%
+Paper Preparation Guide and Submission Instructions\\	% Line 1
+%%% Please keep the \vspace{4pt} between lines in the title
+\vspace{4pt}
+for Building Simulation and Optimization 2020 Conference % Line 2 - If there is no second line then just put \phantom{Line 2} here
+}
+
+%%% Change or delete text before "\\" on the lines below to keep the layout but don't remove the "\\"
+%%% Do not exceed more than 6 lines for authors and affiliations
+\author{
+John MacModeller$^1$, Jane MacSimulator$^2$, Another MacAuthor$^2$\\ % Line 4
+$^1$BSO 2020 Secretariat, Some Town, Some Country\\ % Line 5
+$^2$Another Institution, University of Origin, Some City, Some Country\\ % Line 6
+The names and affiliations SHOULD NOT be included in the draft submitted for review.\\ % Line 7
+The header consists of 10 lines with exactly 14 points spacing.\\ % Line 8
+The last line below should be left blank.} % Line 9 - Last line
+\date{\vspace{-0.5cm}}	% remove default date and replace the Blank 10th line
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}	% Section headings need to be upper and lower case.
+\addtocounter{section}{1}
+This document explains how to prepare a paper for submission to the Building Simulation and Optimization 2020 Conference. It also includes the instructions for submission and some other information.
+This document can also be used as a template if you are using LaTeX.
+
+\section*{Introduction}
+The paper should be prepared in A4 size with 25 mm margins at top and bottom, and 20 mm margins at left and right. Use font type Times (Times New Roman) for the entire document with different style at different part of the paper, as explained later in each section.
+
+The top section of the first page of the paper is used for the title of the paper, list of authors, and authors’ affiliation. This section consists of 10 lines of exactly 14 points spacing.
+
+After these 10 lines, the rest of the document is in two-column format, with a space between the two columns of 8 mm. The space between the columns should be centred on the paper.
+
+Please \textbf{DO NOT} include page numbers. The paper must have 6 to 8 pages.
+
+\section*{Parts of the paper}
+
+\subsection*{Title, authors, and authors’ affiliations}
+Titles should be in bold font size 12 points. Do not use more than 2 lines for the title, and try to limit it to ten words.
+
+Authors, authors’ affiliations, and other information should be in font size 12. More than one affiliation of an author should be indicated by numbers, superscripted after the author’s name.
+
+You can add contact information (e-mails, telephone numbers, postal address, etc) and other information as you wish. However, the 10 lines limitation applies. If you need less than 10 lines for all the information, please leave the other lines blank.
+
+\subsection*{Abstract}
+The abstract of your paper should be about 250 words.
+
+Abstracts must clearly identify (i) the research objectives, (ii) the research methods and outcomes and, (iii) the novelty and contribution of the submission.
+
+\subsection*{Main body}
+The main body of the paper should contain (but not be limited to):
+\begin{itemize}
+  \item Introduction
+  \item Simulation and/or experiment
+  \item Discussion and result analysis
+  \item Conclusion
+  \item Add other sections as you wish
+\end{itemize}
+
+The headings of each section should use font size of 12 points, with 6 and 3 points spacing above and below. The headings of the subsection should use 10-point size and bold, with 6 and 3 points spacing above and below. The text should be typed in 10-point font with spacing of 12 points. Both the sections and subsections should not be numbered.
+
+\subsection*{Other sections}
+Add the following sections if applicable:
+\begin{itemize}
+  \item Acknowledgements
+  \item Nomenclature
+\end{itemize}
+
+\subsection*{References}
+All publications cited in the text should be listed at the end of the text ordered alphabetically (in the order of the name of the author). The second line of each entry should be indented. In the main text, refer to a reference using author-year style such as \cite{Clarke2015:1} or \cite{ChuMajumdar2012}.
+
+\subsection*{Figures and Tables}
+Figures and Tables are preferably included in the text where they are discussed rather than at the end of the paper. Both must have a number and caption. Figure~\ref{fig:fig01} is an example of a graph in the text with a caption below the figure.  Please include a blank line above the figure and below the caption.
+
+Colour images are welcome.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1.0]{img/fig1.pdf}
+\caption{A gentle reminder.}
+\label{fig:fig01}
+\end{figure}
+
+Table \ref{tab:tab01} shows an example of a table, where the caption should be on the top of the table.
+\begin{table}
+\caption{Example of a table.}
+\label{tab:tab01}
+\centering
+\begin{tabular}{| c | c | c | }
+  \hline
+  \bf{Heading 1} & \bf{Heading} 2 & \bf{Heading 3} \\
+  \hline
+  Entry 1 & Entry 2 & Entry 3 \\
+  \hline
+\end{tabular}
+\end{table}
+
+Oversized figures and tables may be included in the text. However, you should arrange the layout properly so that it appears at the top or the bottom of the page, or on a separate page. Figure~\ref{fig:fig02} is an example of an oversized figure.
+
+\subsection*{Equations}
+Each significant equation or formula should be displayed on a separate line. Center equations and place consecutive equation numbers flush right in parentheses. For example,
+\begin{equation}\label{eq:example}
+  a^2+b^2=c^2.
+\end{equation}
+Mathematical symbols should be clear to avoid ambiguities. Equations should be referenced by their number as in \eqref{eq:example}.
+Symbols used in equations and in the main text should be italicised.  A brief description of the symbols used in your paper should be added in a nomenclature section at the end of the text or inline with the text where
+the symbols are first used.
+
+\section*{Submission instruction}
+\begin{enumerate}
+    \item To enable the blind review process please do not
+        include your name and affiliation on the draft
+        submitted for review.
+    \item Please convert your entire document to PDF format. Other formats are NOT acceptable.
+    \item Papers must be 6 to 8 pages long.
+    \item You can use any file name, but please do not use special characters, umlaute, etc.
+    \item The maximum file size is 10MB, but please use vector graphics where possible to reduce your file size.
+    \item If your paper has not met the requirements for submission, your file will not be processed for review and you will be requested to resubmit. If everything is in order, the paper will be uploaded to the review area of the conference website.
+\end{enumerate}
+
+\section*{Conclusion}
+This paper has shown how to prepare a paper for submission to Building Simulation and Optimization 2020 Conference. Good luck with your paper. We hope to see you in Loughborough!
+
+\cite{ChuMajumdar2012} Yes!
+
+\section*{Acknowledgement}
+This document is a summary of various documents from previous Building Simulation Conferences.
+
+%here starts the references
+
+\bibliographystyle{chicago}
+\bibliography{references}
+
+\newpage
+\onecolumn
+Please \textbf{DO NOT} include this disclaimer in your paper.  You will be required to accept these conditions when you  submit your paper via the web site.
+
+\begin{figure*}
+\centering
+\begin{boxedminipage}{\textwidth}
+Building Simulation and Optimization 2020\\
+
+I or we, the author(s) of the attached paper, have read the following Copyright Transfer and Disclaimer, and agree to them by submitting the attached paper.
+\begin{enumerate}
+\item
+The author(s) affirm that the paper has not been published elsewhere and, if the paper is accepted, will not be published elsewhere prior to Building Simulation and Optimization 2020.
+\item
+If the paper is accepted, the author(s) will automatically grant to IBPSA-England a nonexclusive, royalty-free, perpetual, worldwide, irrevocable, sub-licensable, and transferable license to publish the paper (in unmodified form) in any fashion (including but not limited to inclusion in the Building Simulation and Optimization 2020 printed and electronic proceedings, via electronic means such as the world wide web, and inclusion in future compilations of papers).  This "nonexclusive" license means that the author(s) are not restricted as to future use of the material except that exclusive rights cannot be granted to another.
+\item
+The author(s) affirm that they have the right to grant the license specified in (2), that is, publication by IBPSA-England or its licensees will not be in conflict with copyright or other restrictions.
+\item
+The author(s) acknowledge that acceptance of the paper does not imply IBPSA-England's endorsement of or agreement with the ideas presented.  Under no circumstances shall IBPSA-England be liable for any damages resulting from use information included in the paper.
+\end{enumerate}
+\end{boxedminipage}
+\caption{The author will be required to accept these conditions when they submit their paper via the web site.}
+\label{fig:fig02}
+\end{figure*}
+
+\end{document}

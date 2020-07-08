@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  
+  <body>
+        <img src="https://energyplus.net/sites/default/files/favicon.ico">
+    <p>Hello!</p>
+
+    <!-- <svg width="50" height="50">
+         <circle cx="25" cy="25" r="25" fill="purple" />
+    </svg> -->
+
+    <script>
+    //Make an SVG Container
+    var svg = d3.select("body").append("svg")
+                                        .attr("width", 200)
+    
+    //Draw the Circle
+    var circle = svg.append("circle")
+                            .attr("cx", 30)
+                            .attr("cy", 30)
+                            .attr("r", 20);
+
+    var rec = svg.append("rect")
+                            .attr("x", 80)
+                            .attr("y", 10)
+                            .attr("width", 50)
+                            .attr("height", 100)
+                            .text('Hello')
+                            .style("fill","green");
+    var rec_text = rec.append('text')
+
+
+    </script>
+    
+<svg width="200" height="100">
+        <rect x="0" y="0" width="200" height="100" stroke="red" stroke-width="3px" fill="white"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">TEXT</text>    
+      </svg>
+
+     
+    
+  </body>
+  <i class="fab fa-python"></i>
+</html>
