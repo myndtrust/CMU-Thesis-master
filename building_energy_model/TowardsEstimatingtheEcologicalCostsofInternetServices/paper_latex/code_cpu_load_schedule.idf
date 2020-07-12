@@ -1,0 +1,16 @@
+  Schedule:Compact,
+    Data Center CPU Loading Schedule,  !- Name
+    Any Number,              !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: SummerDesignDay,    !- Field 2
+    Until: 24:00,1.00,       !- Field 3
+    For: AllOtherDays,       !- Field 5
+    Until: 6:00,0.50,        !- Field 6
+    Until: 8:00,0.75,        !- Field 8
+    Until: 18:00,1.00,       !- Field 10
+    Until: 24:00,0.80;       !- Field 12
+
+  ExternalInterface:Schedule,
+   Data Center CPU Loading Schedule_RL,  !- Name 
+    Any Number , !- ScheduleType
+    0; !- Initial value, used during warm-up
