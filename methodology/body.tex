@@ -175,7 +175,9 @@ This chapter presents the methods used to identify the scope of this dissertatio
 
     In the models developed for this research, for simplicity and its purpose as a proof of concept framework, the deployment increments are not considered. The information technology considerations of this research are indicated in Table~\ref{computer_parts}. These components are bin packed into the power envelope per Algorithm~\ref{it_y_vector_algo} to quantify the input costs for the EIO. This level of aggregation may suffice for monolithic clusters, but it may not work for highly diverse workloads (like public cloud operations). To translate the components into the count of deploy-able racks, requires additional insights about the server rack layouts in relationship to the rest of the building floor area. The equation presents the methods to translate the server power density to rack counts and rack level power.
     
-    \input{methodology/content/equation_rack_counts}
+    % \input{methodology/content/equation_rack_counts}
+    
+    \input{methodology/content/algo_rack_counts}
     
     Equation~\ref{eq:floor_per_density} indicates the  IT load density that is input to each thermal zone. However, this density is a naive distribution of the IT load over the entire floor area; while servers can only be positioned in linear rows as shown in Figure \ref{img_server_room}. This rack layout reduces the area available for racks. To account for the fraction of the server floor where racks can be deployed, the available area for racks can be calculated with Equation~\ref{eq:area_for_racks}. Once the area for racks is known, the quantity of racks that the server floor can support can be evaluated with Equation \ref{eq:rack_count} and the average power for each rack can be evaluated with Equation \ref{eq:rack_power}.
     

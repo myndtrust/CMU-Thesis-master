@@ -1,11 +1,11 @@
-Variable,Value,Unit
-$Floor Area$ ,3778,m
-$F_{racks}$,0.15,\%
-$Facility Power$ ,7500,kW
-$Rack_{area}$ ,800,$in^2$
-$Rack_{area}$ ,0.52,$m^2$
-$Network$,0.05,\%
+Variable,Value,Units
+$A_{f}$ ,3778,m
+$F_{f}$,0.15,\%
+$P_$ ,7500,kW
+$R_{a}$ ,800,$in^2$
+$R_{a}$ ,0.52,$m^2$
+$P_{rn}$,0.05,\%
 $\rho$ ,1.99,kW/$m^2$
-$Area_{racks}$,566.7,$m^2$
-$Rack _{counts}$,1098,each
-$P_rs$,6.5,kW/rack
+$A_{r}$,566.7,$m^2$
+$R_{#}$,1098,each
+$P_{rs}$,6.5,kW/rack

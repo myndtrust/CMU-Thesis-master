@@ -1,0 +1,30 @@
+  \begin{algorithm}
+    \caption{Rack Counts from Building and Power Properties}
+    \begin{algorithmic}
+
+      \STATE $\rho= \frac{P_{f}}{A_{F}}$
+
+      \STATE $A_{r}= A_{f} \times F_{f}$
+      \STATE $R_{\#}= \frac{A_{r}}{R_{a}}$
+      \STATE $P_{rs} = \frac{P_f \times (1-F_{n})}{R_{\#}}$
+      \STATE $P_{rn} = P_{rs} \times F_{n}$
+      \STATE $P_r = P_{rs} + P_{rn}$
+      
+      \STATE{\bf{Where}}: \\
+        \hspace{.2in}$\rho$ = Power Density of server floor. This value is used in the EnergyPlus Models. \\
+        \hspace{.2in}$A_{f}$ = Total floor area.  \\
+        \hspace{.2in}$A_{r}$ = Area available for rack deployment.  \\
+        \hspace{.2in}$R_{a}$ = Rack footprint area. \\
+        \hspace{.2in}$R_{\#}$ = Rack count.\\
+        \hspace{.2in}$P_{f}$ = Provisioned power for IT for server floor.\\
+        \hspace{.2in}$P_{rs}$ = Power for rack server equipment. \\
+        \hspace{.2in}$P_{rn}$ = Power for rack network equipment. \\
+        \hspace{.2in}$P_{r}$ = Total power of rack. \\
+        \hspace{.2in}$F_{f}$ = Fraction of $A_{f}$ that is deployable with Racks.\\
+        \hspace{.2in}$F_{n}$ = Fraction of power to rack allocated to network devices.
+        
+        
+        
+    \end{algorithmic}
+    \label{rack_power_counts}
+  \end{algorithm}

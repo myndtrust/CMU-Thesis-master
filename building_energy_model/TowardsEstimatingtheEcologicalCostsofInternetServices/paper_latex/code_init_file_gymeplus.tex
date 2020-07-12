@@ -1,0 +1,10 @@
+register(
+    id='Eplus-dc_Ashburn-v1',
+    entry_point='eplus_env.envs:EplusEnv',
+    kwargs={'eplus_path':FD + '/envs/EnergyPlus-8-9-0/', # The EnergyPlus software path
+            'weather_path':FD + '/envs/weather/USA_VA_Arlington-Ronald.Reagan.Washington.Natl.AP.724050_TMY3.epw', # The epw weather file
+            'bcvtb_path':FD + '/envs/bcvtb/', # The BCVTB path
+            'variable_path':FD + '/envs/eplus_models/datacenters/cfg/variables_v2.cfg', # The cfg file
+            'idf_path':FD + '/envs/eplus_models/datacenters/idf/eplus89/2ZoneDataCenterHVAC_wEconomizer_RL_git_86to89.idf', # The idf file
+            'env_name': 'Eplus-dc_Ashburn-v1',
+            })
