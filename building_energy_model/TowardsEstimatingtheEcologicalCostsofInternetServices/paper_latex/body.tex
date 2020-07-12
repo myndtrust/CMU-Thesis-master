@@ -201,7 +201,20 @@ The simulator \deleted{allows}\added{integrates} algorithms that are aware of ne
 
 \added{Now, the CPU Loading Schedule\_RL as passed in from the Python program to EnergyPlus is described. The basis for the schedule is a network traffic model built upon simulations of real world network traffic for a global service. The choice to characterise the DC IT equipment load with bandwidth of network traffic is superior to the usual hour-day-week schedules as an operational model because (1) most DCs serve international users across many time zones. (2) the DC workloads are known to not be stable across time. (3) network traffic is conducive to predicative models based around world events and seasons.} 
 
-\deleted{The traffic profile of an internet service is an intrinsic property of the service.} Characterizing the traffic profile for an online service platform requires granular data that spans across a wide temporal range. However, due to the proprietary nature of the internet industry such data that allows for building level traffic profiles is not publicly available. Therefore, in this research a network traffic simulator is created. The objective for the simulator was to represent a globally distributed online platform indicative of real world user demand. To represent a global service, the load factors in this article reflect visits to 145,063 Wikipedia pages over an 18-month period as provided by Kaggle \citep{kaggle17}. In this work, publicly available information is to establish the locations for the Wikipedia DC as illustrated in the map in Figure~\ref{dc_map}.
+\deleted{The traffic profile of an internet service is an intrinsic property of the service.} Characterizing the traffic profile for an online service platform requires granular data that spans across a wide temporal range. However, due to the proprietary nature of the internet industry such data that allows for building level traffic profiles is not publicly available. Therefore, in this research a network traffic simulator is created. The objective for the simulator was to represent a globally distributed online platform indicative of real world user demand. To represent a global service, the load factors in this article reflect visits to 145,063 Wikipedia pages over an 18-month period as provided by Kaggle \citep{kaggle17}. In this work, publicly available information is to establish the locations for the Wikipedia DC as illustrated in the map in Figure~\ref{fig:dc_map}.
+
+\begin{figure}[!h].
+\centering
+\includegraphics[scale=0.45]{img/dc_locations.png}
+\caption[DC Locations]{Data Center Locations Map. SFO: San Francisco, CAR: Carrolton, TX, ASH: Ashburn VA, AMS: Haarlem, Netherlands, SIN: Singpore.}
+\label{fig:dc_map}
+\end{figure}
+
+One issue with the Kaggle data set is that it just provides a time series of page visits agnostic of source location (ie user location) or serving DC. For evaluating DC level workloads, the pages were mapped to a DC \added{location} as part of a pre-processing step of this research. The pre-processing required \added{handling} raw URL strings and parsing out it's language hash markers. Then, countries where these languages are the official languages are mapped to the nearest Wikipedia DC to indicate the traffic to each DC. \added{The step-wise procedure is in indicated in Table~\ref{table: url2dc}.}
+
+\input{building_energy_model/TowardsEstimatingtheEcologicalCostsofInternetServices/paper_latex/content/table_url2dc}
+
+The procedure resulted in the seven languages being routed by a minimum distance function from any country that they are the official language to the nearest DC site. Treating each of the seven languages as a service \deleted{allows this research to have an abstraction of the (Moriyama , et al., 2018) service which is intuitive to reason about as indicated in Figure~\ref{fig:lang2dc}} \added{provides an abstraction that makes each language an isolated platform. Figure~\ref{fig:lang2dc} shows curves with all languages to a particular data center aggregated together.}
 
 \begin{figure}.
 \centering
@@ -210,23 +223,13 @@ The simulator \deleted{allows}\added{integrates} algorithms that are aware of ne
 \label{fig:lang2dc}
 \end{figure}
 
-One issue with the Kaggle data set is that it just provides a time series of page visits that is agnostic of source location (ie user location) or serving DC. For evaluating DC level workloads, the pages were mapped to a DC as part of a pre-processing step of this research. The pre-processing required handling raw URL strings and parsing out it's language hash markers. Then, countries where these languages are the official languages are mapped to the nearest Wikipedia DC to indicate the traffic to each DC.  This resulted in the seven languages being routed by a minimum distance function from any country that they are the official language to the nearest DC site. Treating each of the seven languages as a service \deleted{allows this research to have an abstraction of the (Moriyama , et al., 2018) service which is intuitive to reason about as indicated in Figure~\ref{fig:lang2dc}} provides an abstraction that makes each language an isolated platform. Figure~\ref{fig:lang2dc} shows curves with all languages to a particular data center aggregated together. 
+\deleted{To validate the impacts of resetting the proportional load factors, two specific simulations were run for each of the DCs from Figure~\ref{fig:lang2dc} The first is the novel dynamic load simulation and second configured as in \citep{moriyama18}. In both simulations nominal power density of the DC is set to 2kW/m2 and the auto-sizing feature is enabled for all HVAC equipment.} 
 
-\begin{figure}.
-\centering
-\includegraphics[scale=0.45]{img/lang2dc_curve.jpg}
-\caption{Sum of English, French, German, Mandarin, Spanish, Russian, and Japanese traffic to each of the 5 DC locations.}
-\label{fig:lang2dc}
-\end{figure}
+\added{The traffic aware EnergyPlus models are simulated for each data center through GymEplus in a batch process loop. In the batch workflow, the same IDF file is used to represent all of the data centers shown on the map in Figure~\ref{fig:dc_map}; except their local weather files are changed. In} the proportional load simulation, \added{at each time step} the traffic load factor is pulled in \deleted{by}\added{from} the Python program and is passed to EnergyPlus \added{by the BCTVB. This demonstrates that using an external interface (such as logic programmed in Python), building energy models can facilitate the analysis of a network of data centers in a single workflow.}
 
+\deleted{\textit{Algorithm} \ref{Service Profile} indicates how the the service demand profile is generated. It is based on Kaggle's web-traffic data-set $(K)$ which is a time-series of the count of visits $(v)$ to 145,063 Wikipedia pages distributed across seven languages $(l)$ at daily intervals \citep{kaggle17}. In this work  pages $(p)$ are aggregated together by language and classified as a common service. $P_l$ is a list of all pages with the language $l$. The subscript $d$ represents individual DCs.  The demand for the service at a particular DC is obtained by the average quantile visits to the pages of the respective language as indicated by $P_{l}[d]$.} 
 
-To validate the impacts of resetting the proportional load factors, two specific simulations were run for each of the DCs from Figure~\ref{fig:lang2dc} The first is the novel dynamic load simulation and second configured as in \citep{moriyama18}. In both simulations nominal power density of the DC is set to 2kW/m2 and the auto-sizing feature is enabled for all HVAC equipment. 
-
-In the proportional load simulation, the traffic load factor is pulled in by the Python program and at each time step it is passed to EnergyPlus. The load factor that is passed represents the CPU loading of servers, where CPU loading is a dominate energy consumer of IT equipment but it’s not the only power consumer. In EnergyPlus IT equipment always consumes a near constant rate of energy for hard disks, random access memory, fans and other parts regardless of the load. This constant rate is approximately 30\% of the power density, in line with industry practices \citep{barroso18}. 
-
-\textit{Algorithm} \ref{Service Profile} indicates how the the service demand profile is generated. It is based on Kaggle's web-traffic data-set $(K)$ which is a time-series of the count of visits $(v)$ to 145,063 Wikipedia pages distributed across seven languages $(l)$ at daily intervals \citep{kaggle17}. In this work  pages $(p)$ are aggregated together by language and classified as a common service. $P_l$ is a list of all pages with the language $l$. The subscript $d$ represents individual DCs.  The demand for the service at a particular DC is obtained by the average quantile visits to the pages of the respective language as indicated by $P_{l}[d]$.  Figure~\ref{fig:lang2dc} illustrates the service profile for the data range and notes the seven languages. The y-axis is the number of page views on a $1e^8$ scale, the x-axis spans the date range, and the curves represent each of the seven languages.
-
-\begin{algorithm}
+\deleted{\begin{algorithm}
 \caption{Service Profile}
 \begin{algorithmic}[1]
 \REQUIRE{$K$} %Time series
@@ -240,9 +243,10 @@ In the proportional load simulation, the traffic load factor is pulled in by the
 	\ENDFOR
 \end{algorithmic}
 \label{Service Profile}
-\end{algorithm}
+\end{algorithm}}
 
-Next we discuss the results from the simulations. 
+\deleted{Figure~\ref{fig:lang2dc} illustrates the service profile for the data range and notes the seven languages. The y-axis is the number of page views on a $1e^8$ scale, the x-axis spans the date range, and the curves represent each of the seven languages.
+Next we discuss the results from the simulations.}
 
 % -------------------------------------------------------------------------------------------------------------------------------
 \section*{Results}
@@ -292,6 +296,7 @@ This is a naive assumption and such a practice is not suitable for the design ph
 %\added{utility power reservations and back-up power generator reservations. More explicitly, during the part load operations of the cooling plant when their electrical demand is lower then their design values; the headroom in power infrastructure from the cooling equipment can be safely supplied to IT equipment. The rerouting of the available power increases the supportable IT load and essentially yields 'free capacity' beyond the design values of the IT load}% 
 }
 
+\added{The design power input represents the electrical power loading of servers. In practice the CPU is a dominate energy consumer of IT equipment but it’s not the only power consumer. Aside from the fan and power supply unit which are explicitly defined in the ITE IDF object, it is unclear how the power demand for hard disks, random access memory, and other parts are accounted for in EnergyPlus.}
 % -------------------------------------------------------------------------------------------------------------------------------
 \section*{Conclusion}
 % -------------------------------------------------------------------------------------------------------------------------------
