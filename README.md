@@ -10,10 +10,10 @@
 
 ### Foreword
 
-The first draft of this manuscript is being written through the 2020 COVID-19 stay in place orders set all over the world. However the discussed work spans over five years. During the five years, I have concluded that given the myriad of available type-setting tools, \LaTeX is the most expressive for technical writing. The template I use is a real gem. To any new starting their journey I suggest you adapt this work as a template for your as early as possible. Latex provides a level of organization that other type-setting programs just can't.
+The first draft of this manuscript is being written through the 2020 COVID-19 stay in place orders set all over the world. However the discussed work spans over five years. During the five years, I have concluded that given the myriad of available type-setting tools, \LaTeX is the most expressive for technical writing. The template I use is a real gem. To anyone starting a new research journey I suggest you adapt the template I use as a template for your work as early as possible. With this template, Latex provides a level of organization that other type-setting programs just can't.
 
 
-After some exploration with other forms of type-setting tools I chose to write this manuscript in Latex. My experience with Latex is that it has a steep learning curve, but for me it was the stepping stone into programming languages. The good thing with latex is that with it what you type is what you get. There are tons of resourcefully libraries that make programmatic publishable quality documents.
+Why Latex? After some exploration with other forms of type-setting tools I chose to write this manuscript in Latex. My experience with Latex is that it has a steep learning curve, but for me it was the stepping stone into other programming languages as-well. The good thing with Latex is that with it, what you type is what you get. This has really helped me frame type-setting problems programmatically. Furthermore, there are tons of resourceful libraries that help make publishable quality documents.
 
 <!--Before going all in with Latex, I tried Markdown, Jupyter Notebooks, and of course Word. Markdown is cool for routine notes. Jupyter Notebook was not worth the effort. While Word was to con trained and is not conducive to programmatic writing.-->
 
