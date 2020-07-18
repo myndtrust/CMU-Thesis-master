@@ -12,11 +12,14 @@
 \renewcommand{\familydefault}{\sfdefault}
 %> ---------------------------------------------------------------------------------------------------------------
 %> Other packages.
-\usepackage{graphicx,color,multirow,colortbl,hhline,array,url,fancyhdr,setspace,enumerate, tikz, pgf-pie, algorithm, algorithmic, pgfplots, booktabs, siunitx, pgfplotstable}
+\usepackage{graphicx,color,multirow,colortbl,hhline,array,url,fancyhdr, setspace, enumerate, tikz, pgf-pie, algorithm, algorithmic, pgfplots, booktabs, siunitx, pgfplotstable, listings}
 \usepackage[normalem]{ulem}
 \usepackage[margin=1.3in]{geometry}
 \usepackage[font=small]{caption}
 \usepackage{subcaption}
+% \usepackage[markup=underlined]{changes}
+\usepackage[final]{changes}
+
 %> ---------------------------------------------------------------------------------------------------------------
 
 %% dkoes - Here's a bunch of stuff taken from mjz-titlepage.sty that makes
@@ -130,7 +133,7 @@
 	\@ifundefined{mydraftmode}{#1}{}
 	\makeatother
 }
-\newcommand{\comment}[2][Comment]{\textcolor{red}{[#1: #2]}}
+% \newcommand{\comment}[2][Comment]{\textcolor{red}{[#1: #2]}}
 \newcommand{\colorcomment}[2]{\textcolor{#1}{[#2]}}
 \newcommand{\edadd}[1]{\textcolor{red}{#1}}
 \newcommand{\eddelete}[1]{\textcolor{red}{\sout{#1}}}
