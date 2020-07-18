@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {0.1}Introduction}{xiv}
+\contentsline {chapter}{\numberline {1}Internet Traffic Profile}{1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Building Energy Model of Data Centers}{3}
+\contentsline {chapter}{\numberline {3}Marginal Cost of Energy for Data Centers}{5}
+\contentsline {chapter}{\numberline {4}Life-Cycle Energy and Carbon Footprint Modeling with Data Center Building Energy Models}{7}
+\contentsline {section}{\numberline {4.1}Introduction}{7}
+\contentsline {subsection}{\numberline {4.1.1}Motivations for an end to end life cycle cost model}{8}
+\contentsline {section}{\numberline {4.2}Background}{9}
+\contentsline {subsection}{\numberline {4.2.1}Technical Overview of Data Centers}{9}
+\contentsline {subsection}{\numberline {4.2.2}Similar Works}{11}
+\contentsline {section}{\numberline {4.3}Methodology}{13}
+\contentsline {subsection}{\numberline {4.3.1}Functional Unit and Reference Flows}{13}
+\contentsline {subsection}{\numberline {4.3.2}System Boundary}{14}
+\contentsline {subsection}{\numberline {4.3.3}Operational Inventories}{15}
+\contentsline {subsection}{\numberline {4.3.4}Embodied Inventories}{16}
+\contentsline {subsubsection}{Building Systems}{17}
+\contentsline {subsubsection}{Information Technology Systems}{17}
+\contentsline {section}{\numberline {4.4}Results}{17}
+\contentsline {section}{\numberline {4.5}Discussions}{17}
+\contentsline {section}{\numberline {4.6}Conclusion}{17}
