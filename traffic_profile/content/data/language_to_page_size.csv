@@ -1,4 +1,4 @@
-ID,Language,Count Pages,Word_length,Words_page,Bytes_character,Bytes_page,bits_page
+ID,Language,Count Pages,Word_{length},Words_{page},Bytes_{character},Bytes_{page},bits_{page}
 zh,Mandarin,17229,1.0,1032,2,2064.0,16512.0
 fr,French,17802,10.9,640,1,6976.0,55808.0
 en,English,24108,8.23,640,1,5267.2,42137.6

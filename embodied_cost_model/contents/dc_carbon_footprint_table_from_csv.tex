@@ -4,38 +4,38 @@
 }
 
 
-\begin{table}[h!]
+\begin{table*}[h!]
   \begin{center}
     \scalebox{0.5}{%
     \pgfplotstabletypeset[
       multicolumn names, % allows to have multicolumn names
       col sep=comma, % the seperator in our .csv file
       display columns/0/.style={
-		column name=Site, % name of first colum
+		column name=\textbf{Site}, % name of first columm
 		string type},  % use siunitx for formatting
       display columns/1/.style={
-		column name=German,
+		column name=\textbf{German},
 		column type={S},string type},
 	  display columns/2/.style={
-		column name=English,
+		column name=\textbf{English},
 		column type={S},string type},
 	  display columns/3/.style={
-		column name=Spanish,
+		column name=\textbf{Spanish},
 		column type={S},string type},
 	  display columns/4/.style={
-		column name=French,
+		column name=\textbf{French},
 		column type={S},string type},
       display columns/5/.style={
-		column name=Japanese,
+		column name=\textbf{Japanese},
 		column type={S},string type},
 	  display columns/6/.style={
-		column name=Russian,
+		column name=\textbf{Russian},
 		column type={S},string type},
 	  display columns/7/.style={
-		column name=Chinese,
+		column name=\textbf{Chinese},
 		column type={S},string type},
 	  display columns/8/.style={
-		column name=Total,
+		column name=\textbf{Total},
 		column type={S},string type},
       every head row/.style={
 		before row={\toprule}, % have a rule at top
@@ -45,7 +45,8 @@
 			},
 		every last row/.style={before row={\toprule}, after row=\bottomrule}, % rule at bottom
     ]{embodied_cost_model/contents/data/ops_co2_table2.csv} % filename/path to file
-  }\end{center}
-     \caption[Data Center Operation Carbon Footprint]{Data Center Operation Carbon Footprint}
+  }
+  \end{center}
+     \caption[Data Center Operation Carbon Footprint]{Data Center Operation Carbon Footprint (Tons of CO_2)}
     \label{dc_carbon_footprint}
-\end{table}
+\end{table*}

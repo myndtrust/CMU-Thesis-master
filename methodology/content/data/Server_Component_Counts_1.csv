@@ -1,0 +1,11 @@
+Comp Count / Server Power,Comp. Power,Count_{SSD},Total Power_{SSD},Count_{HDD},Total Power_{HDD},Count_{IO},Total Power_{IO},Count_{Compute},Total Power_{Compute},Count_{LM},Total Power_{LM}
+Example Function,,MaReduce,,Photos Sharing ,,General Purpose ,,Online Retail,,General Purpose ,
+,,,,Application,,High IO,,Search,,Compute,
+CPU,105,2,210,2,210,2,210,2,210,2,210
+MEM,0.375,8,3,8,3,6,2.25,4,1.5,4,1.5
+HDD,3.87,4,15.48,8,30.96,2,7.74,4,15.48,8,30.96
+SSD,0.37,2,0.74,0,0,5,1.85,0,0,0,0
+MBD,40,1,40,1,40,1,40,1,40,1,40
+PSU,25,2,50,2,50,2,50,2,50,2,50
+BAL,,1,,1,,1,,1,,1,
+Total Power (W),,,319.22,,333.96,,311.84,,316.98,,332.46
