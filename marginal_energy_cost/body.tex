@@ -6,9 +6,9 @@
 
 % Globally distributed internet services are ubiquitous today. These services are driving the demand to build mega-watt scale data center facilities (DC) distributed through out the globe. 
 
-Over the last decade, operational efficiency optimizations in data center (DC) facilities designs have curtailed their absolute power demands. However, in absolute terms their physical footprint is still growing. Offsetting effects such as the these make system level life cycle environmental footprint evaluations complex for distributed services operating in these DCs. 
+Over the last decade, operational efficiency optimizations in data center (DC) facilities designs have curtailed their absolute power demands. However, their physical footprint is still growing. This growth in capacity may offset the efficiency gains at best or it may even dwarf the them in absolute terms. Offsetting effects such as the these make system level life cycle environmental footprint evaluations complex for distributed services operating in these DCs. 
 
-To support system level evaluations for service operating in DCs, this research uses simulated network traffic and coincident energy generation source aware building energy models (BEM) to evaluate the marginal carbon footprint of a globally spanning network of data centers. The result of this research is a BEM based framework that can be used in environmental decisions to characterize their life-cycle costs.
+To support system level evaluations for services operating in DCs, this research uses simulated network traffic profiles and coincident energy generation source aware building energy models (BEM) to evaluate the marginal carbon footprint of a globally spanning network of data centers. The result of this research is a BEM based framework that can be used in environmental decisions to characterize DC life-cycle costs.
 
 
 
@@ -224,7 +224,9 @@ The resulting values of the carbon footprint for each data center's energy sourc
 
 
 
-Table~ \ref{dc_carbon_footprint} indicates the total marginal carbon footprint for each language in the last row by summing the language column. While the total marginal carbon footprint of each data center is obtained by summing the rows as shown in the last column. The English pages have the most traffic globally and as expected English has the largest marginal carbon footprint due to its data-center operations. It is surprising however that the Netherlands data center has the highest total marginal carbon footprint among the data centers. A relatively lower marginal cost is expected for Netherlands due to the comparatively cooler ambient temperatures there which enables the data center systems to use economizers for more hour. The EnergyPlus results support the expected lower building energy demands for the Netherlands site as shown in the stacked PUE histogram in Figure~\ref{fig:pue}. However, the network model simulation has many languages routed to the Amsterdam data center making its absolute workload relatively higher than other data centers. The additional workloads appear to be offsetting the saving from the building operations.
+Table~ \ref{dc_carbon_footprint} indicates the total marginal carbon footprint for each language in the last row by summing the language column. While the total marginal carbon footprint of each data center is obtained by summing the rows as shown in the last column. The English pages have the most traffic globally and as expected English has the largest marginal carbon footprint due to its data-center operations. It is surprising however that the Netherlands data center has the highest total marginal carbon footprint among the data centers. A relatively lower marginal cost is expected for Netherlands due to its cooling plant operations because the site has comparatively cooler ambient temperatures (see Table~\ref{table_weather}). The cooler temperatures enable facilities to be cooled with economizers for more hours and it also lowers the energy demand required by thermo-electrical equipment when economizers are not fully operational. The EnergyPlus results support the expected lower building energy demands for the Netherlands site as shown in the stacked PUE histogram in Figure~\ref{fig:pue}. Therefore, the site's high carbon footprint can be attributed to the utility grid.
+
+\input{marginal_energy_cost/contents/table_weather}
 
 \begin{figure}
   \centering
