@@ -100,8 +100,9 @@ To validate that the proposed building energy model configurations with the abov
 
 In Figure~\ref{fig:total_energy_comp}, the pair simulations for a DC site is presented in the single bar. In the figure the magenta bar part of the bar indicates the total site energy of the model with economizer dry-bulb temperature limits increased (RL). The light green indicates the default values (NoRL). The dark green part indicates where the two simulations overlap. From the figure it is observed that the increased economizer and the IT workloads resets lead to more energy use than the default values for three of the five DCs. While it maybe possible to fine optimal economizer settings, for this article it's concluded that the new settings from suffice. 
 
-  
+ \begin{center}
   \begin{table}[ht]
+  \begin{center}
   \begin{small}
     \vspace{-10 pt}
     \caption{Economizer settings for the two models}
@@ -118,14 +119,22 @@ In Figure~\ref{fig:total_energy_comp}, the pair simulations for a DC site is pre
     \end{tabular}
     \vspace{-8 pt}   % Please use appropriate negative vspace to remove the space above/below the Table
     \end{small}
+    \end{center} 
     \end{table}
+  \end{center} 
 
-  \begin{figure}
-    \centering
-    \includegraphics[scale=.50]{marginal_energy_cost/img/total_energy_comp2.png}
-    \caption[Comparison of Economizer Settings in E+]{Comparison between increased economizer settings  vs. default IDF settings from \citep{kumar20} }
-    \label{fig:total_energy_comp}
-    \end{figure}
+\input{marginal_energy_cost/contents/total_site_energy_bars}
+
+
+%   \begin{figure}
+%     \centering
+%     \includegraphics[scale=.50]{marginal_energy_cost/img/total_energy_comp2.png}
+%     \caption[Comparison of Economizer Settings in E+]{Comparison between increased economizer settings  vs. default IDF settings from \citep{kumar20} }
+%     \label{fig:total_energy_comp}
+%     \end{figure}
+
+
+
 
   The next subsection introduces the marginal costs of energy model, which will take the results from the BEM model described above.
 
@@ -194,40 +203,17 @@ The second module requires a time-series profile of the electrical grid’s powe
 %---------------------------------------------------------------------------------------
 \section{Results \& Discussions}
 %---------------------------------------------------------------------------------------
-The resulting values of the carbon footprint for each data center's energy source is summarized in Table~\ref{dc_carbon_footprint}. The energy model for the 491 kW data center has been scaled by 1000 to represent the metro scale of data centers. The table further indicates the carbon footprint of each of the languages being served from the data centers. The values are indicative of the marginal $CO_{2}$ emitted by adding the data center demand to the grid.
+The resulting values of the carbon footprint for each data center's energy source is summarized in Table~\ref{dc_carbon_footprint_mec}. The energy model for the 491 kW data center has been scaled by 1000 to represent the metro scale of data centers. The specific data center model represents only a small fraction of hyper-scale data centers campuses that reach 500-Mega-Watts. The table further indicates the carbon footprint of each of the languages being served from the data centers. The values are indicative of the marginal $CO_{2}$ emitted by adding the data center demand to the grid.
 
 
-% \begin{table*}[ht]
-%   \vspace{-10 pt}
-%   \caption{Data Center Carbon Footprint (Tons of CO_2)}
-%   \label{table:tab03}
-%   \begin{small}
-%   \centering
-%   \begin{tabular}{|c c c c c c c c c| }
-%     \hline
-%     \bf{DC ID} & \bf{de} & \bf{en}    & \bf{es} & \bf{fr} & \bf{ja} & \bf{ru} & \bf{zh} & \bf{total}\\
-%     \hline
-%     SFO       & 0       & 1,301,549  & 0           & 0      & 0 & 0 & 0 & \bf{1,301,549}\\
-%     CAR       & 0       & 519,466    & 1,341,227  & 0       & 0 & 0 & 0 & \bf{1,860,693}\\
-%     ASH       & 0       & 563,085    & 1,109,162  & 661,919 & 0 & 0 & 0 & \bf{2,334,166}\\
-%     AMS       & 464,780 & 470,714    & 473,987    & 766,542 & 0 & 1,027,424 & 457,393 & \bf{3,660,840}\\
-%     SIN       & 464,780 & 470,714    & 473,987    & 766,542 & 0 & 1,027,424 & 457,393 & \bf{3,660,840}\\
-%     \hline
-%     \bf{Sum} & \bf{464,780} & \bf{3,446,114}    & \bf{2,924,376} & \bf{2,042,611} & \bf{873,602} & \bf{1,888,019} & \bf{1,035,892} & \bf{12,675,394}\\
-%     \hline
-%   \end{tabular}
-%   \end{small}
-%   \vspace{-10 pt}   % Use appropriate negative vspace to remove the space above/below the Table
-%   \end{table*}
 
- \input{embodied_cost_model/contents/dc_carbon_footprint_table_from_csv}
-
+ \input{marginal_energy_cost/contents/carbon_footprint_siteXlanguage}
 
 
 Table~ \ref{dc_carbon_footprint} indicates the total marginal carbon footprint for each language in the last row by summing the language column. While the total marginal carbon footprint of each data center is obtained by summing the rows as shown in the last column. The English pages have the most traffic globally and as expected English has the largest marginal carbon footprint due to its data-center operations. It is surprising however that the Netherlands data center has the highest total marginal carbon footprint among the data centers. A relatively lower marginal cost is expected for Netherlands due to its cooling plant operations because the site has comparatively cooler ambient temperatures (see Table~\ref{table_weather}). The cooler temperatures enable facilities to be cooled with economizers for more hours and it also lowers the energy demand required by thermo-electrical equipment when economizers are not fully operational. The EnergyPlus results support the expected lower building energy demands for the Netherlands site as shown in the stacked PUE histogram in Figure~\ref{fig:pue}. Therefore, the site's high carbon footprint can be attributed to the utility grid.
 
 \input{marginal_energy_cost/contents/table_weather}
-
+\char
 \begin{figure}
   \centering
   \includegraphics[scale=.40]{marginal_energy_cost/img/pue.jpg}
