@@ -1,6 +1,6 @@
 \begin{table}[ht!]
     \begin{center}
-    \scalebox{0.6}{
+    \scalebox{0.65}{
     \pgfplotstabletypeset[
         col sep=comma,
         string type,
@@ -10,13 +10,10 @@
         columns/d/.style={column name=$1\%DB$, column type={|c}},
         columns/e/.style={column name=$1\%WB$, column type={|c}},
         columns/f/.style={column name=$2\%DB$, column type={|c}},
-        columns/g/.style={column name=$2\%WB$, column type={|c}},
-        columns/h/.style={column name=Station, column type={|c}},
-        columns/i/.style={column name=State, column type={|c}},
-        columns/j/.style={column name=Country, column type={|c|}},
+        columns/g/.style={column name=$2\%WB$, column type={|c|}},
         every head row/.style={before row=\hline,after row=\hline},
         every last row/.style={after row=\hline},
-        ]{marginal_energy_cost/contents/data/weather.csv}}
+        ]{marginal_energy_cost/contents/data/weather_nordicsim.csv}}
     \end{center}
     \caption[Cooling Design Data]{ASHRAE Annual Cooling and De-humidification Design Conditions in $^\circ F$ \cite{ASHRAE_2009}}
     \label{table_weather}
