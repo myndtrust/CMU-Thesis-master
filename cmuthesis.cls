@@ -12,7 +12,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 %> ---------------------------------------------------------------------------------------------------------------
 %> Other packages.
-\usepackage{graphicx,color,multirow,colortbl,hhline,array,url,fancyhdr, setspace, enumerate, tikz, pgf-pie, algorithm, algorithmic, pgfplots, booktabs, siunitx, pgfplotstable, listings}
+\usepackage{graphicx,color,multirow,colortbl,hhline,array,url,fancyhdr, setspace, enumerate, tikz, pgf-pie, algorithm, algorithmic, pgfplots, booktabs, siunitx, pgfplotstable, listings, rotating}
 \usepackage[normalem]{ulem}
 \usepackage[margin=1.3in]{geometry}
 \usepackage[font=small]{caption}
@@ -82,7 +82,7 @@
 	\thispagestyle{empty}
 	\vspace*{5in}
 	\vfill
-	\noindent\copyright \@Year\ \@author.~~\@ifundefined{@permission}{\textit{All rights reserved.}}{{\@permission}}\\[2mm]
+	\noindent\copyright \@Year\ \@author.~~\@ifundefined{\usepackage{rotating}@permission}{\textit{All rights reserved.}}{{\@permission}}\\[2mm]
 	\@ifundefined{@disclaimer}{The views and conclusions contained in this document are those of the author, and should not be interpreted as representing the official policies, either expressed or implied, of any sponsoring institution, current or past employers, the U.S. government, or any other entity.}{\@disclaimer}\\[2mm]
 	\@ifundefined{@keywords}{}{\textbf{Keywords}: \@keywords\\}
 	\clearpage
