@@ -1,12 +1,12 @@
 % \sisetup{
 %   round-mode          = places, % Rounds numbers
 %   round-precision     = 2, % to 2 places
-% }
+% } Need to specify column type={S} to control sig figs
 
 
 \begin{table*}[h!]
   \begin{center}
-    \scalebox{0.7}{%
+    \scalebox{0.8}{%
     \pgfplotstabletypeset[
       multicolumn names, % allows to have multicolumn names
       col sep=comma, % the seperator in our .csv file
@@ -15,28 +15,28 @@
 		string type},  % use siunitx for formatting
       display columns/1/.style={
 		column name=\textbf{German},
-		column type={S},string type},
+		string type},
 	  display columns/2/.style={
 		column name=\textbf{English},
-		column type={S},string type},
+		string type},
 	  display columns/3/.style={
 		column name=\textbf{Spanish},
-		column type={S},string type},
+		string type},
 	  display columns/4/.style={
 		column name=\textbf{French},
-		column type={S},string type},
+		string type},
       display columns/5/.style={
 		column name=\textbf{Japanese},
-		column type={S},string type},
+		string type},
 	  display columns/6/.style={
 		column name=\textbf{Russian},
-		column type={S},string type},
+		string type},
 	  display columns/7/.style={
 		column name=\textbf{Chinese},
-		column type={S},string type},
+		string type},
 	  display columns/8/.style={
 		column name=\textbf{Total},
-		column type={S},string type},
+		string type},
       every head row/.style={
 		before row={\toprule}, % have a rule at top
 		after row={
