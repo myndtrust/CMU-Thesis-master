@@ -1,0 +1,23 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{1.0}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        columns/Site/.style={column type={|l}},
+        columns/en/.style={column type={|c}},
+        columns/fr/.style={column type={|c}},
+        columns/es/.style={column type={|c}},
+        columns/ja/.style={column type={|c}},
+        columns/de/.style={column type={|c}},
+        columns/zh/.style={column type={|c}},
+        columns/ru/.style={column type={|c|}},
+        every head row/.style={before row=\hline,after row=\hline},
+        every last row/.style={after row=\hline},
+        every even row/.style={
+            before row={\rowcolor[gray]{0.9}}},
+        ]{embodied_cost_model/contents/data/functional_unit_matrix.csv}}
+    \end{center}
+    \caption[Operational Energy's $CO_2$ emissions per functional unit Matrix]{Operational energy's $CO_2$ emissions per functional unit matrix. For each Site (row) and Language (column) pair, the $CO_2$ density (tonnes) per provisioned kW data center capacity. Units: $CO_2$-tonnes per kW per year}
+    \label{functional_unit_bar}
+\end{table}
