@@ -1,0 +1,23 @@
+\begin{table}[h!]
+    \begin{center}
+    \scalebox{1.0}{
+    \pgfplotstabletypeset[
+        col sep=comma,
+        string type,
+        % columns/Site/.style={column type={|l}},
+        % columns/en/.style={column type={|c}},
+        % columns/fr/.style={column type={|c}},
+        % columns/es/.style={column type={|c}},
+        % columns/ja/.style={column type={|c}},
+        % columns/de/.style={column type={|c}},
+        % columns/zh/.style={column type={|c}},
+        % columns/ru/.style={column type={|c|}},
+        every head row/.style={before row=\hline,after row=\hline},
+        every last row/.style={after row=\hline},
+        every even row/.style={
+            before row={\rowcolor[gray]{0.9}}},
+        ]{embodied_cost_model/contents/data/embodied_energy_table.csv}}
+    \end{center}
+    \caption[Embodied Energy Table]{Embodied $CO_2$ for the English language. Compute, network, and storage (CNS) and Buildings components of the embodied costs are shown. The evaluation is based on a 492-MW data center (metro-scale) facility and CNS is modeled to be fully populated. The input costs vector for the CNS have been adjusted to account for the failure rates from Table~\ref{tab:it_failure_rates}. Units: $CO_2$-tonnes per kW per year}
+    \label{functional_unit_bar}
+\end{table}
