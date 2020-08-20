@@ -1,0 +1,7 @@
+Source,Embodied,Operational,Units,Note,Embodied : Operational
+Eric Masanet,785,805,Mg CO2e/year,"This study considered office PC, which have a significantly different duty cycle then DCs. The work included monitors and prolonged useful life of equipment.  It does not account for auxillary infrastructure (power, cooling, etc)",0.9751552795
+Kline,600,350,kg CO2e,A comparable device to DC equipment in Kline's study is the Mac Pro. Mac Pro. Duty cycles are different from DC's.,1.714285714
+Shah,10,90,% (mt-CO2e),"They note their result to be 75,000 mTonnes of CO2e",0.1111111111
+Shah ,1000,"21,000",tonnes-CO2e,"DC profile is indicated as a 3MW DC. 1,000 tonnes of Co2 is for non-ops IT only. There are not other non-operations costs. No indication was found on the gird and energy sources CO2 intensity.",0.04761904762
+Whitehead,-,-,-,Comparison of total environmental impact using Impact 2002+,-
+Kumar,4.5,2.6,tonnes-CO2e/kW provisioned,"Model accounts for dynamic power use, source energy mix, and dynamic workloads.",1.730769231
