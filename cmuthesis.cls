@@ -12,7 +12,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 %> ---------------------------------------------------------------------------------------------------------------
 %> Other packages.
-\usepackage{graphicx,color,multirow,colortbl,hhline,array,url,fancyhdr, setspace, enumerate, tikz, pgf-pie, algorithm, algorithmic, pgfplots, booktabs, siunitx, pgfplotstable, listings, rotating}
+\usepackage{graphicx,color,multirow,colortbl,hhline,array,url,fancyhdr, setspace, enumerate, tikz, pgf-pie, algorithm, algorithmic, pgfplots, booktabs, siunitx, pgfplotstable, listings, rotating, hyperref}
 \usepackage[normalem]{ulem}
 \usepackage[margin=1.3in]{geometry}
 \usepackage[font=small]{caption}
